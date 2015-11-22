@@ -1,0 +1,122 @@
+
+ Information for programmers
+ ---------------------------
+
+This text file details some of the maor changes to the code.
+
+
+ The pager
+ ---------
+
+The pager is now only called with two functions.
+
+  pager(<player>,"<file>");
+
+The original code had an additional flag which meant that you could force
+the pager to be used even if the resident has asked for it not to. This
+was pointless.
+
+If you ever see any code like this:
+
+  if (p->custom_flags & NO_PAGER)
+    tell_player(p, oldstack);
+  else
+    pager(p, oldstack, 1);
+
+then replace with just:
+
+  pager(p, oldstack);
+
+and it will do the same job.
+
+
+ Backups
+ -------
+
+The original code (and all EW2 talkers) used the signal SIGUSR2 to trigger
+backups from outside the talker via the use of crontabs.
+
+This has been removed simply becuase there is no need to use crontabs
+since the code automatically starts backups itself.
+
+
+ Builder
+ -------
+
+The builder priv has been changed to the residency struct and replaces
+SPARE15 (1<<25). This means that to check to see if someone is a builder
+then you now use:
+
+  if (p->residency & BUILDER)
+
+This means that builder commands are not available to non-builders. All
+pfiles using the old format are automatically converted to the new format
+upon login.
+
+
+ Minister
+ --------
+
+The minister priv has been changed to the residency struct and replaces
+SPARE10 (1<<19). This means that to check to see if someone is a minister
+then you now use:
+
+  if (p->residency & MINISTER)
+
+This means that minister commands are not available to non-ministers. All
+pfiles using the old format are automatically converted to the new format
+upon login.
+
+
+ Anti-swear code
+ ---------------
+
+  This has been added for novelty value only really since the best way to
+make sure people don't swear is to nicely grill it into them. However it
+does stop people getting offended by the odd outburst and means that the
+resident will soon realise that any careless language will just get
+blanked. Also its a bit of fun :o)
+
+  In clist.h there are two flags, M_SWEARc and F_SWEARc. All commands that
+you will to have swear filtering on simply add to the end of the line (not
+forgetting the |).
+
+  F_SWEARc will cut out all swearing irrespective of where you are. This
+           is ideal for commands that broadcast messages to more than one
+           room (ie. "shout" and channels)
+
+  M_SWEARc will cut out swearing if the player is in one of the main
+           rooms. This is ideal for commands where you wouldn't want to
+           prevent people swearing in their own rooms (ie. "say", "think"
+           etc).
+
+  Be careful swear filtering private commands like "tell" and "remote"
+since many people will get annoying if they can't swear in a private
+conversation.
+
+  Currently, the major communication channels are censored excluding the
+SU and Admin channels. What you filter, is up to you.
+
+  Finally it is worth nothing that ALL words are filtered even if they are
+part of another word. Consider Scunthorpe (a place in the UK), this will
+be filtered to "S<snip>horpe" since the word "cunt" is in the filtered
+database. If however we made it so that only full words are filtered then
+words like "crappy", "shittiest" and more would not get filtered. Since
+there are a lot less real words with rude words in them, the first
+option is preferable IMO but you may want to change it.
+
+
+ Spodlist code
+ -------------
+
+Playground Plus now incorporates dynamic spodlist code which means there
+is no "ssort.c" file or additional scripts. This means that all positions
+are calculated on the fly and can be displayed anywhere within functions.
+
+Should use wish to display the position of a resident you should call the
+funtion:
+
+  calc_spodlist();
+
+beforehand otherwise the details that you get will omly be accurate to the
+last time it was updated (which could a fair amount of time ago).

@@ -1,0 +1,39 @@
+
+ Multis
+ ------
+
+Playground+ includes Mikael Segercrantz's (aka Segtor) multi/chain code. 
+Care has been taken that this code will work as intended, and so far it has
+been run successfully on Sprawls (sprawls.electronic.co.uk 2053), for which
+it was originally developed, and also on the PG+ test site.
+
+--- Begin included README.multis ---
+
+This multi/chain code is freely distributable, as long as it isn't spread in
+any changed form, only in the form originally received, and as long as
+credit is given where credit is due, in all appropriate places, including
+BOTH the 'version' command and 'help credits'.  Special permission is hereby
+granted to the maintainers of the Playground+ codebase to distribute a
+modified version of the code, as long as it is not distributed outside the
+complete codebase.  The code may be freely modified for OWN usage only.
+
+I, Segtor take absolutely NO responsibility whatsoever for how this code
+works, nor guarantee that it does.  This code is distributed on an 'as
+is'-basis, and if it manages to cause your computer blowing up, your monitor
+to start flickering, your talker to crash, or other disasters, the
+responsibility will be only yours.  Nothing has forced you to add this code
+to your talker.  In no way can I be held liable for any possible errors in
+this code.  So if something happens, don't come screaming at me, or at
+anyone distributing this code.
+
+If you find any bugs in this code, PLEASE report them!  And if you find any
+fixes for the bugs, send the info on how to fix to me.  If you don't, well,
+all I can say is that I don't want you running my code then.  So either
+report bugs and their fixes to me, or don't bother running this code.  But,
+in case you find any bugs in it, and can't fix them, I'll help as much as I
+can.
+
+You can contact me (Segtor) at:  segtor@electronic.co.uk
+                            or   sprawls.electronic.co.uk 2053
+
+--- End included README.multis ---

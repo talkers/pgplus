@@ -1,0 +1,44 @@
+
+ How to convert from PG to PG+
+ -----------------------------
+
+[ DISCLAIMER: By following these instructions you agree that the author   ]
+[ cannot be held responsible for loss or damage in any way. If you think  ]
+[ that this method may do so, either stick with PG or do it your own way! ]
+
+This file details what you need to do if you are already running a PG
+talker (that is you have PG playerfiles). PG+ is 100% compatable with PG
+so firstly don't panic!
+
+The first thing to do is to configure and compile PG+ (but do not boot
+it!). Once this is ready you will find a batch file in the PG+ bin
+directory called "pg2pgplus". This is a simple batch file which copies 
+all the required files from your "talker" directory (where you kept
+PG96) to the "pgplus" directory. If you have (for some reason) renamed
+this directory then you will need to mess about either with the script or
+the directory name.
+
+Note that you should only run this when your talker is down and NOT
+running. If you do so whilst it is running there is a good chance that the
+pfiles will corrupt.
+
+ If you have added your own code
+ -------------------------------
+
+Socials: The socials format has been changed totally for PG+. It is
+         recommended that you use this new format since it is ten times
+         more flexable (and is bug free).
+
+Normal code: If you have not adjusted the pfiles in anyway then you can
+             simply cut and paste the new code into PG+.
+
+Pfiles: If you have updated the pfiles then you need to edit "player.h"
+        accordingly and then add the new variables into the load and save
+        procedures AFTER the PG stuff but BEFORE the PG+ stuff.
+
+Finally don't forget to update "clist.h" otherwise you won't be able to
+use any of your new commands!
+
+		Richard Lawrence (aka Silver)
+		11th January 1998
+

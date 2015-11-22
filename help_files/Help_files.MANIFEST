@@ -1,0 +1,60 @@
+
+ Playground Plus Help File Manifest
+ ----------------------------------
+
+Help_files._MANIFEST		This file
+PGPLUS.welcome			Welcome message
+coding/				Coding related help files
+configuration/			Configuration & conversion help files
+licences/			All the licences
+misc/				Misc help files, history, credits etc.
+
+In the 'coding' directory:
+
+PGPLUS.IntelliBots		Information about the Intellibots code
+PGPLUS.NuNews			Information about NuNews
+PGPLUS.coding			How to code a simple command
+PGPLUS.programmers		Help for programmers
+PGPLUS.robots			Information about the robots code
+PGPLUS.sample_soshuls		Information about sample soshuls
+PGPLUS.stack			A howto on stack usage
+PGPLUS.update			How to update pfiles
+
+In the 'configuration' directory:
+
+PGPLUS.configuration		How to configure your talker
+PGPLUS.configuration2		Information for starting your talker
+PGPLUS.converting		Converting from PG96 to PG+
+PGPLUS.customisation		How to customise your talker
+PGPLUS.file_editing		Information on file editing
+PGPLUS.makefiles		Information on makefile options
+PGPLUS.softmsgs			Information about the soft messages
+
+In the 'licences' directory:
+
+PGPLUS.SeamlessReboot		Information about seamless rebooting
+PGPLUS.licence			Playground Plus licence
+PGPLUS.licence_ident		Ident server licence
+PGPLUS.malloc_logger		Information on the malloc logged
+PGPLUS.multis			Information about multis/chains code
+PGPLUS.phypor			Information about phypors code
+PGPLUS.port_redirector		Information about the port redirector
+PGPLUS.soshuls			Information about the socials code
+PGPLUS.spodlist			Information about the spodlist code
+
+In the 'misc' directory:
+
+PGPLUS.bugs			What to do when you find a bug
+PGPLUS.contact			How to contact the author
+PGPLUS.credits			Credits for Ew-Too
+PGPLUS.history			A history of PG96 and PG+
+PGPLUS.hints			Hints and tips
+PGPLUS.intercom_security	Intercom security information
+PGPLUS.mailing_list		Information about the angel mailing list
+PGPLUS.mirroring		Information about mirror this code
+PGPLUS.spooning			A message for spooners
+PGPLUS.versions			Version information
+PGPLUS.webpages			Information about pgplus logo
+
+Last updated 11.10.1998
+Some details may be innacurate.

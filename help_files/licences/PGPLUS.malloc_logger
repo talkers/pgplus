@@ -1,0 +1,17 @@
+
+ Malloc Logger
+ -------------
+
+Included in the PG+ package is a very handy memory leak detector which was
+used extensively during the development of PG+. Basically it will report
+on any functions that malloc memory and forget to free them after the
+function has finished.
+
+Note that this doesn't mean that its a leak, the talker uses a whole
+number of global structures which will be malloc'ed and then not freed
+until a different procedure.
+
+Full help is in the directory.
+
+	Richard Lawrence (aka Silver)
+	26.05.98

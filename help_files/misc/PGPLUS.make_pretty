@@ -1,0 +1,26 @@
+
+ make_pretty
+ -----------
+
+make_pretty is a simple batch file which indents all your .c files nicely
+to aid in reading. To run simply type:
+
+  make_pretty
+
+the script will make a backup of the files first before indenting them.
+Once it has finished you should do "make install" to check to see that
+there has been no problems.
+
+If not, you can delete the "backup.tar.gz" file created. In the unlikely
+event there is a problem you can type:
+
+  tar zxvf backup.tar.gz
+
+to get the original files back. If you don't like the indent style read
+the man page for "indent" and edit the file accordingly.
+
+YOU USE THIS AT YOUR OWN RISK. I CANNOT BE HELD RESPONSIBLE FOR ANY DAMAGE
+TO FILES THROUGH DIRECT OR INDIRECT USAGE OF THIS SCRIPT.
+
+		Richard Lawrence (aka Silver)
+		19th June 1998

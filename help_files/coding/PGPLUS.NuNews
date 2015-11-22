@@ -1,0 +1,142 @@
+
+ NuNews - an enhanced replacement news system (v.5)
+ --------------------------------------------------
+
+But why would you want to install a new news system?...
+Well... here are the added features of NuNews
+
+   *  multiple groups    
+         you can add new news groups with one entry into an array.
+         these news groups are fully functional and behave as if
+         they were there own entity, you can set minimum privs
+         to access them (such as having a news board for ministers
+         only), set the maximum amount of postings per player, and
+         add customization to them.
+   
+   *  unread news informing
+         players can (if they so desire) be shown on login whut
+         groups have new news and how many postings have been added
+         since they have last read.
+   
+   *  extra administration options
+         as an admin you can remove all a players postings with
+         one command, get stats on memory usage of the system,
+         toggle any articles to never timeout and more.
+   
+   *  ease of installation
+         full installation procedures, the code is very modular
+         with as few entry points into your existant src as possible.
+
+   *  included help files
+         updated help files are included with the distribution
+         so you dont have to arse about with writing them yourself
+    
+   *  and the most important ... ease of use
+         for anyone that doesnt wish to learn any new commands,
+         none be learned, they can continue operating with news
+         exactly as they always have.   if they wish to use groups 
+         and expanded features, very little extra need be learned.
+
+
+--- notes ---
+news will have two files for each article...
+one will contain the guts of it...which is loaded
+and shown when the news is read...
+the other will be a fsave()'d thinger
+of its news_header info, all of which are loaded on boot
+
+a linked list of news headers for all notes will be in the running program,
+the tops of the linked lists are kept in a static array of newsgroups
+
+to add a new group...just add an entry for it in the NewsGroups array
+the program will handle the rest in init_news
+an entry would look like
+   {"sus", PSU, 10, "Staff news group", "files/news/sus", 0},
+     ^      ^    ^     ^                    ^             ^
+ the name   |    |   description shown    path to the     leave zero
+of the group|    |   on 'news groups'     directory in    (top of news_header
+            |    |   command             which to store    linked list)
+ minimum privs   |                      postings of group
+to see the group |
+                 |
+    max postings a
+   non admin may make
+     to the group
+
+the zeroth entry of the NewsGroup array will be the main news ...
+it wont output the group name as it does for other groups, instead 
+showing it as it always has been
+
+the super users news group (sus) can be accessed as a regular news group,
+or the shortcuts can be used for the more common commands (see listing
+in the clist.h portion of INSTALLING)
+
+the informing of unread news isnt perfect but it is the most ideal way... 
+instead of trying to keep up with each and every article that has been 
+read by a player, it tracks the date posted of the most recently read 
+article in a group... if (on login) its found there is news with more 
+recent posting times than the player has read, then it considers there 
+to be unread news.
+
+sizes... the current size of news_header is 148 bytes
+translated to disk usage... if there are a total of 500 news articles,
+the header size disk useage will be about 74k... this is quiet acceptable
+to me, especially considering the number of news postings wouldnt 
+(in most situations) reach 500 articles, and even if it did, the
+overhead cost would be relativly very small
+
+and for the one thing that dint make the cut in this release...
+news reply    ... its not there... so ppl wont be able to reply
+via mail to the poster of news... (well, they still can if its not
+posted anonymously, by just sending a normal mail)
+look for this to return when i get around to rewriting the mail system
+
+
+
+-- to do --
+web based version, at least where news articles are viewable from the web
+nothing else off the top of my head
+
+
+    
+--- license ---
+If you chose to use this code, you may do so without restriction,
+as long as due credit be given in your talker's help credits
+or equvelant file, "NuNews news system written by phypor" is sufficent.
+If you wish to put an entry in your version output,
+that's good as well, tho its not required.
+
+If you chose to redistribute this code, you may do so as long as
+all the files that are in the offical distribution are included.
+One exception, the INSTALLING file, need not be included if you
+redistribute the code preinstalled in a talker.   Any modifications
+must be plainly documented.  Credit must be given as stated above.
+
+
+
+--- author ---
+phypor is the author of this code and release package.
+
+
+--- maintainer ---
+Any bug reports should be mailed to phypor@benland.muc.edu
+
+
+--- disclaimer ---
+There is no warrenty nor statement of fitness or usablity made
+about this code...  If you chose to install it you are responsible
+fully for its implementation, and effects, be they good or ill.
+
+
+
+
+--- history ---
+v.5   - fixed a missing   fclose()  in load_news_header ()
+        (thanks to lioncub for noticing it)
+
+v.4   - fixed typo/dangling bit in installaion procs for the
+        news_header struct
+
+v.3   - fixed missing function load_file_to_string in distrubition
+        (thanks for point this out shaggy)
+

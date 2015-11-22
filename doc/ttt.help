@@ -1,0 +1,17 @@
+TTT <player>  - Start a ganme of TicTacToe against a resident
+
+Whilst playing a game:
+
+TTT <number>  - Place a piece on the board
+
+TTT ABORT  - Cancel a game
+
+TTT PRINT  - Redraw the board
+
+If you mess a command up, it will redraw the board.
+
+The numbers in the right-hand box are the square numbers..
+
+Note: * You wins, losses and draws are in your X
+      * For version information, read "help ttt-version"
+

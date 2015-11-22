@@ -1,0 +1,40 @@
+
+ On-line file editing
+ --------------------
+
+  You may (currently with admin privs) edit any file in the dir files/
+  You may add other directories to this by adding then to the
+  char array at the top of glue.c, EditableDirs[]
+
+  It is suggested you NOT allow editing of the files in soft/
+  It is suggested you NOT edit .rooms files (its much safer with a real editor)
+
+  Lower directories may not be accessed, for instance,
+  altho the items in files/ maybe accessed, the items
+  in player/files or rooms/files may not.
+  To allow lower directories, they must be explictly added
+  to the EditableDirs[] array.
+
+  Only regular files (not dirs, symlinks, sockets, etc) maybe edited
+  
+  The command for this is
+     edit_file <directory> <file>
+  
+  For instance, to edit the motd,
+     edit_file files motd.msg
+
+  Or to add a new whois file for 'nester',
+     edit_file files/whois nester.who
+
+  Most things youll edit will be reloaded automatically,
+  but if you add more dirs, its possible youll have to
+  add in reloading of those files as well.
+
+  Records of editing are found in the 'edit' log.
+  
+  You may totally disable the ability to edit files in this manner
+  by turning off the flag     can_edit_files     in soft/config.msg
+
+
+                              ~phypor (6.11.98)
+

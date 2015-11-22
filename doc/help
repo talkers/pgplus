@@ -1,0 +1,4086 @@
+:0,general,newbie
+
+ &t Online Help
+
+   The easiest way to use HELP is to start with HELP INDEX and then go
+   through all the pages - HELP 1, HELP 2, etc ...
+
+   Help can also be found on various commands and specific topics. Simply
+   type "HELP <command or topic>" for information. Alternatively you can
+   enter any command followed by "/?" or "-h" (ie. "PINFO -H") and the
+   relevant help will be shown.
+
+   If you think you've found an error or a missing help file then please
+   let the admin know by sending email to &e.
+
+   Original help files written by traP, astyanax and Indiefan. Additional
+   files, updates and presentation changes by Silver and enigma.
+
+:1,com,comm,communication,communicate
+                        
+                        General Communication
+                        ---------------------
+
+ command  abbrev   Description
+ =======  ======   =======================================================
+ say      ' ` "    say a message to people in the same room as you.
+ emote    : ;      emote an action to people in the same room.
+ pemote   ;; ::    possessive emote to the room (adds  's to your name)  
+ think    ~        does a    . o O ( think )  to everyone in the room.
+ echo     +        does an "echo" to everyone in the room.
+ sing     )        does an o/~ sing o/~ to everyone in the room.
+ 
+ tell     . >      tell something to a particular person(s).
+ remote   , <      an emote , but to a particular person(s).
+ premote  <: <;    a pemote, but to a particular person(s).
+ whisper  =        whisper to a person(s) in the same room as you.
+ recho    -        like echo, but to a particular person(s).
+ rsing    (        a private sing to someone.
+ rt       *        a think to specific person(s). 
+ yell     &	   yell at some person(s).
+
+ reply    ]        handle "multi-tell" situations with this command.
+ ereply   [        like reply, but you emote instead
+ preply   [;       possessive ereply
+ treply   [~       rthink reply
+ sreply   [)       rsing reply
+ yreply   [&       yelled reply
+ oreply   [+       echoed reply
+
+ shout    !        say something to everyone on the program.
+ yemote   !: !;    an emote to everyone on the program.
+ pyemote  !:: !;;  a pemote to the entire program.
+ ythink   !* !~    a think to everyone on the program.
+ yecho    !+ !-    echo to the entire program.
+ ysing    !) !(    sing to everyone on the program
+
+ 
+:10,room-more
+
+                           More Room Stuff
+                           ---------------
+
+Via the room command, or whilst in room mode:
+
+  id            - set the id of the room
+  name          - set the name of the room
+  info          - give some info about the room
+  check         - info about all your rooms
+  soundproof    - toggle whether shouts can get in/out of room.
+  isolate       - toggle whether tells can get in/out of room.
+  chamber       - toggle whether sings can get in/out of room.
+  [+-]auto      - add or remove an auto-message (+ to add a message, -
+                  to remove one)
+  speed         - change the speed of the auto-messages
+  autos[on/off] - auto-messages, or turn them on or off
+  delete        - delete a room
+  create        - create a room
+  end           - end sub command mode
+  
+:11,editor,edit
+
+                              The Editor
+                              ----------
+
+      Lines not starting with / or . are inserted into the text.
+
+  .del <x>      - delete the current line (or x lines)
+  .-            - go back a line
+  .+            - go forward a line
+  .view         - see what you've written
+  .l            - view the current line
+  .g            - goto a line
+  .top          - goto the top
+  .bot          - goto the bottom
+  .wipe         - completely clear the buffer
+  .stats        - show some stats about the buffer
+  .quiet        - toggle whether you go into 'quiet' mode when editing 
+  .end          - quit the editor and KEEP the changes
+  .quit         - quit the editor and THROW AWAY any changes
+  .s <string>   - finds the next global occurrence of the string
+  .sr <s> <r>   - Search and replace all occurrences of <s> with <r> eg:
+
+
+	Marry had a Yello cat!
+	.sr "Marry" "Mary"
+	changes Marry to Mary
+	The quotes allow you to replace spaces and stuff too.
+	i.e.   .sr "Yello cat!" "little lamb,"
+	now the line reads:  Mary had a little lamb,
+
+
+:12,pager,page
+
+                            The Pager
+                            ---------
+
+  b or p           - Back 1 page.
+  f or n           - Forward 1 page.
+  t                - Go to the top of what is being paged.
+  q                - Quit.
+  
+If the talker is running Nightwolf's advanced pager then you can continue
+to enter commands whilst in the pager (although you will not be able to
+view paged text). If you aren't then typing anything else will result in
+the page being redrawn.
+
+:13,misc,miscellaneous
+
+                            Miscellaneous
+                            -------------
+
+  blocktells    - ignore any tells to you.
+  blockfriends  - block the "spam" caused by friend-tells to you.
+  earmuffs      - ignore any shouts.
+  quiet         - go quiet, ignore shouts and tells
+  linewrap      - turn off, or set the width of your terminal
+  wordwrap      - turn off, or set the largest word that will
+                  trigger wrapping
+  show          - show what sort of command, some text has originated
+                  from.
+  hitells       - high-lights any personal messages for you.
+  quit          - leave the program
+
+
+:14,|,pipe 
+
+         A way of directing text to several different people.
+
+          Format: <emote/shout/say/echo> <msg> | <user list>
+            (see 'help ulist' for help on <user list>)
+
+        Example     emote smiles at you. | alice,astyanax
+
+        You will see : 
+                You emote : &m->n smiles at alice and astyanax.
+
+        alice sees (as a personal message)
+                &m->n smiles at you and astyanax.
+
+        astyanax sees (as a personal message)
+                &m->n smiles at alice and you.
+
+        Everyone else in the room sees (as a room message) :
+                &m->n smiles at alice and astyanax.
+
+:15,chan,channel
+
+The original Playground channel code has been scrapped for a more pleasant
+and easier to use format. There are 3 available channels for you to speak
+on:
+
+Main Channel (requirements: resident)        - See "help mainchannel"
+
+Spod Channel (requirements: spod)            - See "help spodchannel"
+
+Z Channel (requirements: resident)           - See "help zchannel"
+
+Dynamic saved channels (requirements: none)  - See "help dsc"
+
+:16,color,syscolor,colorize,fingerpaint,colour,syscolour,colourize
+
+We now offer color! 
+
+To use this, you should be on a terminal that supports ANSI color codes. 
+More help on getting color to work may be made available later.
+
+But for now, try it by typing FINGERPAINT.
+
+If you see colors, then you will be able to use and view colors. Even if some
+colors don't seem to work, others may, and you may want to activate it, even 
+if its only for a few shades.
+
+Color related commands:
+
+COLOR 	- activate standard color mode -- you will see the colors others
+	  create in their rooms, in help files, in descriptions, practically
+	  everywhere.
+
+SYSCOLOR - This enables Active Color Mode -- where you can set the colors
+	   of certain types of input by using the COLORIZE command. So your
+	   tells can be white while your shouts are dark blue and your 
+	   friend tells scream in blinking text.
+
+COLORIZE - Without an argument, it will show you your current system colors.
+	   With arguments, it will change your color settings for one type of
+	   command.
+
+Good luck, and any questions should be relayed to &e.
+
+:17,aliases,define,undefine,lsa,alias
+
+We now supports aliases. An alias is a substitute for a longer  
+set of commands.. for example...
+
+  define idin idle indiefan        (you can also use "alias")
+
+This creates a "pseudo-command" called idin. If i type idin, I will see how 
+long indiefan has been idle.
+
+  PG ->idin
+  indieFan has just hit return.
+  PG ->
+
+You can also list your aliases.
+
+  PG ->lsa
+-------------- You are using 1 of your maximum 10 aliases -----------------
+idin                 = idle indiefan
+---------------------------------------------------------------------------
+PG ->
+
+Also, it is easy to remove an alias you no longer need.
+
+  PG ->undefine idin
+  Alias deleted...
+  PG ->lsa
+  You are not using any of your 10 aliases.
+  PG ->
+
+See help advanced for more info on what can be done with aliases.
+
+:2,information,info
+
+                             Information
+                             -----------
+
+  who           - lists who is currently on the program. (who 2 etc)
+  w             - lists who is on, rank, location and idle time
+  swho          - a brief version of 'who'
+  fwho          - show which of your friends are on and listening.
+  qwho          - shows all your friends on, blocking or not.
+  twho          - does a 'who' with titles, not session messages.
+  where         - lists where everyone (or a particular person) is.
+  with          - lists who a particular person is with.
+  hide          - make it so no-one will know where you are.
+  idle          - shows when someone (or everyone) last did something
+  idlemsg       - set a message to say why you're idle.
+  examine    (x)- show info about a person who is logged in
+  finger     (f)- show info about someone who isn't logged in.
+  look       (l)- show the room you are in, and who is in it.
+  time          - show the local time
+  commands      - a list of every command you can do
+  privs         - a list of abilities you have.
+  grabable      - lists who you can grab.
+
+:3,describe
+
+These commands are to spice up your examine (x) file and finger (f) 
+file.  Some of them are for both files, some are for only one.  They have 
+been separated for your convenience.
+
+-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-
+
+For BOTH files:
+---------------
+
+age: 
+
+	To set your age, type:  age <number>
+	You must set the age to a numerical value.  It will not recognize
+	anything else.  Typing 'age 0' turns this function off.
+
+birthday (bday):
+
+	To set your birthday, type:  bday <month/date>
+	If you want your birthday to be set to Feb 29, you _must_ include
+	the year in the date.  For example: bday 2/29/96.  The only time
+	you do not have to include the year, is when it is an actual leap
+	year.  Typing 'bday 0' turns this function off.
+
+description (desc):
+
+	To set up a description of yourself, type:  desc <self depiction>
+
+hometown:
+
+	To set the location of where you are, type:  hometown <place>
+
+madefrom (formerly automatically set based on gender):
+
+	To set what you are made from, type:  madefrom <components>
+	You may now set this to whatever you wish it to be.  If you
+	type madefrom without anything after it, it will default to
+	the old message.
+
+title:
+
+	To set your own title type:  title <insert your noble rank here>
+	You do not need to put your name at the beginning of your title.
+	The program will do it for you automatically.  If you prefer to
+	have just your name, and no title after it, type title with no
+	message after it.  (i.e. just type: title)
+
+toggle:
+
+	To set your email and/or site public for friends or everyone to see,
+	type:  toggle <email or site> <friends or everyone>
+	If you do not toggle your email or site, it is assumed that
+	you wish for them to remain private.
+
+url (WWW homepage location):
+
+	To set the location of your homepage, type:  url <location>
+	This is NOT to set up a homepage.  It is only for those who
+	currently have one.
+
+-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-
+
+For the Examine (x) File _only_:
+--------------------------------
+
+favorite:
+
+	To set up a favorite, type:  favorite # <item> <thing>
+	* The number must be 1, 2, or 3, as you are only allowed 3 
+	  favorites.
+	* The item may be no longer than 12 characters long.
+	* For example: to show that your favorite movie is Star Wars
+	  type: favorite 1 movie Star Wars
+	* To delete a favorite, type:  favorite #
+
+	Make sure that you have the correct # of the one you wish to remove.
+	Also, you do not put in an <item> or <thing> when you are deleting
+	a favorite.
+
+irl_name:
+
+	To set the name you go by in real life, type:  irl_name <your name>
+
+-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-
+
+For the Finger (f) File _only_:
+-------------------------------
+
+plan:
+	To set your plan, type:  plan <what you want to do with your life>
+	If you wish to remove the plan section from your f-file,
+	type plan with no comments after it.  (i.e. just type:  plan)
+
+*Note: The examine (x) file is for people to get more info on you when 
+you are currently logged in.  The finger (f) file is to get more info 
+when you are not currently logged in.
+
+-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-,._.,-*~'``'~*-
+
+Miscellaneous Personalization Commands
+(these don't affect the x or f files):
+--------------------------------------
+
+prefix:
+
+	To set a prefix, type:  prefix <msg>
+	This has a limit of 16 characters, and will not accept any blank
+	spaces within it.  The prefix is also shown to anyone who has the
+	prefix command on whenever you say something, public or private.
+	To see how to turn seeing prefixes on/off, type help noprefix.
+
+recap:
+
+	To re-capitalize your name in some new fashion, type:  recap <name as
+	you want it to appear>
+
+
+:4,moving,move
+
+                            Moving Around
+                            -------------
+
+  go            - move to an adjacent room.
+  trans         - move to any room (if you know its i.d.).
+  home          - go home.
+  visit         - visit a person in their home.
+  leave / main  - leave to the main room.
+  exits         - find out where you can 'go'
+  check room    - find out the name/id of the room you are in
+  grab          - grab someone into the same room as yourself.
+  join          - join someone in the room they are in
+
+:5,list
+
+                              Your List
+                              ---------
+
+  list          - view your list
+  clist         - clear entries in your list
+  slist         - set particular flags in particular entries
+  rlist         - reset particular flags in particular entries
+  tlist         - toggle particular flags in particular entries
+
+  noisy,ignore,inform, } 
+  friend,grabme,       }  toggle, set or reset flags according to which 
+  beep,block,bar,      }  command is used on a particular person or 
+  friendblock,         }  persons in your list
+  mailblock,shareroom, }
+  nofriend, prefer.    }
+
+:6,news,NuNews
+
+Using News
+----------
+
+  check news   - see what news there is
+  news         - do a news command, or enter news mode
+
+        Via the news command, or while in news mode:
+       (If the [group] argument is left out, it will
+        default to the primary news board)
+
+  read [group] <#>           - read a news article <#>
+  view [group] [#]           - view page of news articles listing
+  check [group] [#]          - same as 'view'
+  (a)post [group] <subject>  - post an article entitled <subject>
+  (a)followup [group]        - post an article referring to a previous article
+  remove [group] <#>         - remove your news posting, <#>
+  groups                     - view all available news groups.
+  commands                   - see possible news commands
+  inform                     - toggle seeing when new news is posted
+  login                      - toggle seeing unread articles on login
+  checkown [group/all]       - list the articles you have posted
+
+  help / man / ?             - view this text
+  end                        - exit sub command mode
+
+   See also: news_examples
+
+:news_examples
+
+Some examples of the news system
+--------------------------------
+
+   The commands will function the same as they do in the original system,
+   however they have additional functionality if you wish to use it.
+
+   First   news groups     to see the available groups on this talker.
+
+   Assuming there was a group called 'humor' for the following examples,
+
+   To list the articles in the group,
+      news check humor
+
+   If you wished to read the 5th posting in this group,
+      news read humor 5
+
+   If you wanted to post an article called 'Random jokes' here,
+      news post humor Random jokes
+   And enter it in the editor
+
+
+:7,mail
+
+                              Using Mail
+                              ----------
+
+  check mail    - see what's in your mailbox
+  mail          - do a mail command, or enter mail mode
+
+Via the mail command, or whilst in mail mode:
+
+  read          - read a piece of mail to you
+  view          - view the mail you have received
+  (a)post       - post mail to a person or persons (prepend 'a' to
+                  post anonymously)
+  (a)reply      - reply to a piece of mail
+  delete        - delete mail you have received
+  inform        - toggle whether you get informed of new mail for you
+  sent          - show what mail you have sent.
+  remove        - remove mail that you have sent
+  noanon        - toggle whether you will be able to receive anonymous
+                  mail 
+  end           - exit sub command mode
+
+:8,checking,check
+
+                           Checking things
+                           ---------------
+
+  check mail          - view your mailbox
+  check news <group>  - view the news
+  check snews         - view the superuser news
+  check exits         - view the exits in the room
+  check autos         - see the auto-messages in a room
+  check room          - list info about a room
+  check rooms         - list your rooms
+  check email         - see what your email address is set to
+  check wrap          - check the line/word wrap stats
+  check entry         - check the entry for your name, on someone else's
+                          list.
+
+:9,room
+
+                           Stuff for Rooms
+                           ---------------
+
+  lock          - lock the room you are in.
+  room          - do a room command, or enter room mode
+
+Via the room command, or whilst in room mode:
+
+  edit          - edit the description for the room.
+  sethome       - make this room your home
+  lock          - lock a room
+  lockable      - make your room lockable by others apart from you
+  open          - make it so anybody can enter a room
+  entermsg      - set the message that other people will see when
+                  someone leaves a room to enter this room
+  exitmsg_con   - Determine whether or not exitmsgs may be used instead
+		  of room entermsgs.
+  [+-]exit      - add or remove an exit to another room (+ to add, -
+                  to remove)
+  notify        - you get told when someone enters a room of yours
+  link          - link your rooms to another
+  linkable      - make it so other people can link to a room of yours
+  entrance      - opens a room so people can arrive there when they login
+
+                        Continued on 'help room-more'
+
+:ad,au,ae,at,as,ap,ad_hi,lad
+
+AD <message>  - admin chan say
+AE <action>   - admin emote
+AP <action>   - admin pemote
+AT <thought>  - admin think
+AS <song>     - admin sing
+AD_HI         - toggle hi-lighting on the admin_chan
+LAD           - list all "admins" (people who can see the admin channel)
+
+:ads,advert,advertise,advertising
+
+Advertising other talkers here:
+
+	*Don't*
+
+	These are examples of "acceptable" advertising here:
+		* Ask an admin to list you on help 'talkers'.
+		* Do a friend tell.
+		
+	Everything else is not appreciated, and will be handled severely. This
+	is because we are a new talker ourselves, and don't appreciate being
+	"raided" by other talkers.
+
+Advertising our talker on other talkers:
+	
+	* Do tell your friends about this place.
+	* Do ask to have us listed in a help talkers 
+
+	* Don't shout addresses. Its rude.
+	* Don't post news without explicit admin permission.
+
+Advertising our talker elsewhere on the Internet:
+
+	* Newsgroups: Try and stick to "appropriate" groups
+	* WWW: Try and get us listed on WWW pages that link
+	  to talkers
+
+		(if you want to link it to your home page, do this:)
+	 	<A HREF = "telnet://site.com:port/"> Link to &t </A>	
+
+	* Email:  Mail your friends, not random people ;)
+	* Other:  Your own best judgment, based on these guidelines.
+
+:advanced,%
+
+These "variables" can be inserted into an alias you create.
+
+%0          - This means to list all arguments and insert here.
+
+e.g.        define sillysay emote sez -=> %0 <=-
+	    sillysay red doofus
+	    sillysay bouncey bouncey bouncey :-P
+	    sillysay .
+
+%1  %2      - These mean to take this word in the list of arguments.
+
+e.g.        define bop remote %1 bops you with a %2
+	    bop traP spoon 
+	    (you bop traP with a spoon)
+
+            define flip emote tackles %2 and %1.
+	    flip traP Nogard   
+	    (you tackle Nogard and trap)
+
+%-1   %-2   This is a special case. You can list all arguments AFTER the first,
+		second, etc, word.
+
+	    define tickle remote %1 tickles you all until %-1.
+	    tickle friends the end of the day.
+	    (you tickle your friends until the end of the day)
+	    
+            define telltwo tell %1,%2 %-2
+	    telltwo traP Nogard hello silly coders.
+	    (you tell traP and Nogard 'hello silly coders')
+
+%;	    This is a very special case. This can be used to perform multiple
+	    commands with one alias. The %; separates the commands from each 
+	    other.
+
+	    define getinfo x me%;lsu%;swho%;qwho
+
+	    When you type getinfo, you will x yourself, do an lsu, a swho, and 
+	      a qwho in that order.
+
+%{@@}	    This is the most recent addition. You can insert random phrases
+		into your aliases.. Pay careful attention to the format.
+
+	    define cast_spell emote chants as %{red@green@blue} smoke swirls.
+
+		This will choose a random word (red, green, or blue) and use
+		that in the phrase.
+
+	    This is not allowed.
+
+		define random_arg say %{1@2@3}
+		You would randomly say the numbers rather than using that word.
+
+	    However, this may change in the future.
+
+	
+One word of warning. If you abuse aliases they will be removed from you.
+
+If an alias you write crashes the program, don't use the alias again. Also, 
+	report it to the admins so they can fix the bug.
+
+And, be careful about doing stuff like this...
+
+	define oy say oy %1, that hurt.
+
+	PG ->oy
+
+	Funny things may happen when you forget an argument..
+
+:aecho
+
+AECHO <arg>  - sends a completely anonymous echo to everyone.
+BECHO <arg>  - sends a completely anonymous echo to the room.
+
+Note: Both of these commands are undetectable.  Don't over-do them, however,
+otherwise they will be removed.
+
+:age
+
+AGE <years_old>  - sets your age.
+
+:all_delete
+
+ALL_DELETE  - Deletes all LSO items and does not refund any money.
+
+Notes: * Don't use unless you absolutely have to.
+       * It is hard coded to allow only someone with the name "admin" to
+         do so.
+
+:anews
+
+ANEWS		- view the admin news
+
+:anul
+
+ANUL <player>  - clears all marital data. Gives no messages. Use with
+                 discretion.
+
+:apost
+
+APOST		- post a message to the admin news
+
+Syntax:  apost <message>
+
+:assist
+
+ASSIST <player>  - inform newbie that you're an su and will help them.
+
+:autoshutdown,cancel_as
+
+AUTOSHUTDOWN	- make the program automatically shut down when the
+		  last person logs out
+
+CANCEL_AS	- cancel the autoshutdown ;)
+
+:aw,au,ae,as,at
+
+Admin Channel
+-------------
+
+  AU <message>  - Say on the admin channel
+  AE <action>   - Emote on the admin channel
+  AS <song>     - Sing on the admin channel
+  AT <thought>  - Think on the admin channel
+  AW            - See who is listening to the admin channel
+
+:backup,defrag,dfcheck,dfstats,sync,syncall
+
+SYNC <letter>  - Saves all players beginning with that letter.
+SYNCALL        - Saves all players.
+BACKUP         - Forces a backup to begin.
+DEFRAG         - Defragments the rooms.
+DFSTATS        - Room fragmentation statistics
+DFCHECK        - Validates all the rooms.
+
+Be careful when using these commands.  If you don't know what you're
+doing you could corrupt files and do other bad things!
+
+:banish,unbanish
+
+BANISH <player>    - banish a player or a name from being used on this
+                     program
+UNBANISH <player>  - unbanish a player or a name from being used on this
+                     program.
+
+:bar
+
+BAR <player(s)> on/off/[blank]  - forbid the specified player(s) from
+                                  ever entering any of your rooms.
+
+:barge
+
+BARGE <player>   -  Break into players home room
+BARGE <room.id>  -  Break into a room with that ID.
+
+Note: All barges are logged.
+
+:basics
+
+   These are the 10 most important commands to know about here.
+
+' <what you want to say>   -- talk to everyone in the room   (help say)
+; <what you want to do>    -- do an action to everyone in the room (help emote)
+> <someone's name> <what you want to tell them> 
+			   -- talk privately to someone   (help tell)
+JOIN <someone>             -- go to someone else's room    (help join)
+LEAVE                      -- go to the main room         (help leave)
+COMMANDS <section>         -- see what stuff you can do   (help commands)
+LSU                        -- see who the super users who are on are
+WHO                        -- see who everyone on the program is
+X <someone>                -- get info about someone else on the program
+F <someone>                -- get info about any user of the program
+
+(10 commands, and you won't look like a total moron.. but you should learn
+the others too, if you want to be a REAL user of the talker!)
+
+:bedit
+
+BEDIT  - Enter the banished sites editor.
+
+Note: This is a pain to use and it is recommended that you edit this file
+      from within the talker account. However it is handy to undo a
+      banish.
+
+:beep
+
+BEEP <player(s)> on/off/[blank]  - when the player(s) log on or off, you
+                                   will get a "beep"
+
+:birthday,bday
+
+BDAY <mm>/<dd>[/<yy>]  - sets your birthday... 
+
+        e.g.   BDAY  03/14/74 sets your birthday (and age) to March 14th, 1974.
+	       BDAY  06/15 sets your birthday to June 15, doesn't touch age.
+
+-=> yes, BDAY is an alias of BIRTHDAY in the never ending quest for shorter
+    commands =)
+
+*Known bug: If you want to set a BDAY of 2/29, you must use the year
+ as well to make it work. There is no fix to this bug yet, sorry. 
+
+:bits
+
+SETBIT <item name> <flag>  - Set the properties of an item where the bits
+                             can be one (or more) of the following:
+
+	FOOD	- make something edible
+	DRINK	- make something drinkable
+	WEAR	- make something wearable	
+	WIELD	- make something wieldable	
+	TOY	- allow people to play with item 
+	UNIQUE	- Only allow people to own on of these at a time
+
+:blank
+
+BLANK <something> <player>  - Blanks an offensive comment, desc, entermsg,
+                              etc.
+
+Type BLANK with no arguments to see what you can blank.
+
+:blank_alias
+
+BLANK_ALIAS	- blank ALL of your aliases.  Use this with
+		  caution -- it does NOT confirm that you
+		  want to do this!
+
+:blank_email
+
+BLANK_EMAIL <player>  - blank a players email address.
+
+Note: Use with caution, this could cause a player to be deleted.
+
+:blank_items
+
+BLANK_ITEMS  - Deletes all your items.
+
+Note: * Does not refund you any money!
+      * Use this command only if your inventory is totally screwed up.
+
+:blank_list
+
+BLANK_LIST - completely deletes your list... be careful!
+
+:blankpass
+
+BLANKPASS <player> [new_password]  - change someone's password.
+
+You do not have to specify a new password although this is not very
+secure!
+
+:block
+
+BLOCK <player(s)> on/off/[blank]  - you prevent the player(s) from sending
+                                    tells to you, but you can still see
+                                    what they say, shout, etc.
+
+Note: * Think of it as a "lesser ignore". Other methods are "gag" (only
+        lasts for the duration they are on) and "ignore" (permanent).
+
+:blockdesc
+
+BLOCKDESC	- toggle room descriptions on/off
+
+:blockfmail
+
+BLOCKFMAIL  - Blocks all friend mail.
+
+:blockfriends
+
+BLOCKFRIENDS  - block FRIEND TELLS only.
+
+:blockgames
+
+BLOCKGAMES	- toggles whether or not you will accept
+		  invitations from other players to play games
+
+:blockitems
+
+BLOCKITEMS  - Toggles whether or not you see item messages (either
+              personal or in the room).
+
+:blocklist
+
+BLOCKLIST <on|off>  - Toggles if your friends can send messages to all
+                      your friends or not.
+
+:blocklogins
+
+BLOCKLOGINS  - Toggles whether or not you see login messages in the main
+               room.
+
+:blockmsg
+
+BLOCKMSG <msg> - sets the message people will see when you are are in
+                 BLOCKTELLS mode or BLOCKFRIENDS mode. 
+                 (this might be something like -  I'll be right back  )
+
+:blocktells
+
+BLOCKTELLS  - block all forms of private communication directed at you.
+
+:boot
+
+BOOT  - kick someone out of your room.
+
+:bop
+
+BOP <person>  - Bop a person with your wielded item.
+
+Note: *	If <person> is in the same room as you then the whole room will
+        see you bop them.
+      * If the item has a special effect associated with it, that effect
+	might be bestowed on the victim.
+
+:bounce
+
+BOUNCE    - takes you to a random room.
+
+:bug
+
+BUG -  Report an error in the program. Please be as specific as
+       possible. If the description of the bug won't fit, then send an
+       internal mail to the admins or to &e.
+
+:builder_rules,brules,b_rules,b.rules,b-rules
+
+Rules for Builders
+------------------
+
+1.   No creation of offensive items.
+
+2.   No creation of alcoholic beverages.
+	
+3.   No creation of items that break any rules.
+
+4.   No intentional creation of an item that shares the name of
+     another user with the intention of using it to harass.
+
+5.   No creation of items that already exist.
+
+6.   No exploiting system or item bugs.
+
+If you abuse the ability to create items, builder status will be revoked.
+
+:bump
+
+BUMP <player>   - Bumps a player silently off the talker.
+
+You can also type 'BUMP NEWBIES' to automatically remove all newbies from
+the program (useful for several newbies from the same site who are all
+causing problems).
+
+There is no message to the player(s) - they just suddenly disappear.
+
+:buy
+
+BUY <object>  - Buys an item from the LSO list.
+
+Note: * You can only buy the item provided you have enough money for it.
+      * To gain more money - log on more!
+
+:ch_hi
+
+CH_HI		- toggle highlighting of channels on/off
+
+:change_command_privs
+
+CHANGE_COMMAND_PRIVS <command> <priv level>  - Changes a commands priv
+                                               level to a new one.
+
+Note: * The new command levels are NOT saved by the program. When you
+        reboot they will be back to the original settings.
+      * Don't do silly things such as change the level of "quit", 
+        "shutdown" or even this command :o)
+      * This is ideal if a command is causing problems with the talker,
+        you can make it inaccessible to a majority of people so as to
+        prevent the code crashing again.
+
+:chlim
+
+CHLIM <limit type> <player> <new limit>  - change player limits.
+
+Note: * Limits that can be changed are: mail, list, room, auto, exit,
+        alias, item
+
+:ckban
+
+CKBAN <IP address>  - Check if a site is banned, and why, and to what
+                      extent.
+
+Here are some examples of its use..
+
+->ckban 0.0.0.0
+Site is totally banned.
+Banned by: &m->n
+Reason: # Constant harassment of other users.
+->ckban 255.255.255.0
+Site is banned to new users.
+Banned by: &m->n
+Reason: # people keep shouting addresses to other talkers
+->ckban 128.58.99.69
+That site doesn't appear to be banned.....
+
+NOTES:
+1) You can't use * wild-cards
+2) If a site is banned twice, only the first listing will show up.
+3) You can't scan name addresses.. i.e. ckban pgplus.whiting.co.uk
+   This is because all bans are stored internally as IP's.
+
+:clist 
+
+CLIST  - clear a name from your list
+
+:cls
+
+CLS  - clears the screen. Doesn't work on every terminal and won't work
+       on any MUD client (since they suppressed escape codes).
+
+:commands
+
+COMMANDS <type>  - Lists all commands available to you of that "type"
+
+If you don't include a type then you will be shown all available options.
+
+Note: This is also aliased to "c".
+
+:comment
+
+COMMENT <whatever>   set your 'answer' to the session question.
+
+:confirm
+
+CONFIRM <player>  - check if a new ressie has set an email and a password
+
+:connect_room
+
+CONNECT_ROOM  - Try to set the current room as the room you will logon to.
+
+:converse,end
+
+CONVERSE   - you enter a different mode EVERYTHING you type gets "said" 
+             unless you type a / first.
+
+/END         - takes you out of converse mode.
+
+:cprompt
+
+CPROMPT <prompt>    - set your converse mode prompt.
+
+:create,setbit,setval,delete
+
+CREATE <item name> <item description>  - Create a new item with a one word
+                                         name and short description.
+SETBIT <item name> <flag>              - Set the properties of an item.
+SETVAL <item name> <cost>              - Set the cost of an item.
+DELETE <item>                          - Delete an item.
+
+Note: * When deleting an item all occurrences of it will disappear. All
+        those players who have bought that item will be given a full
+        refund.
+      * Type HELP BITS for the possible arguments to SETBIT.
+
+:creation
+
+So you want to create an item... first you have to be a builder.
+
+If you are then decide what you want to build. Lets say, I decide to
+create a can of spam.  Since spam can (technically) be eaten, I'll make it
+a food item.  Also, since spam is such a part of Internet culture, I'll
+make it cheap.
+
+I type (in this order)
+
+	create Spam A can of rubbery mystery meat
+
+	setbit spam food
+
+	setval spam 25
+
+This makes spam, at a cost of 25 pennies, available as an edible item.
+
+Note: * If spam already exists, then it will fail to create spam.
+      * After you SETVAL an item, you can no longer edit it, so 
+	make sure your SETBIT stuff is done FIRST.
+      * Item names and descriptions cannot be too long
+      * Item names cannot start with $, -, +, or a number
+
+:decap
+
+DECAP <user>  - removes / grants the ability to use upper case letters.
+
+Use this to force people who constantly insist on all caps to use all
+lowercase letters.
+
+Affects all says, shouts, echos, sings, tells, remotes, and gossip channel.
+
+:deflogon,deflogoff,defrecon,logon,logoff,recon
+
+These are special aliases you can define for what happens just before you 
+logon, reconnect, or logoff -- do NOT give these aliases arguments, because 
+they will not be sent any arguments by the program.
+
+DEFLOGON <string>   - change the script before you logon
+DEFLOGOFF <string>  - change the script after you logoff
+DEFRECON <string>   - change the script after a reconnection.
+
+:desc,description
+
+DESC <msg>  - sets a little description of yourself =)
+
+-=> DESC is aliased to DESCRIPTION - some people LIKE the longer commands =)
+
+:dibbs,call
+
+DIBBS <player> - Call "dibbs" on a player.   Used on newbies that are 
+		 experienced users and you don't wish to  spam with the
+		 obligatory "assist" message.   Only su's see the "call".
+
+:disclaim
+
+DISCLAIM <player>  - Force a player to agree to the disclaimer on login.
+
+:divorce
+
+DIVORCE <player>    - annul net.marry. This also divorces the person that
+                      <player> WAS married to.
+
+:drag
+
+DRAG <player> <reason>  - Kicks a person off the program. (like forcing
+                          them to type 'quit')
+
+:drugs,drug,pot,marijuana,cocaine,heroin,alcohol,illegal
+
+A DRUG is defined, for the purpose of the talker rules,
+as ANY substance that is illegal to either make, use, buy, sell, or
+possess in the United States of America, without the specific prescription
+of a Doctor of Medicine.  This includes substances such as cocaine, 
+marijuana, heroin, PCP, LSD, as well as many others.  Discussion of 
+these items, even mentioning them, in any tell, say, shout, sing, mail, 
+news, or any other sort of communication at all is completely illegal 
+on the talker.  The continued existence of the talker comes 
+before your "right" to free speech.
+
+The following are technically drugs, but are not illegal to 
+discuss, because their possession, use, purchase and selling are not
+illegal: caffeine, nicotine, aspirin, etc.
+
+Alcohol and any alcohol containing substances are in a special
+intermediate category. Discussion, mentioning of them, etc, is LEGAL,
+however EXCESSIVE discussion of alcohol will not be tolerated. The
+decision as to what is and is not "excessive" is up to the individual
+superuser.
+
+These rules exist so that the talker can continue to exist
+in the face of the drug paranoia that prevails in most of America.
+Sorry, but thats just the way it is. As I said before, the continued 
+existence of the talker comes before anything else.
+
+:dsc,join_chan,leave_chan,lsc,list_chans,dsc_hi
+
+Dynamic saved channels are an extremely simple way of being on more than
+one channel at the same time whilst reducing the number of additional
+commands you need to know.
+
+JOIN_CHAN <name>  - Join a channel. If it doesn't exist then it will be
+                    created automatically. Channel names must not be the
+                    name of a current resident and contain only standard
+                    letters.
+
+LEAVE_CHAN <name>  - Leave the channel.
+
+LSC / LIST_CHANS  - List the channels you are on.
+
+DSC_HI  - Hi-light all dynamic saved channels
+
+To talk on the channels use your normal remote commands (ie. tell,
+rthink, rsing, remote). Should you quit the talker without disconnecting
+from that channel then you will be automatically reconnected to it upon
+login.
+
+For an example see "help dsc-example"
+
+:dsc-example
+
+join_chan silver
+ You don't really want to name your channel after a person... do you?
+join_chan test
+ No match of the name 'test' found in files.
+) [test] ++ &m->n joins this channel ++
+< test waves
+) [test] &m->n waves
+> test allo!
+) [test] &m->n says 'allo!'
+leave_chan test
+) [test] -- &m->n leaves this channel --
+
+:dumb
+
+DUMB <player>  - turn a player into a lil baby =)
+
+Note: * They won't be able to talk, emote, or anything (correctly) for as
+        long as they are dumbed.
+      * The 'dumb' is saved, so even if they log out and come back they'll
+        still be acting silly!
+
+:dump
+
+DUMP  - dump all notes to disk
+
+:earmuffs
+
+EARMUFFS  - block all shouts 
+
+:eat
+
+EAT <item>  - Eats an item that you have in your inventory.
+
+Note: * Some items cannot be eaten.
+      * Some items do special things when eaten.
+      * Everyone in the room will see you try to eat the item.
+      * Once an item is eaten it is gone, and you do not get a refund for
+        the cost of the item.
+
+:echo,+
+
+ECHO <message>  - sends a "semi-anonymous" message to everyone in the
+                  room.
+
+-=> ECHO is aliased to +
+
+you type  You see          People with seeecho off/on see    
++Boo!     You echo: Boo!   + Boo!               + [&m->n] Boo!
+echo hi.  You echo: hi.    + hi.                + [&m->n] hi.
+
+(the '+' symbol means that the text was an echo. whether the + is seen or
+ not is controlled by the 'show' command).
+
+:edcash
+
+EDCASH <player> [-]<amount to give/take> - edit how much cash a person has
+
+:edfirst
+
+EDFIRST <player> [-] <time in days>  - edit the time of a person's first
+                                       login to &t
+
+:edidle
+
+EDIDLE <player> [-] <time in hours>  - edit a person's total idle time (in
+                                       other words, their truespod login
+                                       time)
+
+:edtime
+
+EDTIME <player> [-] <hours>  - edit someone's login time.
+
+Note: * If you don't use this command carefully you can really screw up
+        both their login time and spod factor!
+
+:ef,rf,pf,rtf,sf,ft,yf
+
+These are the "friends channel" commands. They send private messages to anyone
+who is logged on, and is on YOUR list as a friend.
+
+  ef     - echo to your friends
+  tf     - tell your friends
+  rf     - remote to your friends
+  rtf    - remote think to your friends 
+  sf     - sing to your friends 
+  pf     - premote to your friends
+  yf     - "yell" at your friends
+
+eg: 
+
+  tf hi      &m->n tells &g friends 'hi'
+
+:email
+
+EMAIL <email>@<address>  - set your email address.
+
+:emergency
+
+EMERGENCY <reason> - Starts emergency scripting when there are no su's on
+                     and you are being harassed.
+
+You need to include a good reason. Misuse of this command is not allowed.
+
+:emote,;,:
+
+EMOTE <action>  - this is the most "general" type of communication. It
+                  simply puts whatever you say after your name with no
+                  "extras" added on and sends it to everyone in the same
+                  room as you.
+
+eg:  emote giggles            &m->n giggles
+     emote blinks at you.     &m->n blinks at you.
+
+Note: * EMOTE is aliased to : and ;
+      * If your "action" begins with a ' symbol, the program assumes you
+        want to "squeeze" the line together. eg:
+ 
+	emote 'll be right back.     &m->n'll be right back.
+
+:entermsg
+
+ENTERMSG <msg> - sets the message people will see when you enter their room.
+
+:etrace
+
+ETRACE <email>  - Trace an email address against the reslist.
+
+:examine,exam,ex,x
+
+EXAMINE <player>  - get more info on a player currently logged in.
+
+EXAMINE is aliased to x
+
+:exclude
+
+EXCLUDE     - like a SAY, except you say something to everyone EXCEPT 
+              a list of people...
+
+Format: exclude <people who WON'T get the message> <message>
+
+eg:
+
+exclude trap hey everyone! it's trap's birthday! Shhhhh...
+
+   everyone but trap sees:
+
+&m->n says to everyone but trap 'hey everyone! it's trap's 
+    birthday! Shhhhh...'
+
+   trap sees:
+
+&m->n tells everyone in the room something about you.
+
+(if you abuse this, be ready - cause the SUs will be watching =) )
+
+:exitmsg
+
+EXITMSG <str>  - Sets your exitmsg.
+
+Note: This message will only be shown if you enter a room which allows
+      exitmsgs to be used or the owner has not set an entermsg for the
+      room yet.
+
+:exits
+
+EXITS  - see all exits from the current room
+
+:extend
+
+EXTEND <player> - lengthens a player's list by five up to a maximum of 50.
+		  Past that point, an admin must be consulted for a list
+		  extension.
+
+:f,finger
+
+FINGER <player>  - get info about any user whether they are logged on or
+                   not.
+
+-=*> FINGER has been aliased to f
+
+:favorite,favourite
+
+This allows you to set some stuff in your new examine file:
+
+FAVORITE LIST                  - list what you set for your favorites.
+FAVORITE <#> BLANK             - delete a favorite
+FAVORITE <#> <topic> <answer>  - set or change a favorite.
+
+the first two formats should be easy, the third however requires some 
+explanation:
+
+here are some examples, and the results you'll get with them...
+
+favorite 1 cereal cheerios
+You set your favorite cereal to be: cheerios.
+(in examine file)
+Favorite cereal       : cheerios.
+
+favorite 2 girls name susan
+You set your favorite girls to be: name susan      
+(the problem here is that a topic can only be one word)
+
+favorite 3 star
+You set your favorite star to be: .
+(you gotta give an answer, but the program isn't smart enough yet to 
+  realize this yet)
+
+favorite Antidisestablishmentarian BoB
+You set your favorite Antidisestab to be: BoB
+(The topic can only be 12 letters long max, in order to fit)
+
+:find
+
+FIND <player(s)> on/off/[blank]  - you allow the player(s) to find you,
+                                   even if you are hiding.
+
+:flirt
+
+FLIRT  - Changes your net status from bachelor to net.flirt and back.
+         Being engaged or married overrides this setting.
+
+:flist
+
+FLIST - Force a list toggle
+
+e.g. say 'trap' is on your list as Friend and Inform
+
+Example:
+
+  flist trap friend,beep,grabme 
+
+(this changes your list entry for trap to friend, beep and grabme (but
+turns inform off)
+
+:forcehelp
+
+FORCEHELP <player> <help file>  - Forces a player to view a help file.
+
+Note: Use carefully. Don't FORCEHELP for a command that either doesn't
+      exist or one that you have but they don't.
+
+:friend
+
+FRIEND <player(s)> on/off/[blank]  - you declare the player(s) to be your
+                                     friends. They will begin to receive
+                                     your 'friend tells'
+
+:friended
+
+FRIENDED  - list the people on the talker who have made you their friend.
+
+Note: * This is not the same as the "fwho" command!
+
+:friendblock
+
+FRIENDBLOCK <player(s)> on/off/[blank]  - you prevent the player(s) from
+                                          sending 'friendtells' to you.
+
+Note: * The friendblocked players can still send regular messages.
+
+:fwho,qwho
+
+FWHO  - lists your friends on.
+
+Friends who are blocking friendtells will be displayed in ()'s 
+
+:gag,ungag,blank_gags,gwho
+
+GAG <player>    - ignore a player without taking up a list space
+UNGAG <player>  - undo a gag
+GWHO            - list everyone you've gagged
+BLANK_GAGS      - reset your gaglist
+
+gags work just like ignores, except that they don't take up a spot on
+your list.. the price for this, however, is when you (or they) quit the
+program, they get ungagged, because gags aren't saved.  However, gags are
+useful to protect yourself against harassment from newbies, and if you are
+a newbie, from harassment in general.
+
+They also tend to send a message of "geez, chill out" -- people generally
+don't like to be gagged, and may take the hint when a few people gag them.
+
+:game_hi
+
+GAME_HI		- toggle highlighting of game messages on/off
+
+:gender
+
+GENDER <m/f/n>  - change your gender to Male, Female or None.
+
+:ghome
+
+GHOME - toggles if you will go home automatically on login.
+
+:git,ungit,su_comment
+
+GIT <player> <comment>  - Set an su comment for a troublemaker.
+UNGIT <player>          - Remove the su comment.
+
+GIT is aliased with "SU_COMMENT"
+
+Note: * The comment will be in a players Y file. 
+
+:give
+
+GIVE <money> <player> <amount>  - Gives a player some of your money.
+GIVE <item> <player>	        - Gives a player an item from your
+                                  inventory.
+
+NOTE: * You cannot give items or pennies to newbies.	
+      * You cannot give items or pennies to people who are blocking
+         charity (see HELP NOGIFT).
+
+:go
+
+GO <exitname>  - takes you to the adjoined room exitname
+
+:grab
+
+GRAB <player> - grab a player on your grabbable list into the same room as
+                you.
+
+:grabable
+
+GRABABLE  - shows who you are allowed to 'grab'
+
+:grabme
+
+GRABME <player(s)> on/off/[blank]  - you allow the specified player(s) to 
+                                     'grab' you at will into other rooms
+
+:grant,remove
+
+GRANT <player> <priv>   - Grant someone a permission (priv).
+REMOVE <player> <priv>  - Remove a permission from someone.
+
+Note: Typing either of the commands with no arguments lists all
+      permissions available.
+
+admin          - admin priv on lsu
+admin_channel  - can see the admin channel
+asu            - advanced su priv on lsu
+base           - DO NOT USE
+build          - can create their own rooms
+builder        - can create items to be bought
+coder          - coder priv on lsu
+condom         - can only have things done to them by hcadmins/coders
+creator        - can create socials
+echo           - can use the echo command
+hcadmin        - hcadmin priv on lsu
+house          - fun priv (does nothing, is listed in "privs")
+list           - can have list entries (for friends/ignore etc.)
+lower_admin    - lower admin priv on lsu
+mail           - can send internal mail
+minister       - can perform net.weddings and net.divorces
+nosync         - DO NOT USE
+no_timeout     - will not have their pfile deleted becuase of inactivity
+psu            - psu priv on lsu
+residency      - DO NOT USE
+robot          - is a robot (not really necessary, don't use on residents)
+script         - can record scripts on the server
+session        - can set and comment on sessions
+spod           - is a spod (has access to spod news and spod channel)
+sysroom        - DO NOT USE
+trace          - can trace peoples sites
+su             - su priv on lsu
+warn           - can warn troublesome residents
+
+:grep
+
+GREP <string> <log file>  - Searches an entire log file and displays only
+                            the ones which match the string.
+
+Note: * This uses only simple matching NOT regular expressions!
+
+:hack,hacking
+
+Hacking is defined on the talker as anyone who tries to login as 
+someone else. You may have one, and ONLY one, saved resident character
+on the talker. You cannot "borrow" someone else's account, with, or without
+their consent.
+
+Any person who attempts to hack the talker, whether the actual account
+or any residents account, will be COMPLETELY site banned - meaning that 
+no one from your domain (for most of you, this means your entire school
+or your entire service provider) will ever be allowed to logon to the
+talker again. In addition, if we know what account you used to hack
+from, we WILL report this information to your system administrator, and
+ask that your Internet accounts be permanently removed.
+
+Simply put, we will not tolerate illegal access attempts, and we will take
+any and all actions that we can to stop them from occurring.
+
+:help,?
+
+HELP <command or topic>  - Show help on that command or topic.
+
+Note: * If you do not have the priv for that command, you will not get any
+        help on it.
+      * Try "help" on its own as a general starter.
+      * You can also get help by typing a command followed by "-h" or
+        "/?". For example "help -h" and "help /?" will bring this
+        information up.     
+
+:hide
+
+HIDE      - toggle whether people can find out where you are with the WHERE 
+            and WITH commands.
+
+:history,review
+
+HISTORY  - See the last 8 tells, remotes, rsings, and other private
+           messages you received.
+
+Note:  this command is also aliased to 'review'.
+
+** This command was given to us courtesy of Jlyd from Resort **
+
+:hitells
+
+HITELLS [termtype/off]  - set if you want private messages to you to be
+                          hi-lighted or not.
+
+Note: * If you don't know your termtype, vt100 is USUALLY a good guess.
+
+:home
+
+HOME - takes you to your home room
+
+:hometown
+
+HOMETOWN <place>  - Set where you come from.
+
+This is viewable on your X.
+
+:homeview,mindseye
+
+HOMEVIEW  - lets you see who's in a room you own.
+
+This is also aliased to MINDSEYE.
+
+:hw,hu,he,hs,ht
+
+HCAdmin Channel
+---------------
+
+  HU <message>  - Say on the HCAdmin channel
+  HE <action>   - Emote on the HCAdmin channel
+  HS <song>     - Sing on the HCAdmin channel
+  HT <thought>  - Think on the HCAdmin channel
+  HW            - See who is listening to the HCAdmin channel
+
+:i,inv,inventory
+
+INVENTORY  - Shows you what you are carrying.
+
+The entries look like this:
+
+  [item id] (special flags) #pennies item_name -- item_description	
+	
+Also you can see how many pennies you have:
+
+  [-1  ] ##### pennies -- dirty copper coin
+
+Note: * This is also aliased to INV and I.
+
+:iacga
+
+IACGA  - This controls whether you get prompt change messages via the
+         telnet protocol. These can be used by a front-end to display an
+         appropriate prompt. Some telnet clients have problems with
+         this, so it can be switched off.
+
+:icq
+
+ICQ <number>  - set your ICQ number to be shown in your profile
+	        (for more information about ICQ, point your web browser at
+                http://www.mirabilis.com).
+
+Syntax:  icq <number>
+
+See also: help icq_more
+
+:icq_more
+
+Here is a brief description of what ICQ is and what it is capable of doing...
+
+ICQ is a program that allows you to communicate with your list of friends
+w/out ever having to login on a network. In short, it works as a talker
+outside of a talker. When you register with ICQ, you will receive a UIN
+(universal identification number) which acts as your phone number. This
+allows you to do the following: you may send a message to a person on
+your list, chat with them, send them information on an URL, send a file,
+email them, and play Internet based games. Loosely stated, this program
+allows you to do almost all the commands that you are accustomed to w/out
+having to login on a system, except the ICQ system.
+
+By downloading ICQ from www.mirabilis.com you will be able to conduct
+real time chats and send addresses of web-pages to your friends. This
+program is very flexible and currently many add-ons are being made, thus
+this program will only get bigger and better.
+
+Once you have downloaded ICQ, please be sure to place your UIN in the ICQ
+slot of your examine file. This will allow fellow spods to place you on
+their list.
+
+If you have any concerns or questions, please contact one of the
+staff members (type 'help staff' for a list).
+
+:idea,suggest
+
+IDEA <the idea>  - officially log an idea for this place =) 
+
+This is also aliased to SUGGEST for people used to Summink commands :o)
+
+:idle
+
+IDLE <player>  - shows you how long it has been since player last hit return.
+IDLE           - shows you how long EVERYONE has been idle.
+
+:idle_multi
+
+IDLE_MULTI <number of multi>  - shows you how idle a current multi is
+
+Note: * You can only find out the idle time of a multi you are on.
+
+:idlemsg
+
+IDLEMSG <msg> - set a short message saying why you're idle..
+
+:idling,truespod
+
+From now on, when you idle for a sufficient amount of time, the program
+will catch this, and will deduct time from your total login time. This means
+that, now, everyone has two "total login" amounts.. total login (which includes
+idling) and truespod, which penalizes idlers, and is therefore a more
+accurate measurement of how big a spod you are.
+
+Also, a friendly warning: people who get kicked off by the program for idling
+for an hour -- you may notice your adjusted spod time plummet...
+
+:ignore
+
+IGNORE <player(s)> on/off/[blank]  - you don't see what the ignored
+                                     player(s) says or does/do.
+
+Note: * If they try to talk to you they see your ignoremsg.
+
+:ignoremsg
+
+IGNOREMSG <message> - Set what your message will be to people to try to
+                      talk to you when you are ignoring them.
+
+Example:
+
+  ignoremsg doesn't want to talk to you  -- Set your ignoremsg
+  ignore deathboy                        -- Ignore DeathBoy
+
+When Deathboy tries to talk to you he'll get:
+ 
+  &m->n doesn't want to talk to you
+
+:index
+
+                          Index 
+                          -----
+
+0  - general help		9  - room commands
+1  - communication     		10 - MORE room commands
+2  - information		11 - editor
+3  - customization		12 - pager
+4  - movement			13 - miscellaneous
+5  - list                       14 - pipe
+6  - news			15 - channels
+7  - mail			16 - color
+8  - check commands		17 - aliases
+
+:inform
+
+INFORM <player(s)> on/off/[blank]  - you get a message when the 'informed' 
+                                     player(s) log on or off
+
+:invite
+
+INVITE <player(s)> on/off/[blank]  - the player(s) have a standing
+                                     invitation to enter any unlocked room
+                                     you own.
+
+:invites
+
+INVITES   - see who has invited you to enter their rooms.
+
+:items,item,object,objects
+	
+	Items are dynamic objects that can be created, destroyed,
+	bought, sold, and used.
+
+	For more info on items, please read the following:
+
+        HELP BUY, HELP WIELD, HELP EAT, HELP WEAR, HELP DRINK,
+        HELP SELL.
+
+:itrace
+
+ITRACE <site>  - shows all users last connected from a site
+
+:ix
+
+IX <item>  - Examine an item.
+
+:jail,unjail
+
+JAIL <player> [time]  - Send someone to jail.
+UNJAIL <player>       - Release them from prison.
+
+Notes: * If you set the [time] to -1 then you will jail them forever!
+       * If you use JAIL without a time then they will be jailed for 1
+         minute.
+
+:jetlag
+
+JETLAG <hours>  - sets your local time relative to the "talker" time.
+
+:join
+
+JOIN <player> - go to the room that <player> is currently in.
+
+:key
+
+KEY <player(s)> on/off/[blank]  - you give the player(s) a key to your 
+                                  rooms.
+
+Note: * A player with a key can lock and unlock your rooms, make links to
+        your room, and boot people from your rooms.
+
+:lag
+
+LAG <player> <minutes>  - Lag someone for an amount of time
+
+Note: * You can lag them forever using -1. This is NOT recommended.
+
+:library,liblist,libexam,libcopy
+
+We now has a modest library of useful and/or fun aliases that you
+may freely copy into your own private alias list.
+
+LIBLIST          - lists all aliases currently in the library
+
+LIBEXAM <alias>  - get more info on a specific alias.
+
+LIBCOPY <alias> [your name for it]  - copy a library alias into your 
+                                      alias list.
+
+Note: For LIBCOPY you may optionally use a different name for the alias,
+      or you can use the same name as the library version.
+
+We are looking to add a lot more to our small library. Please send your ideas
+and/or favorite aliases by internal mail to the admin
+
+:linewrap
+
+LINEWRAP [columns/off]  - set the width of your terminal.
+
+:list_emails
+
+LIST_EMAILS  - dumps all emails to disk for usage with the mailer program
+
+:list_notes,relink,rm_note,view_note
+
+LIST_NOTES, RELINK, RM_NOTE, VIEW_NOTE 
+
+These commands have something to do with the mail/news system and
+shouldn't be used unless you know what you are doing!
+
+:list_robots,store,unstore
+
+LIST_ROBOTS     - Lists which robots are currently on the talker and active
+STORE <name>    - Forces a robot to disconnect (be placed in storage)
+UNSTORE <name>  - Allows a robot to connect again (unstores them)
+
+Note: * When unstoring a robot, it may not connect immediately.
+      * Don't try logging in as a robot when it is stored or you will
+        crash the talker!
+
+:lock
+
+LOCK  - lock the room if you own it or own a key to it.
+
+:login_fwho
+
+LOGIN_FWHO  - Automatically gives you a list of what friends are on when
+              you login (right after the room desc)
+
+This defaults to off, you can turn it on with this command =)
+
+:logoffmsg
+
+LOGOFFMSG <msg>  - sets the message people will see when you type 'quit'
+
+:logonmsg
+
+LOGONMSG <msg> - sets the message people see when you logon.
+
+:look,l
+
+LOOK    - see the room description and a list of people in the room.
+
+LOOK -  - see just the list of people in the room.
+
+-=> LOOK is aliased to l
+
+:lsb,list_builders
+
+LSB  - List all builders online
+
+Builders can create and destroy objects, and are chosen carefully by the
+admins.
+
+:lsg, list_gits
+
+LSG  - Lists all current gits on, who gitted them and why.
+
+This is aliased to "list_gits"
+
+:lsk
+
+LSK  - List all the creators on the talker.
+
+:lsn,list_new
+
+LSN  - lists all newbies, what site they are from, and who has assisted
+       them.
+
+This is aliased to "list_new"
+
+:lso,list_obj,list_objects
+
+LSO [!]<$(+-)price|(+-)flag|&&creator|*|(1st char)>  - List all available
+                                                      items.
+
+Arguments:
+		!(other args)  - list items, but ignore desc line
+		$-<amount>     - items that cost less than <amount>
+		$+<amount>     - items that cost more than <amount>
+		(any letter)   - items whose name starts with the letter
+		*	       - all items
+		+<bit>         - all items with a given bit
+		-<bit>	       - all items except those with a given bit
+
+Bits at the end are fWBwTDU for:
+
+		f  - food
+		W  - Wear
+		B  - Bag
+		w  - Wield
+		T  - Toy
+		D  - Drink
+		U  - Unique
+
+Examples:
+
+	LSO !$+500    - list all items costing more than 500 and block
+			descriptions.
+	
+	LSO !*        - list all items with no descriptions.
+
+	LSO D         - list all items beginning with letter d with
+			descriptions.
+
+	LSO !+FOOD    - list all food items with no descriptions.
+
+:lsr,list_res
+
+LSR <x>  - lists all residents who's name begins with the letter <x> and
+           their hash and permissions.
+
+This is aliased to "list_res"
+
+                     
+                          script
+                         house |                1  PSU
+             echo       spod | |  protect       2  SU
+           base |list  git | | | warn |         3  ASU
+               \| |      | | | |    | |         4  ADC
+        NBSR   bemlrs    GXOKHMSB   WFPT        5  LOWER_ADMIN
+       / |||     | ||     | | | |    | |        6  ADMIN
+ nosync  |||   mail||     | | | | frog |        7  CODER
+  banished||   rooms|     | | | |   trace       8  HCADMIN
+   sys_room|  session     | | | |
+       robot      notimeout | | |
+                      creator | |
+                       minister |
+                          builder
+
+
+:lst
+
+LST  - Lists all current tweedles on and their sites.
+
+:lsu,list_su
+
+LSU  - list all super users who are on-line
+
+LSU is aliased to LIST_SU for those of you used to the "old" commands =)
+
+:mailblock
+
+MAILBLOCK <player(s)> on/off/[blank]  - prevents the player(s) from
+                                        sending mail to you.
+
+:main,leave
+
+MAIN  - takes you back to the main room
+
+-=> This is also aliased to "leave"
+
+:mainchannel,ch,cu,ce,cs,ct,cw
+
+The main channel is for everyone to talk on. It doesn't matter what room
+you are in.
+
+CU <message>  - Say on the channel (you can also use CH)
+CE <action>   - Emote on the channel
+CS <song>     - Sing on the channel
+CT <thought>  - Think on the channel
+CW            - See who else is listening to the channel
+MUFFLE MAIN   - Toggles whether you listen to the channel or not
+
+:make
+
+MAKE <character name> <email addr> <password>  - create a new player file
+
+Note: * You don't *have* to specify a password but it's a good idea if you
+        do, otherwise anyone can log in and use this character!
+
+:marry
+
+MARRY <person1> <person2>  - marries two people
+
+Note: * Both people must be logged on or this will fail.
+
+:mball
+
+MBALL <yes or no question>  - Ask the Magic8Ball a question. Your question
+                              and its answer will be told to the whole
+                              room.
+
+:medit
+
+MEDIT <player> <new spouce>  - edit someone's spouse
+
+:mindseye
+
+MINDSEYE - check who's in your home room.
+
+:minister_rules,m-rules,mrules,m_rules,m.rules
+
+Rules for Ministers
+-------------------
+
+1.   No marrying people who don't ask for it.
+
+2.   No denying of services to people just on the basis of not knowing them.
+
+3.   No "quickies" if people request a true ceremony.
+     (in other words, ask them first if they want quickie or ceremony)
+
+4.   Marriage must be agreed to by all parties involved.
+
+5.   Divorce can be granted on the request of just one spouse.
+
+6.   If you need a room for the ceremony, use main.chapel, unless you
+     have a better room yourself, or the couple has a specific room request.
+
+7.   To become a minister, you must agree to abide by these rules,
+     have at least TWO AND A HALF DAYS truespod login time, and have a
+     chronic spod factor of at least 3.5%.
+
+Abuse of these guidelines and rules will result in your collar being
+revoked.
+
+:mode
+
+MODE <player>  - tells you what mode a player is in.
+
+:motd
+
+MOTD  - Displays the message of the day
+
+:mquit
+
+MQUIT <message>  - quit and leave a message in your finger info letting
+                   people know when you will be back.
+
+:muffle
+
+MUFFLE <option>  - Toggles whether or not you see the option. The command
+                   on its own will list what you are currently seeing.
+
+Options are:  main     : The main channel
+              spod     : The spod channel
+              session  : The sessions
+              clock    : The hourly clock
+              dynatext : The dynatext 
+
+:netstat
+
+NETSTAT  - display some statistics about the network connection, the code
+           base, ports and processes used.
+
+:new,vnew
+
+NEW  - Lists the new features (or bug fixes) that the coders have added
+       recently (if they've added anything at all ...)
+
+Note: * This is also aliased to "vnew"
+
+:newbie_ban
+
+NEWBIE_BAN <ip site> <reason>  - ban an entire site to new users. 
+
+Note: * IP site means the NUMBER address (like 44.66.91.23) NOT the name
+        address.
+
+:newbies
+
+NEWBIES [on/off] - allow / forbid newbies from logging in.
+
+Note: * Typing "newbies" with no arguments tells you what the current
+        status is.
+
+So also: screen
+
+:no_propose, no_proposals
+
+NO_PROPOSE - toggles whether or not you can be proposed to (only if unwed)
+
+:no_prs
+
+NO_PRS  - toggles whether people can play paper rock scissors with you
+	  (type help prs)
+
+:nobachelor
+
+NOBACHELOR  - toggle whether or not your marital status is shown when
+              you're single.  Once you've become engaged/married this
+              setting is overridden.
+
+:nobeep
+
+NOBEEP  - toggles whether or not yells and wakes will send a "beep" to
+          your terminal.
+
+Note: * This will not stop all beeps. If you really want to do that you'll
+        need to turn the sound down or disable it!
+
+:noblink
+
+NOBLINK  - toggle blinking and inverse text on/off
+
+:nofriend
+
+NOFRIEND <player> <on|off> - toggles whether or not someone can send
+                             tells to your friends.
+
+:nogift
+
+NOGIFT  - Toggle whether or not people can give you items.
+
+Note: * The default is off (ie. people can give you items).
+
+:noisy
+
+NOISY <player(s)> on/off/[blank]  - you allow the player(s) to break 
+                                    through ignores, blocks, blocktells, 
+                                    and blockfriends.
+
+:nopager
+
+NOPAGER  - toggles if you will use the pager or not to read news, mail, 
+           help, etc.
+
+Note: * If you have a good MUD client like tinyfugue, GMUD or ZMUD you'll
+        want this off, because the pager is a pain to use =)
+
+:noprefix,noeprefix
+
+NOPREFIX   - this is the default. you will not see other peoples prefixes.
+             type NOPREFIX to see prefixes again =)
+
+NOEPREFIX  - controls if you will see prefixes on EMOTES. this also is "on"
+             for new users.
+
+:noprs
+
+NOPRS  - toggle whether or not you want to be able to play PRS
+
+See also:  help prs
+
+:nuke
+
+NUKE <player> <reason>  - completely DELETE someone's existence.
+
+Note: * You cannot use this to nuke a newbie!
+
+:obj
+
+OBJ <name> <reason>  - Object to the residency proposal of a newbie.
+
+Note: * You must give a valid reason
+      * This reason is logged
+      * Your name and the reason is broadcast to the SU channel
+      * Your reason (but not your name) is given to the newbie in question
+      * Don't abuse the command, its a pain being objected to for no good
+        reason and means that it takes another minute before they can
+        become a resident again
+
+:old3,customize,customization
+
+                            Customization
+                            -------------
+
+  title             - change the message after your name.
+  prefix            - change the message before your name.
+  description (desc)- write a little description of yourself.
+  plan              - a message for when you're not on the program.
+  prompt            - set the normal prompt to something.
+  cprompt           - set the prompt as seen in converse mode.
+  password          - set your password
+  email             - set your email address
+  toggle            - Toggle privacy level on your email and site
+  gender            - change your sex
+  entermsg          - change the message people see when you enter a room
+  ghome             - toggle whether you get transferred to your home
+                      when you log in.  
+  recap             - change the capitalization of your name
+  age               - set your age (0 turns off)
+  birthday   (bday) - set your birthday (0 turns off)
+
+:on_duty,off_duty
+
+ON_DUTY    - you are an SU, can use your commands, and talk on the channel
+OFF_DUTY   - you become just a normal ressie - you can't use su commands.
+
+:on_lsu,off_lsu
+
+ON_LSU [player]   - Go onto invisible duty. You still have your commands
+                    but are not listed on LSU. You can also force another
+                    su onto this state by supplying their name.
+OFF_LSU [player]  - Go back to visible duty. You can force another su to
+                    do this by supplying their name.
+
+:password,passwd,pw
+
+PASSWORD  - change your password.
+
+You'll need to confirm it twice before the new one take effect. If you had
+a password already set then you'll need to enter that one first.
+
+:pemote,::,;;,:;,;:
+
+PEMOTE <message>  - just like EMOTE, except it puts 's at the end of your
+                    name.
+
+eg:    pemote dog is cool       &m->n's dog is cool
+     
+(if your name ends in s, then it does this..)
+
+       pemote cat rules         chains' cat rules
+
+Note: * PEMOTE is aliased to :: :; ;: ;;  
+
+:pg+,playground+,pgplus,richard,lawrence
+
+Playground Plus
+---------------
+
+Playground+ (PG+) is a stable, bug free and improved version of Playground
+written by Richard Lawrence (aka Silver), J. Bradley Christian (aka
+phypor) and Geoffrey Swift (aka blimey) in 1998.
+
+You can always download the latest version (thanks to John Whiting) from
+
+    http://pgplus.ewtoo.org
+
+All bug reports or queries should be directed to <pgplus@pgplus.ewtoo.org>
+
+Below is a list of features that have been added to Playground Plus that
+were not previously seen in Playground 96. Note that below only lists
+_new_ features and not previously seen features that have been updated or 
+bug fixed.
+
+* Comment setting message
+* Pager and command counter to "commands"
+* Admin sing command
+* Intercom code
+* Anti-crash code
+* Dynamic staff list
+* Safe player-file updating code
+* Longest connection statistic
+* Disconnect message feature
+* Three attempts at someone's password
+* "purge_list" and "grep" commands
+* Anti-spam code
+* Main, spod and Z channels
+* Mailing list code
+* FIFO logging
+* Auto-shutdown code
+* Last connection tracing code
+* Hourly clock
+* Time-prompt
+* Dynatext
+* Anti-newbie spam code
+* Ping code
+* Robots
+* Dynamic command priv changing
+* Seamless rebooting
+* Partial command and sub command matching
+* Ident server
+* Swear filtering
+* Player preferral flag
+* Quit with message
+* News system with multiple groups
+* SU history
+* Site tracing
+* Killing of angel from talker
+* Dynamic spod-list
+* Multi's/chains code
+* Intelligent robots code
+* Soft messages and configuration system
+* Dynamic saved channels
+
+(Last updated 12.06.98 by Silver. For a fuller list type "new").
+
+:pinfo
+
+PINFO [player]  - View the login, logout, enter, exit, and block messages
+                  for either yourself or someone else (admin only).
+
+:ping
+
+PING  - Lists everyone on the talker and their current lag.
+
+Note: * Lag is defined as the time it takes between a message being sent
+        and it being seen on your telnet client. A shorter lag means a
+        faster connection and is better.
+      * You can also find out someone's connection speed by X'ing them
+      * Lag status is updated every 10 seconds.
+
+:plan
+
+PLAN <msg>  - sets your "PLAN" when other people "FINGER" you.
+
+:play
+
+PLAY <item>  - Play with a toy in your inventory.
+
+Note: * The room will see you play with it.
+      * Some toys have unusual side-effects!
+
+:playground96,deathtrap,ew3,ew-three,summink,updates,ew2,ew-too,ew-two,ew4,ew-four,ew-for
+
+EW-TOO:		The first talker of this kind. Written by Burble (Simon Marsh)
+		(sometimes known as EW2)
+
+SUMMINK:	Ew-too "version 3" Based on Burbles code, updated by Grim and
+		Athanisius. (Playground is based on Summink and Ew-too)
+
+EW-THREE:	An "aka" for summink.
+
+Playground 96:	The name for a beta release for "Playground" source code
+
+EW-for (EW4):   An approved "aka" for Playground 96.
+
+Playground+:    A stable bugfixed and improved version of Playground96 
+                written by Richard Lawrence (aka Silver). For more
+                information see "help pg+"
+
+The following is a list of features that appears in neither Summink, nor the
+   older EW-too codes that were released to the public, but do exist here 
+	 on &t, and will be in any release of Playground code.
+
+Builders (create, destroy items, lsb, lso)
+Items (inv, wear, wield, buy, sell, eat, play, give)
+Monetary system (pennies)
+Separate SuperUser news-board for inner-staff notes
+Marriage (marry, propose, accept, reject, divorce, anul, ministers, lsm)
+Aliases (define, undefine, lsa, deflogin, deflogout, defrecon, blank_alias)
+Colors  (^^*, color, syscolor, colorize)
+Friendmail (mail post friends, blockfmail)
+friendtell blocking
+Tell to other ppls friends (to, ro, eo, yo, so, rto, po)
+Dynamic resident channels (chan, ce, ct, ch, cs, lsc, cwho)
+url's in examine, finger
+Typo/shortcut aliases.
+Full set of reply, shout commands (yemote, preply, etc...)
+pinfo 
+logonmsg, logoffmsg, exitmsg
+isolated, soundproof and chambered rooms
+spod listings
+whois
+library of aliases
+logon_fwho (original PG idea, btw -- no matter what others say :-P)
+rescount
+history, reportto (courtesy of jyld)
+sing commands and singblock
+Allow friends/everyone/no-one to see your site and email address.
+New editor commands .s and .sr
+Pager redone and updated
+Sessions no longer can be set and left by people
+Blockdesc -- ignore all room descriptions
+Mail forward, aforward
+Shareroom, mailblock, friendblock, nofriendlistaccess list flags added
+Massive bug fixes
+And, of course, lots of SU level and admin level "toys" added too.
+
+(this is just a partial list, last updated 3/29/96 by traP)
+
+:prefer
+
+PREFER <player(s)> on/off/[blank]  - your tells will always favour that
+                                     person if they are on.
+
+Example: Say there are two people on "Silver" and "SillyGirl" and you'd
+         rather talk to "SillyGirl" then you can type:
+
+           prefer sillygirl
+
+         From then on all tells to "S", "Si" or "Sil" will go, by default,
+         to "SillyGirl". If you have two or more people preferred then you
+         will get a "multiple matches" error and when "SillyGirl" logs out
+         tells will go to "Silver".
+         
+:prefix
+
+PREFIX <pretitle>  - sets the title before your name.
+
+:premote,<:,<;
+
+PREMOTE <player(s)> <message>  - sends a PEMOTE to a specific list of 
+                                 people.
+
+-=> PEMOTE is aliased to <: <; ,; ,:
+
+<: astyanax disk drive crashed =(      &m->n's disk drive crashed =(   
+
+:privs
+
+PRIVS   - shows what you are allowed to do. 
+
+:prompt
+
+PROMPT <prompt>  - set your prompt. 
+PROMPT           - clears your prompt.
+
+:propose,accept,reject,cancel
+
+PROPOSE <player>  - ask another person to marry you.
+ACCEPT <player>   - agree to marry another person.
+REJECT <player>   - refuse to marry the person.
+CANCEL		  - This command will cancel your net engagement.
+
+If you are net.engaged, it will appear on your X
+
+:prs,game,games
+
+You can play paper-rock-scissors against a friend.
+
+PRS <player> <paper|rock|scissors>  - Play PRS against a player and
+                                      choosing the item you want.
+PRS CLEAR                           - Cancel a game.
+
+If they have not already challenged you then they will get the message:
+
+  &m->n wants to play paper-rock-scissors against you
+
+otherwise you will be informed of who has one.
+
+
+Note: * You can only play against one person at a time.
+      * Paper beats Rock, Rock beats Scissors, scissors beats paper.
+      * If you get errors saying that you're "not playing against that
+        person" then use PRS CLEAR to reset your game status.
+
+:pstats
+
+PSTATS  - lists current program stats.
+
+:public,toggle
+
+TOGGLE EMAIL <friend/public/private>  - Toggle your email address to be
+                                        viewable only by friends, viewable
+                                        by the public, or hidden from
+                                        everyone.
+
+TOGGLE SITE <friend/public/private>  - Toggle your site, just like your 
+                                       email address.
+
+TOGGLE BOTH <friend/public/private>  - Toggle email and site at the same
+                                       time.
+
+(the command 'public' has been removed, as it is now redundant)
+
+:purge_list
+
+PURGE_LIST  - Removes people from your list entry that don't exist any
+              more
+
+:pyemote,!::,!;;
+
+PYEMOTE <message>  - kinda like a PEMOTE, except that it goes to everyone
+                     in the program who isn't wearing EARMUFFS.
+
+-=> PYEMOTE is aliased to !:: and !;;
+
+!! if you pyemote too much, the program might tell you that your throat is
+   just a bit sore...
+
+:quiet
+
+QUIET  - go quiet... it toggles BLOCKTELLS and EARMUFFS
+
+:quit
+
+QUIT  - Logoff the program.
+
+:reboot
+
+REBOOT  - Performs a seamless reboot of the talker
+
+Note: * This is performed immediately and causes the whole talker to
+        reboot without kicking the players off.
+      * Up to 10 seconds after rebooting ping times will
+        (incorrectly) report that everyone is very lagged. After 10
+        seconds it will be fine.
+      * It is NOT recommended to force the anti-crash code to do a
+        seamless reboot since this may not fix the problem and make your
+        talker stay in a reboot/crash loop.
+      * Up-times and longest spodding times are not affected.
+
+:recap
+
+RECAP <name>  - change the capitalization of your name.
+
+eg: recap traP       
+
+(you can only recap your own name! =) )
+
+:recho,-
+
+RECHO <player(s)> <msg>  - sends an ECHO to a specific list of people.
+
+-=> RECHO is aliased to -
+
+- erland mooooo              + [&m->n] mooooo  (only erland sees this)
+
+:recount,recount_snews
+
+RECOUNT        - Recounts news articles.
+RECOUNT_SNEWS  - Recounts snews articles.
+
+Useful if the number of news articles doesn't actually tally with the
+articles you can see. A stupid bug so blame it on the authors of PG96 :o)
+
+:redtape
+
+REDTAPE <git> <SuperUser/Minister/etc>  - Points a person towards a
+                                          different person who may be able
+                                          to help them better.
+
+:reload
+
+RELOAD  - reload the help files, motd, and other messages into memory to
+          update any changes that have been made since the last reboot or
+          reload
+
+:remote,<
+
+REMOTE <player(s)> <action>  - sends an EMOTE to a specific list of
+                               people.
+
+-=> REMOTE is aliased to < and ,
+
+,snowie giggles         &m->n giggles    (only snowie will see this)
+
+:rename
+
+RENAME <oldname> <newname>  - change the name of a newbie.
+
+Note: * You cannot rename a resident!
+
+:repeat
+
+REPEAT <name>  - Redirect a mistell to the right person.
+
+-=*> REPEAT is also aliased to RE
+
+:reply,ereply,treply,sreply,preply,yreply,oreply,],[,[;,[~,[),[+,[&
+
+reply   ]      - handle "multi-tell" situations with this command.
+ereply  [      - like reply, but you emote instead
+preply  [;     - possessive ereply
+treply  [~     - rthink reply
+sreply  [)     - rsing reply
+yreply  [&     - yelled reply
+oreply  [+     - echoed reply
+
+:reportto,rpt
+
+REPORTTO <superuser>  - Sends a copy of the last 8 tells you received
+                        to the superuser of your choice.  
+
+This is a tool to combat harassment -- the info is taken from your history 
+buffer, and will only be sent by you: the superusers and admins cannot see
+this info unless you specifically give it to them.  
+
+If you have any questions about this, ask the admins
+
+** This command was given to us courtesy of Jyld from Resort **
+
+:res,resident,vres,vresident
+
+RES <player>   - grant residency to a newbie.
+VRES <player>  - grant residency to a newbie who has no email address.
+
+:res_count,rescount
+
+RESCOUNT  - List the count of the total number of residents of this
+            talker.
+
+:reset_idle
+
+RESET_IDLE <person>  - reset someone's idle time for the current session
+
+:reset_session
+
+RESET_SESSION [session name]  - reset the session timer to 0. 
+
+:reset_sneeze
+
+RESET_SNEEZE <player>  - reset the sneeze (no-login) time on a player
+
+:ressie,residency
+
+One of the more common questions we get is "What does it mean to be a 
+resident?" There are many advantages to gaining residency, among them :
+   
+* You don't have to go through all those annoying validation procedures
+  every time you enter the program.
+
+* You get to have your own list, and with that comes friends lists,
+  informs (notify you when someone connects to the program) and the like.
+
+* And most importantly, you get a room of your own!!  You can make your 
+  own description for it and have all your friends over for a chat (and
+  keep annoying gits out of it as well).
+
+Gaining residency is simple.  Just look around for the friendly 
+neighborhood SU (or type lsu if you don't see any in the room you're in) 
+and tell <su's name> you would like to become a resident.  Generally 
+there are two requirements : 1. A valid email address and 2. Agreement to 
+follow help rules (type help rules to see them).  Thats all there is to 
+it :)  Enjoy your newfound residency :)
+
+=astyanax (4/6/95)
+
+:ressies
+
+RESSIES [on/off]  - toggle whether or not to allow non-staff members to
+	            log into the program
+
+Note: * Using no arguments tell you the current status of the talker
+
+:restore
+
+RESTORE <letter of alphabet>  - restore a group of player files
+                                (leave this alone!)
+
+:rlist
+
+RLIST <player list> <flag list>  - Resets a list toggle... in other words,
+                                   always turns off.
+
+Example:
+
+  rlist trap inform
+
+If you have trap on your list as inform, this erases that flag.
+
+:rm_list
+
+RM_LIST <player>  - Remove your name from someone's list.
+
+Note: * It only removes "good" entries like friend, not "bad" entries like 
+        bar or ignore and it doesn't tell the other player what you've
+        done.
+
+:rm_move
+
+RM_MOVE <player> <minutes>  - Stops a person moving for an amount of time
+
+Note: * Setting <minutes> to -1 will prevent them moving perminantly
+      * Setting <minutes> to 0 will allow them to move again
+
+:rm_sing,rm_shout
+
+RM_SING <player> <time>   } take away someone's right to shout or sing for 
+RM_SHOUT <player> <time>  } a few minutes. 
+
+If the <time> is set to -1 then it will take away shouts or sings forever.
+
+If the <time> is set to 0 then it will allow them to sing or shout again.
+
+(Using 0 or -1 will work on players not logged in at the time)
+
+:robots
+
+Robots are computer controlled residents of this talker. You can treat
+them exactly the same as normal residents (ie. add them on your list, bar
+them, use socials on them) but you won't get a conversation out of them.
+
+If you'd like to see the robots do more then please let the admin know of
+your ideas.
+
+:room_edit,room-edit,rooms_edit,rooms-edit
+
+Decorating your room
+--------------------
+
+Firstly you need to decide the name of your room. This is the description
+that people see when they type WHERE. Don't forget to include the word
+"in" otherwise people will see "&m->n is the forest" rather than
+"&m->n is in the forest".
+
+ROOM NAME <title>  - Set the name of your room.
+
+You also need to give your room an id. This is a unique name and is of the
+format "<owner>.<name>". All rooms have this id and whilst you can have
+the default it is better to change it.
+
+ROOM ID <name>  - Set the id of your room. You only need to type in the
+                  latter part. For the example above we'd use "ROOM ID
+                  FOREST".
+
+You now need to set an enter message, this is the message that people will
+see when someone goes to your room.
+
+ROOM ENTERMSG <message>  - Set the room enter message. An example would be
+                           "ROOM ENTERMSG ENTERS THE FOREST" which will
+                           show "<name> enters the forest" when they go to
+                           your room.
+
+Decorating (editing) your room:
+------------------------------
+
+Step 1: Getting into the editor to decorate your room.
+ 	-type: room edit
+	-If this is done correctly, you will see the description of your
+	 room show up as:
+		A bare room belonging to (your name).
+		Isn't it time to write a description?
+
+
+Step 2A: Deleting the entire room description with one command.
+	-If you want to just delete the entire room that you currently have,
+	 type: .wipe (making sure the period is in there.)
+		-This is only if you want to start from scratch.  You will
+ 		 lose everything that you currently have!  This can be used
+		 at any time. (If yo do this you can skip step 2B)
+
+Step 2B: Deleting the description already there.
+	-Part A: You need to move back two lines within the editor.
+		-type: .- (make sure you put the period in there, or it
+		 will be assumed that the - is part of your room design)
+		-Do this two times.  Each time you move back a line
+		 the editor will show you what line you have moved
+		 to.
+
+	-Part B: Now, you need to delete the line.
+		-type: .del (again, make sure the period is in there.)
+			-This will delete the line that you are currently on.
+			-The editor will not show you what line gets deleted
+			 however, so make sure you know exactly where you are.
+			-To make sure you know where you are, play with the
+			 .- and .+ functions.  (.+ will move you forward one
+			 line.)
+
+	-Parts A and B are also ways of making any corrections to a specific
+	 line in your description.
+
+Step 3: Designing your room.
+	-Type whatever you want your description or design to be at the +
+	 (prompt).
+	-After you hit return, the line you have just typed will appear again.
+	-Please be aware, if you are doing a design, that the prompt does not
+	 take up an actual space in the design.  (You will learn what I mean
+	 when you hit return, as everything will be shifted over one space.)
+	-This editor is a line by line editor.
+		-This means that you need to hit return when you get to the
+	 	 end of a line (80 characters) in order to make sure that it  
+		 turns out the way you want it to.  The editor will continue 
+		 each line if you do not hit return, and the design or 
+		 description may not turn out the way you had planned.
+	-One tip, especially for those doing designs, is to draw what you want
+	 on graph paper.  This will help you with your spacing.
+
+Step 4: Saving your room.
+	-type: .end (Make sure that the period is in there.)
+		-This will QUIT out of the editor, and SAVE all changes that
+		 have been made by you.
+
+Notes and Tips:
+	-Quitting Without Saving
+		-If you are unsatisfied with the room you've created, and
+		 DON'T want to save the changes (and don't want to work on
+		 your room anymore due to frustration):
+			-type: .quit (Make sure the period is in there.)
+
+	-If you are using Tiny Fugue:
+		-Leave a space between the prompt (+) and slash (/), if that
+		 is the first character in the line.
+		-Also, be aware that the above means that you will have to
+		 shift the entire design over one space.  Not just the line
+		 with a slash at the beginning.
+
+indieFan (7 Feb, 1996)
+
+:rsing,(
+
+RSING       - sends a SING to a specific list of people.
+
+-=> RSING is aliased to (
+
+Format: rsing <player(s)> <message>
+
+(astyanax yeah yeah yeah        &m->n sings to you o/~ yeah yeah yeah o/~
+
+:rt,*,rthink
+
+RT <player(s)> (thought>  - short for 'REMOTE THINK' - it's just like
+                            think, except it goes to a specific list of
+                            people instead of the room that you're in.
+
+-=> RT is aliased to *
+
+*trap huh?          &m->n thinks . o O ( huh? )      (only trap sees it)
+
+:rules
+
+This is a set of guidelines of expected behavior on the program.
+
+  1. No drug discussion.
+
+  2. No harassment. Don't be abusive. If you're abusive to someone,
+     don't expect the SU's to give you any slack. (see HELP HARASS)
+
+  3. Attacking people's personal beliefs on controversial issues such as
+     abortion, religion, etc, is against the rules.
+
+  4. The decision on what is and is not "harassment" is up to the 
+     individual superuser. If they tell you to knock it off, knock it
+     off!
+
+  5. Speaking of language - the official language of this talker is
+     English. Feel free to speak whatever you want in private 
+     rooms. However, in the public discussions, we ask that you
+     speak English.
+
+  6. Most people find all words typed in all CAPITAL letters annoying.
+     For this reason, we ask that you keep capitalizations to a
+     minimum. Realize that the program scans for capital letters
+     and "symbols" in shouts, and automatically limits your ability
+     to shout - so it's in your best interest to keep the caps to a
+     minimum as well. Also note that excessive use of colors in shouts can
+     result in having shouting privileges removed too.
+
+  7. No multiple characters - if we see that you have a multiple
+     character, all characters will be nuked (deleted) with no notice.
+
+  8. The job of interpreting these rules is that of the superuser.
+     Therefore, the decisions of a superuser in interpreting these rules
+     is beyond argument.
+
+For more, read HELP HARASS, ADS, HACK, SPAM, M-RULES, B-RULES and C-RULES
+
+:save
+
+SAVE  - Save your character. The code automatically tries to save you when
+        you quit if you are a resident and periodically saves your file
+        whilst you are on the talker.
+
+:say,',",`
+
+SAY <something>  - Tells everyone in the same room as you something.
+
+if <something> ends with a ! then it becomes an "exclaim"
+if it ends in ? then it becomes an "ask"
+if it ends in anything else, it's a "say"
+
+eg:   say hi people!            &m->n exclaims 'hi people!'
+      say where are you from?   &m->n asks 'where are you from?'
+      say that's cool.          &m->n says 'that's cool.'
+
+Note: * SAY is also aliased to " ' `  
+
+:scare
+
+SCARE <player>  - A "fake" nuke. Shows the player the nuke message but
+                  doesn't actually remove their player file. Most amusing.
+
+:screenlock
+
+SCREENLOCK  - lock your screen so nobody can use your character while you
+              are away from your computer.
+
+Note: * Only you can disable the lock with your own password.
+
+:script
+
+SCRIPT <reason>   - Begin scripting, all text you see is send to a file
+                    on the talkers server. 
+SCRIPT OFF        - Stops the script.
+
+:se,st,sp,ss
+
+SU <msg>      - su channel say
+SE <action>   - su channel emote
+ST <thought>  - su channel think
+SP <action>   - su channel pemote
+SS <song>     - su channel sing
+
+:seeecho
+
+SEEECHO   - toggles if you'll see who echos what.
+
+:seesess,comments,lss
+
+SEESESS  - see everyone and their session comment if they have set one.
+
+COMMENTS - see only those people who have set a session comment
+
+-=> COMMENTS is aliased to LSS for people used to the non-standard PG96
+    commands :o)
+
+:seetitle
+
+SEETITLE  - toggles if you'll see session comments or titles with the 'who'
+            command.
+
+:sell
+
+SELL <item>  - Sell an item you don't want. You get a full refund.
+
+:session
+
+SESSION <whatever>  change the session topic to <whatever>
+SESSION             see who set the current session, and when it can be reset
+
+:sex,sexual,harass,harassment,women,men
+
+WE WILL NOT PUT UP WITH HARASSMENT OF ANY SORT. 
+-----------------------------------------------
+
+If we find that you or someone from your site is guilty of harassment
+of any sort ... we _will_ ban your entire site.  That includes any 
+Superusers, and/or Admin from your site as well.
+   
+In other words - NO EXCEPTIONS. 
+
+(and we're REALLY sure that the other people from your site would
+just LOVE you if you caused your site to be banned... and your site
+admins would just love to hear which of their users has been being 
+abusive...)
+
+If YOU are the one being harassed, you can send the last 5 tells you
+received to any superuser with the REPORTTO command (help reportto).
+
+:shareroom
+
+SHAREROOM <player(s)> on/off/[blank]  - you give the player(s) the right
+                                        to edit your rooms
+
+Note: * Think of it as room co-ownership
+
+:shout,!
+
+SHOUT <message>  - kinda like a SAY, except that it goes to everyone in
+                   the program who isn't wearing EARMUFFS.
+
+-=> SHOUT is aliased to !
+
+Note: * If you shout too much or use too many annoying characters then
+        don't be surprised if something happens ...
+
+:show
+
+SHOW <type>  - Show what sort of command the message originated from.
+               "show" on its own will list what you are seeing.
+
+Show tells -             >  tells to you
+                         *  friend tells
+                         &&  replys
+
+Show Shouts -            !  shout or a tell 'everyone'
+                         !+ yecho or a recho everyone
+
+Show echos -             +  echo
+
+Show room  -             -  messages to the room only
+
+Show Autos -             #  auto-message
+
+Show Logins -            ]  loginmsg     } Here to provide compatibility
+                         [  logoutmsg    } with PG since PG+ automatically
+                         %  reconnection } places a prefix before these.
+
+Show dynatext -          Makes all dynatext become surrounded in braces {}
+
+:showexits
+
+SHOWEXITS   - toggles if you'll automatically see the exits to a room when
+              you enter it.
+
+:shutdown,abort
+
+SHUTDOWN <time> <reason>  - Shutdown and reboot the talker. <time> is in
+                            seconds before reboot and [reason] is why.
+
+ABORT                     - Abort a shutdown (if running).
+
+:silver
+
+Silver is the spodding name that Richard Lawrence (the author of PG+) goes
+under. If you see a Silver who isn't from the UK and didn't go to the
+University of Liverpool then it isn't him.
+
+URL   : http://www.whiting.co.uk/~rich
+EMAIL : silver@whiting.co.uk (or) rich@whiting.co.uk
+
+:sing,)
+
+SING <song>  - sing something to everyone in the room
+
+-=> SING is aliased to )
+
+eg: sing do re mi            &m->n sings o/~ do re mi o/~
+
+:singblock
+
+SINGBLOCK  - toggles whether or not you will see people singing
+
+:site
+
+SITE <player>   - shows you all players from similar sites as (player)
+SITE <ip_addy>  - shows all players from ip address
+
+:site_ban
+
+SITE_BAN <ip address> <reason>  - Ban a site to all players irrespective
+                                  of rank. 
+
+:slist
+
+SLIST <player list> <flag list>  - Set a list toggle.
+
+eg.
+
+  slist astyanax friend,inform
+
+This makes astyanax friend and inform, regardless of what else you already
+set that to.
+
+:sneeze
+
+SNEEZE <player> <time>  - Kick someone of the program, and prevent them 
+                          from logging back in for a few minutes.
+
+:snews,spost,sread
+
+SNEWS            - Check the SU news board
+SPOST <subject>  - Post to the SU news board
+SREAD <number>   - Read an item on the SU news board
+
+These are just shortcuts, alternatively you can use:
+
+news <command> sus [additional commands]
+
+if you wish.
+
+:spam,spamming,piping
+
+Spam/Spamming
+
+      Spamming and/or piping is repeating the same thing over and over,
+   otherwise known as "piping" text into the buffer and then filling
+   a person's screen rapidly.  This is very impolite and is grounds for
+   being booted, yoyoed, jailed, sneezed, etc... if the spamming party 
+   does not cease.
+
+:splat,unsplat
+
+SPLAT <player> <fortime>  - sneeze player and ban ALL logins from their
+                            site for a few minutes.
+
+UNSPLAT <player>          - remove the SPLAT on a site
+
+:spod,spodess,spodo,spodz
+
+      -=*> The Spoddy world that spods spodily spod in <*=-
+
+Spod (noun) (feminine:Spodess) (plural individual: Spodz) (Neuter: Spodo) -
+   A sad, sometimes fluffy, sometimes not so fluffy, computer nerd.
+   A spod is easily distinguished by the following characteristics:
+
+1. Extraordinarily long login times to talkers and/or Muds
+2. Knows a dangerous amount of info about the Internet - more than any
+   person should.
+3. Often known to break into computer labs after hours just to telnet.
+4. Sometimes name their favorite terminals
+5. Often witness beautiful sunrises and/or sunsets... from a computer
+   terminal.
+6. Spod Eyes syndrome - Eyes feel as if they will budge after long hours
+   spent at a terminal.
+
+ Spod (verb)    - To act or behave as a spod. (&m->n spods all night, doesn't
+                  &m->g?)
+ Spoddy (adj)   - Fitting the behavioral patterns of a spod. (&m->n, you
+                  spoddy spoon!)
+ Spodily (adv)  - Acting in the manner of a spod (&m->n spodily types away.
+                  What else is new?)
+ Spodaholic (n) - A spod who is obviously addicted to the spodding experience.
+ Spodders       - A spod support group-Before every meeting (It's true that
+ Anonymous (n)    they are meetings on talkers) One says the lines like so:
+                  "Hi, I'm &m->n, and I'm a spodaholic."
+ Spoddom (n)    - The world available for spods to spod in. The exact
+                  opposite of so-called "rl" (real life)
+
+See help spod-classes for the subclasses of spods
+
+"The spoddy world...", and all the subclass names are (c) traP aka M.
+Bourdaa 1995. You are free to use these terms to describe others,
+or yourself, but this may document may not be published
+(written or electronically) or altered without the official permission
+of the author. All rights reserved. And other legal mumbo jumbo too !!
+
+:spod-classes,spod.classes,spod_classes,spodclasses,spodclass
+
+-> How many pests would a pestispod pest if a pestispod could spod pests? <-
+
+There are 15 basic subdivisions of the Spod class: These include -
+
+Antispod        - A spod who enjoys tricking and hurting newbies. These
+                  spods are very dangerous to newbies.
+Minispod        - These spods often sit idle for minutes and hours at a
+                  time, often because they are also multispods.
+Multispod       - Spods who can and do multi-task so they can log on to
+                  several talkers and muds simultaneously
+Superspod       - Spods who are also superusers (or equivalent)
+Pestispod       - Spods who always ask "Can I be an SU?" As this class is
+                  very large and diverse, the pestispod has several
+                  classical subdivisions of it's own.
+Grabypestispod  - Spods who try to become an su by making a big deal
+                  about bringing new people into the talker.
+Helpypestispod  - Spods who make a big deal about helping newbies (some
+                  will only be "helpful" if an admin is in the room!)
+Assitipestispod - Spod who makes a big deal about helping the admin
+                  (giving ideas, volunteering to make system rooms, etc.)
+Megaspod        - Spods who outspod spods :) To be a true megaspod is the
+                  ultimate complement, and the ultimate insult :)
+Hermospod       - Hermospods spend an inordinate amount of time (over 70%)
+                  of their time in their own home room.
+Publispod       - Publispods spend 70% or more of their time in public
+                  (usually the main) rooms
+Scitzospod      - Special class of spods. Scitzospods usually have
+                  multiple characters (usually on different talkers... see
+                  help rules if you're thinking about using different
+                  names on the same talker)
+Spatulaspod     - (derived from the 'your.name' is you, you spoon!
+                  message). Spatulaspods are either absent-minded, or just
+                  stooopid.
+Transvispod     - These are the crossgender spods : male pretending to be
+                  female and vice versa is not the only form, this can be
+                  used in jest with people who set their genders to plural
+                  or "it"
+Vampispod       - Spods who prefer to do their spodding when the sun is
+                  down.
+Solarspod       - Spods who do their spodding during daylight hours.
+Adminospod      - All admins are spods. If they weren't they wouldn't set
+                  up a talker, would they? :-)
+Anonyispod      - A spod who is a member of Spodders Anonymous.
+
+Most spods belong to more than one of these classes: for example
+
+Someone exclaims 'Trap, you lousy MegaMultiSuperPubliVampiSpatulaspod!'
+
+"How many pests...", and all the subclass names are (c) 1994 to traP
+aka M. Bourdaa. You are free to use these terms to describe others,
+or yourself, but this may document may not be published
+(written or electronically) or altered without the official permission
+of the author. All rights reserved. And other legal mumbo jumbo too !!
+
+:spod_class
+
+SPOD_CLASS <title>  - Set your spod class for the LSP command.
+
+:spodchannel,pu,pe,ps,pt,ph,spodchannel,pw
+
+The spod channel is for spods only. For more information about becoming a
+spod ask an admin.
+
+PU <message>  - Say on the channel (you can also use PH)
+PE <action>   - Emote on the channel
+PS <song>     - Sing on the channel
+PT <thought>  - Think on the channel
+PW            - See who else is listening to the channel
+MUFFLE SPOD   - Toggles whether you listen to the channel or not
+
+:spods
+
+SPODS [name|position]  - Shows the spod-list.
+
+Notes: * All details are centred around the name or position given
+       * If you give no arguments then details will centred on you
+
+(see "help spod" for a definition)
+
+:staff
+
+STAFF  - Lists all the staff and admin on the talker.
+
+:statcommands
+
+STATCOMMANDS  - Provides some stats about commands being used
+                (does not include SU or ADMIN commands)
+
+:su,super,superuser
+
+One of the most frequently asked questions here is 'how can I become an
+su?' Because of this, this help file has been created to answer this
+question.
+
+First off, the candidate must realize what the su position entails
+(this does not mean that you must be an su elsewhere to become an su
+here, but rather that you learn what it means to be an su before you
+are actually granted the su privileges/responsibilities)
+
+Being an SU does NOT mean that you can just sneeze, boot and frog at will
+The admins here take these things very seriously. Such commands are to be
+used only as a last resort for dealing with those who would cause chaos and
+anarchy here. It is MUCH better, both for the su, and for the player, to
+be able to resolve an issue without having to resort to the threat or use
+of the su commands. People who are able to "explain" that 'such behavior
+is frowned upon, and should not be continued' are much preferred to the 
+people whose automatic answer to any situation is to boot or sneeze.
+
+Being an SU means, quite frankly, that you have to put up with whatever
+others on the talker dish out. This ranges from the Admins and their        
+quirks and insanity (all admins are insane. Don't let anyone tell you
+differently) to residents who hate your guts because of jealousy of your
+position, to newbies asking the silliest questions imaginable, like "how
+do i talk?" and "what is a title?"      
+
+As an SU, part of your job is teacher. Everyone on the program will come to
+you first with any questions they have, from simple commands like seeecho   
+and earmuffs, to complex commands (like the dreaded room edit commands) to
+non-talker related questions (like 'how do I FTP' or 'how do I finger a
+site' or even 'what is the command to compile a program in c++?')
+
+Note that, while you are expected to handle the simple and complex talker
+commands, a knowledge of the non-talker related stuff, while helpful, will
+not affect your chances of getting a position as an su here. But, you 
+should know who on the talker (staff or otherwise) CAN answer such 
+questions, and be able to direct the questions you cannot answer to the
+appropriate person. 
+
+You should be familiar with all the resident commands, and be able to 
+explain the quickly and clearly to others. You can't let frustration
+show when a newbie says 'i don't get it' or 'that's not what i meant.'
+I can guarantee from experience that you'll have people who simply have
+no business using a computer, who somehow stumble on the 'telnet' command,
+asking you questions and then never understanding the answer. You just have
+to wear a fake smile and try again.
+
+You'll have to deal with people who are just really stupid, who all they
+want to do is cause troubles for everyone else, and especially you. People
+will hate your guts, and you'll just have to deal with it with your
+therapist (you DO have a therapist, don't you?)
+
+You'll have to be an example to the other users, never bending the rules
+yourself, and remember that, as long as you are a su here, you represent
+the entire talker with every action you take. 
+
+However... if you think you can handle it, then that's great. Here's some
+advice on how to become one, from someone who's been there. Never harass the 
+admins .. they have to deal with this 'can i be an su' question more times 
+in the day than they can count, and the last thing they wanna hear is another
+variation of that question. Try never to break the rules. Be friendly to 
+other users, su's and newbies alike. (being a friendly person is a big plus)
+Always be helpful. But don't stress too much about being helpful... you'll
+just look like a kiss-up.
+
+If you REALLY REALLY have an interest in being an su here, however, then
+we suggest you send an email to the admin telling them why you'd think
+you'd make a good su here.
+
+:su_hi
+
+SU_HI  - toggles highlighting of the su_channel.
+
+:su_privs
+
+PRIVS <name> - shows what privs someone else has
+
+:suh
+
+SUH  - recalls a history of the su channel
+
+(originally written by astyanax for PG96)
+
+:suicide
+
+SUICIDE  - Permanently deletes your character from this program.
+
+Notes: * To confirm your desire to die, you must enter your password to
+         prove you are who you are.
+       * You must also give a reason for ending your life.
+
+:sumotd
+
+SUMOTD  - displays the super user message of the day.
+
+:suwall
+
+SUWALL <message>  - send a message to everyone listening to the su channel
+
+:sw,se,st,ss
+
+Superuser Channel
+-----------------
+
+  SU <message>  - Say on the su channel
+  SE <action>   - Emote on the su channel
+  SS <song>     - Sing on the su channel
+  ST <thought>  - Think on the su channel
+  SW            - See who is listening to the su channel
+
+:swearing,swear,language
+
+The official language of &t is ENGLISH. In public rooms and on
+channels please stick to that.
+
+You must not swear under any circumstances. The code automatically
+monitors all swearing and will replace any "sensitive" words with
+something more acceptable.
+
+Some commands will only be filtered if you are in the main room (eg.
+"say", "emote", "think" and "sing") others will always be filtered (eg.
+"shout" and all channels).
+
+PLEASE NOTE that this is "sensitive" as defined by the Admins not you.
+
+Just because we replace these words doesn't mean you can still use them.
+If you continually swear expect to have a Superuser dealing with you.
+
+:swarn
+
+SWARN <player> <message>  - leave a saved "warn" message for someone who
+                            decided to be bad and then leave. :P
+
+:swho
+
+SWHO    - a shorter version of 'who' - just shows you people's names and
+          prefixes.
+
+SWHO -  - shows you same list, with no prefixes =)
+
+:tell,>,.
+
+TELL <player(s)> <message>  - private communications. You can tell
+                              anything to anyone on the program, and only
+                              you and the people you "tell" to will hear
+                              the message.
+
+-=> tell is aliased to > and .
+
+eg:   tell alice what's goin on? =)     &m->n tells you 'what's goin on? =)'
+
+:tf,tinyfugue
+
+TINYFUGUE (tf) is a Telnet "client" -- and is the BEST client in existence
+today. You can get it via ANONYMOUS FTP from magic.infomagic.com, or from
+ftp.tcp.com.
+
+If you need help setting up tinyfugue or have questions, you can e-mail
+shawn.reed@usa.net.
+
+:think,~
+
+THINK <thought>  - puts your thoughts into a "thought bubble" and tells it
+                   to everyone in the same room as you.
+
+eg: think hmmm                    &m->n thinks . o O ( hmmm )
+    think ooooooooookay...        &m->n thinks . o O ( ooooooooookay... )
+
+Note: * THINK is aliased to ~
+
+:time
+
+TIME    - displays the local time, and some program stats.
+
+:timeprompt
+
+TIMEPROMPT <on/off>  - Turns your prompt into a clock or off again.
+
+Note: * If you don't like the format of it you can always create one using
+        dynatext (ie. "prompt [&&m->h-&&m->m-&&m->s]->".
+
+:title
+
+TITLE <msg> - sets the title after your name.
+
+:tlist
+
+TLIST <player list> <flag list>  - Toggle list entrys
+
+Example:
+
+so if Nogard is friend and grabme, and i type
+
+  tlist Nogard friend,inform 
+
+Noggie's new entry becomes 'grabme,inform' (friend was turned off by tlist)
+
+:to,ro,po,so,eo,rto,yo,tfo,rto,sfo,pfo,efo,rtfo
+
+These commands are for telling to other peoples friends
+(see HELP FRIENDTELL for more info) 
+
+	TFO <player> <msg>   - Tell to other players friends
+	RFO <player> <msg>   - Remote to other players friends
+	PFO <player> <msg>   - Premote to other players friends
+	SFO <player> <msg>   - Sing to other players friends
+	EFO <player> <msg>   - Echo to other players friends
+	YFO <player> <msg>   - Yell to other players friends
+	RTFO <player> <msg>  - Think to other players friends
+
+To preserve compatibility with people who are used to the non-standard
+PG96 friend-tells you can use TO, RO, PO, SO, EO, YO and RTO respectively.
+
+:trace
+
+TRACE <player>  - see where a saved player last logged on from.
+
+:trans
+
+TRANS <owner>.<ID>  - takes you to the room id owned by owner
+
+:twho
+
+TWHO  - shows you a list of people on, and their titles.
+
+:ulist
+
+A <user list> is a list of users.  The list can be made up of
+anyone you wish, and can be used in a variety of situations.
+
+For example, let's say you want to tell Joe and Bob the same
+thing.  You *could* tell them both separately:
+
+	tell Joe Meet me for lunch at noon
+	tell Bob Meet me for lunch at noon
+
+But wouldn't it be much easier to tell them both with one
+command?  Ahh, the beauty of user lists. :)  The following
+command can accomplish this task:
+
+	tell Joe,Bob Meet me for lunch at noon
+
+You can see from this example that a user list is simply a
+group of users' names, separated by a comma (,) .  You can also
+use the user list to emote to more than one person in a room:
+
+	emote grins at you. | joe,bob
+
+Bob sees:
+	&m->n grins at you and Joe.
+Joe sees:
+	&m->n grins at you and Bob.
+
+Neat, eh? :)
+
+:unconverse
+
+UNCONVERSE <player>  - take some poor clueless newbie out of converse
+                       mode.
+
+:undumb
+
+UNDUMB <player>  - make a player normal again =)
+
+:val
+
+VAL <player> - view someone else's alias list.
+
+:validate
+
+VALIDATE <player>  - this sets a player to have NO email address. Ask an
+                     admin before using this, if possible.
+
+:version
+
+VERSION   - shows some info about the program, modules enabled, the last
+            time updated, etc.
+
+Note: * If this command is unavailable to you then the admin of
+        &t are breaking the licence agreement for this
+        talker base code.
+
+:view_flags
+
+VIEW_FLAGS  - list everyone and the flags they currently have set
+
+:viewlast
+
+VIEWLAST  - View the last connections to the talker
+
+:visit
+
+VISIT <player> - go to players 'home' room 
+
+:vlist
+
+VLIST <player> [entry]  - Check someone else's list (optionally just one 
+                          entry on their list)
+
+:vlog
+
+VLOG [filename] - view a log file.
+
+Note: * Typing 'vlog' without any arguments will list all of the log files
+        that are available.
+
+:w
+
+W  - provides a more detailed listing of who is on the program along with
+     their rank, location and idle time.
+
+(Code written by tonhE)
+
+:wake
+
+WAKE <player>  - "wake" up another user by sending a beep and a 
+                 highlighted message to their screen letting them know
+                 that you wish to speak to them
+
+:wall,ewall,twall
+
+WALL <msg>   - Scream an announcement
+EWALL <msg>  - Emote an announcement
+TWALL <msg>  - Think an announcement
+
+:warn
+
+WARN <player> <message> - send an official warning to (player). This is
+                          logged and echoed to the su channel.
+
+Note: * You can warn one person, a group of people (with commas) or a
+        "room."
+
+:wear
+
+WEAR <item>  - Wear an item that you have in your inventory.
+
+Note: * This item needs to be wearable!
+      * What you are wearing will be seen when someone examines you.
+      * To remove a worn item, wear it again and you'll get it off of you.
+      * You may wear as many things as you want.
+      * The room will see you put the item on / take the item off
+
+:where
+
+WHERE <player>  - shows you where a specific person is.
+WHERE friends   - shows you where your friends are.
+WHERE           - shows you where EVERYONE is.
+
+:whisper,=
+
+WHISPER <player(s)> <message>  - sends a private message to 1 or a group
+                                 of people in the same room as you.
+                                 (as opposed to tell, which sends the
+                                 message regardless of what room the
+                                 recipient is in)
+
+-=> WHISPER is aliased to =
+
+:who
+
+WHO  - shows you who is on the program.
+
+:whois
+
+WHOIS <player>  - Find out some information about a player.
+
+If you have enough login time, or you get permission from an admin, you
+may have a "whois" page here. The only limits are that the page cannot violate
+any rules, and it must be smaller than 20 lines (the 20 line limit may be
+negotiable under special circumstances)
+
+:wield
+
+WIELD <item>  - Wield a "weapon" in your inventory.
+
+Note: * You can bop someone with a wielded item
+      * Some items have special effects when wielded
+      * To unwield the item simply wield it again.
+      * You may only wield ONE item at a time
+      * The room will see you wield/unwield the item.
+
+:with
+
+WITH <player>  - shows you who is in the same room as <player>
+
+:wordwrap
+
+WORDWRAP [size/off]  - set the size of the word that you want to "break up"
+                       rather than just shove it to the next line.
+
+:xref
+
+XREF <name>  - Check for similar names in saved files.
+
+The use for this is to check if a newbie wants to ressie a name that
+might be too similar to a name already taken by someone else.
+
+If it is too close, just politely ask the newbie to pick a new name..
+99 times out of 100, they will pick a new name and you can rename them
+and ressie them then.
+
+:y,z 
+
+Y <player>  - An SU examination of a resident. Admin will see
+              significantly more information.
+
+Note: * In the original PG96 there was also a Z command. These two have
+        been merged into one.
+
+:yecho,!+,!-
+
+YECHO <message>  - kinda like a ECHO, except that it goes to everyone in
+                   the program who isn't wearing EARMUFFS.
+
+-=> YECHO is aliased to !+ and !-
+
+Note: * If you yecho too much and/or with too many annoying characters
+        then funny things may happen ...
+
+:yell,&
+
+YELL <player> <msg>  - Send a "loud tell" to your friends, or to other users. 
+
+:yemote,!:,!;,eshout
+
+YEMOTE <message>  - kinda like a EMOTE, except that it goes to everyone in
+                    the program who isn't wearing EARMUFFS.
+
+-=> YEMOTE is aliased to !: and !;
+
+Note: * If you yemote too much and/or with too many annoying characters
+        then funny things may happen ...
+
+:yoyo
+
+YOYO <player>  - toss someone around like a yoyo... they get spammed by 
+                 room descriptions before landing back in the main room
+                 with a loud *THUMP* =)
+
+:ysing,!),!(
+
+YSING <message>  - kinda like a SING, except that it goes to everyone in
+                   the program who isn't wearing EARMUFFS.
+
+-=> YSING is aliased to !) and !(
+
+Note: * If you ysing too much and/or with too many annoying characters
+        then funny things may happen ...
+
+:ythink,!~,!*,ethink
+
+YTHINK <message>  - kinda like a THINK, except that it goes to everyone in
+                    the program who isn't wearing EARMUFFS.
+
+-=> YTHINK is aliased to !~ and !*
+
+Note: * If you ythink too much and/or with too many annoying characters
+        then funny things may happen ...
+
+:zchannel,zc,zu,ze,zs,zh,lsz,zw
+
+This is a custom channel for people who want to talk about the same
+subject without involving everyone else.
+
+ZC <name>     - Joins a channel called <name>. If one does not exist it
+                will automatically be created and you joined to it. If you
+                are already on another channel, you will quit that one and
+                then join your new one.
+ZU <message>  - Say on the Z Channel (you can also use ZH)
+ZE <action>   - Emote on the Z Channel  
+ZS <song>     - Sing on the Z Channel
+ZT <thought>  - Think on the Z Channel
+ZC            - Leaves a Z Channel you are on (NOTE: just ZC on its
+                own!)
+ZW            - See who else is on the Z Channel
+LSZ           - Lists all Z Channels currently active and how many people
+                are on each
+
+:zdel
+
+ZDEL <channel name> <reason>  - Deletes a currently active Z channel.
+
+Note: * A reason is required which is logged and broadcast to that channel
+        before being deleted.
+
+:builder
+
+A builder is someone who can create items that can be bought on
+&t. Once an item has been created it can be bought by people
+on the talker and then played with, worn, eaten or drunk depending on
+how the builder wishes that item to be.
+
+<<ADMINS NEED TO INSERT THEIR POLICY ON GIVING OUT THIS PRIV HERE>>
+
+Once you become a builder you should read "help create"
+
+:socials,creator
+
+All socials on &t can be listed by typing "commands soc".
+To use a social type its name and press [return] and see what happens.
+Some socials ask you for a person to direct the social too, some don't and
+some may even give you the option.
+
+To create socials you need to have the relevant priv.
+
+<<ADMINS NEED TO INSERT THEIR POLICY ON GIVING OUT THIS PRIV HERE>>
+
+For more about creating a social see "help social-create"
+
+:social-create
+
+To start the creation of a social:
+
+CREATE_SOCIAL <command for it> <type>
+
+Where <type> can be either "simple", "complex" or "private".
+
+* Simple socials are messages which go to rooms only. They cannot be
+    directed at anyone and only the people in the same room as the sender
+    will see the message.
+
+* Complex socials can go to rooms but can also be directed at people. If
+    it is directed at a person and the sender and receiver are in the
+    same room then everyone else in the room sees a message.
+
+* Private socials are just that. Only you and the person you send the
+    social to get any messages.
+
+See "help social-simple", "help social-complex" or "help social-private"
+for more details
+
+See "help social-format" for special formatting characters
+
+:social-simple
+
+SETSOC ROOM_MSG <string>  - This is the message that will be shown to the
+                            room when a player uses the social.
+
+SETSOC USED_ROOM_MSG <string>  - The string the player who uses the social
+                                 will see.
+
+SETSOC FORMAT <string>  - If set then the social requires an argument and
+                          the is the message that the sender will get if
+                          he/she doesn't give one.
+                          See "help social-format" for details.
+
+SETSOC DONE  - Signifies that you have finished and the social is ready.
+
+SETSOC ABORT  - Signifies that you want to abandon this social.
+
+:social-complex
+
+SETSOC ROOM_MSG <string>  - This is the message that will be shown to the
+                            room when a player uses the social.
+
+SETSOC USED_ROOM_MSG <string>  - The string the player who uses the social
+                                 will see.
+
+SETSOC DIRECT_MSG <string>  - The string a player sees who has had the
+                              social directed at them.
+
+SETSOC USED_DIRECT_MSG <string>  - The string the player who used a
+                                   directed social will see.
+
+SETSOC DONE  - Signifies that you have finished and the social is ready.
+
+SETSOC ABORT  - Signifies that you want to abandon this social.
+
+:social-private
+
+SETSOC DIRECT_MSG <string>  - The string a player sees who has had the
+                              social directed at them.
+
+SETSOC USED_DIRECT_MSG <string>  - The string the player who used a
+                                   directed social will see.
+
+SETSOC FORMAT <string>  - If set then the social requires an argument and
+                          the is the message that the sender will get if
+                          he/she doesn't give one.
+                          See "help social-format" for details.
+
+SETSOC DONE  - Signifies that you have finished and the social is ready.
+
+SETSOC ABORT  - Signifies that you want to abandon this social.
+
+:social-format
+
+You can add the following strings in which will be replaced when the
+social is used:
+
+%hisher      - The social executors gender (in form "his", "her" or "its")
+%himher      - The social executors gender (in form "him", "her" or it")
+%heshe       - The social executors gender (in form "he", "she" or "it")
+%fullname    - The social executors full name (with prefix)
+%name        - The social executors name (without prefix)
+
+%t_hisher    - The social targets gender (in form "his", "her" or "its")
+%t_himher    - The social targets gender (in form "him", "her" or it")
+%t_heshe     - The social targets gender (in form "he", "she" or "it")
+%t_fullname  - The social targets full name (with prefix)
+%t_name      - The social targets name (without prefix)
+
+%str         - The input string
+
+You can also have random words or phrases incorporated in your socials
+like so:
+
+{option1|option2|option3|option4}
+
+You can have as any options as you like and when parses only one of these
+options will be shown. An example could be:
+
+setsoc room_msg {runs|skips|hops|leaps} over to %t_name and
+{hits|throws|punches} %himher in the {face|teeth|eyes|head}.
+
+Note, you do Not need a % in front of the opening brace {
+and putting one there will only get interpreted as a literal %
+  (meaning, itll put a % there as normal)
+
+Don't forget you can also incorporate dynatext for some really impressive
+socials!
+
+:dynatext,twinkle,twinkles
+
+&t supports dynatext, a simple yet clever system which allows
+you to tailor your messages, descriptions etc. depending upon the person
+reading it.
+
+It is based around the same concept of color but with the & character.
+
+Nearly all dynatext is prefixed with either:
+
+  &&c->               - Refers to the current player
+  &&m->               - Refers to the player seeing the message
+  &&r->               - Refers to a random player in the room
+  &&a->               - Refers to a random player on &t
+
+Afterwards you can append any of the additional characters:
+
+  n    - Person's name
+  f    - Person's full local time and date
+  h    - Current hours
+  m    - Current minutes
+  s    - Current seconds
+  w    - Day of the week
+  o    - Month name
+  d    - Date
+  r    - Rank
+  c    - Cash
+  g    - Gender in the possessive form - his/her/its
+  G    - Gender in the form - he/she/it
+  i    - Gender in the form - him/her/it
+  p    - Partner (engaged or married)
+  l    - The time lagged, in seconds
+  L    - Textual description of lag time, as shown in 'x'
+
+If you don't add a an arrow and a letter to the end then it will assume
+you want '->n' (the name)
+
+And these don't require a prefix at all:
+
+  &&t   - The name of the talker
+  &&T   - The address and port of the talker
+  &&e   - The email address of the admins
+  &&j   - The current slots jackpot
+
+If you wish to ignore dynatext then use the MUFFLE command. If you wish to
+see all dynatext but know that it is dynatext then you can use the "SHOW
+DYNATEXT" command.
+
+For examples please see "help dynatext-examples"
+
+:dynatext-examples
+
+To get the current time of the person reading it you would use:
+
+  &&m->h:&&m->m
+
+To get the current time of a random person in the room you would use:
+
+  &&r->h:&&r->m
+
+To run over to a random person in the same room and slap them in the face
+you would use:
+
+  emote runs over to &&r->n and slaps &&r->i in the face with &&c->g hand!
+
+Note that random names are preserved. That means that the random person
+chosen with &&r will stay the same throughout the entire command and that
+everyone will see the _same_ random person.
+
+As you can see, dynatext mixed with socials, room messages, login messages
+etc. are a very powerful thing!
+
+:edit_file
+
+EDIT_FILE <directory> <file>  - Edits a file from within the account.
+
+Note: * Only regular files can be edited (not dirs, symlinks, sockets etc)
+      * You cannot edit files in some directories (these are configured
+          within the talker - ask the coder)
+      * It is recommended you do not edit the following files:
+          +  soft/*.msg
+          +  doc/help
+          +  files/main.rooms
+          +  files/system.rooms
+
+:chaccess
+
+CHACCESS <log> <level>  - Change the permission required to view a log
+
+NOTE: * <level> can be either "ad" (admin), "la" (lower admin) or "su"
+          (superuser)
+
+:clog
+
+CLOG  - List all the currently available logs and how long ago they were
+          changed.
+
+:vemerg
+
+VEMERG [name]  - View the emergency log of [name]. If no name is given
+                 then all available emergency logs are listed.
+
+:vscript
+
+vscript [name]  - View the script of [name]. If no name is given then all
+                  available scripts are listed.
+
+:ask
+
+ASK <player(s)> <message>  - Politely ask one or more people not to do
+                             something.
+
+Note: * This is a "lesser" warn
+
+:comfy
+
+COMFY  - Take you to the Superusers comfy room
+
+:lsi
+
+LSI [name]  - List where all people are connected from
+
+:nomsg
+
+NOMSG <name>  - Toggles whether the player is allowed to edit their X, F
+                or PINFO.
+
+Note: * This can be checked by looking at a player with "Y"
+
+:shelp
+
+SHELP <file>  - View any additional SuperUser help files
+
+:validate_email
+
+VALIDATE_EMAIL <person>  - Set a logged on person as having no email
+                           address.
+
+:becho
+
+BECHO <message>  - Anonymously echo something to a room.
+
+:kill_angel
+
+KILL_ANGEL  - Kills the guardian angel from within the talker.
+
+Notes: * When killed the talker will not reboot the next time is it
+         shutdown!
+       * Once the angel is killed it cannot be rebooted again unless the
+         talker is down as well!
+
+:load_socials,syncsocials
+
+LOAD_SOCIALS  - Load the socials from the account into the talker.
+SYNCSOCIALS   - Saves all socials to disk
+
+:screen,allow,deny,squeue
+
+SCREEN [on/off]
+     used by itself, it will report if the talker is screening newbies or not
+     used with on or off, it will turn screening on or off
+
+ALLOW <name>
+     allow the newbie <name> to enter the talker
+
+DENY <name>
+     deny the entry of <name> to the talker
+
+SQUEUE
+     view those in the screening queue, and how much time theyve left
+
+
+    If screening is on, any newbie attempting will be held up as soon as
+  they enter their name, at which point the staff on duty will see a
+  message informing the newbie is trying to connect, the site they are
+  coming in from, and how to let them in or not.   At this time, any
+  staff member may   allow <name>   to let the newbie continue to enter
+  the program as normal, or   deny <name>   to disallow access.  If a 
+  newbie is denied, they will see the 'no newbies at this time' message.
+  There is also a timeout period, if no staff member allows or denies
+  access before this period is out, the newbie is denied access and
+  shown the message.   Finally, when screening is turned on and there
+  are no staff members on the talker and on duty, newbies will be
+  automatically denied.
+
+:ammend
+
+AMMEND <log> <string>  - add comment to <log>, consisting of <string>
+
+:psx
+
+PSX  - execute the shell command 'ps' and send the results to the player.
+       the options for this can be altered as needed in soft/config.msg
+       one thing of note, this is executed syncronously, the talker
+       stops everything its doing and waits for the command to finish.
+       in normal operation, the execution time of the command is so
+       quick that it wouldnt ever be noticed, however it is something
+       of which to be aware.
+       
+    Explination of results ...
+  USER       - username (owner of process)
+  PID        - process id
+  %CPU       - percent of the processor being used (as a guideline)
+  %MEM       - percent of memory (ram) being used
+  SIZE       - true size of the process, in kilobytes
+  RSS        - realistic size of the process, in kilobytes
+  TTY        - controling terminal of the process
+  STAT       - state of process, (R) running, (S) sleeping, 
+               (D) swapping, (Z) zombie, (T) stopped (trace)
+  START      - when the process began
+  TIME       - how much cpu time the process has used
+  COMMAND    - with -c option, the name of the executable for the process
+
+:search,ese
+
+SEARCH <type> <query>  - search various parts of players in file <type>
+                         for various strings <query>
+
+
+  Type                      Action
+
+  names <query>             search for <query> in players' names
+
+  xref <query>              search for <query> at the beginning of
+                                players names.
+
+  sites <query>             search for <query> in players last host
+                             (note, the last host is saved as alpha
+                             if it has it, ip if not... so check both
+                             if you are really looking)
+
+  emails <query>            search for <query> in players emails
+
+  urls <query>              search for <query> in players urls
+
+  gits <query>              search for <query> in git strings
+                             and in who made the player a git
+
+  swarn <query>             search for <query> in saved warns
+                             and in who set the saved warn
+
+  resby <query>             search for <query> (usually the name of a su)
+                             in who made players a resident.
+
+  richest <number>          search for all those that have more than
+                             <number> of money
+
+  trouble <number>          search for all those that have more than
+                             <number> of discipline commands used on them
+
+  sstats                    show all staff and stats
+
+
+    Note, not all priv levels have access to all types of searches.
+
+:last
+
+LAST - Lists people who recently connected to &t including
+       when they disconnected and how long they were on for.
+

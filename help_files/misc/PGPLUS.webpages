@@ -1,0 +1,16 @@
+
+ Playground Plus icon
+ --------------------
+
+Included in the archive is the file 'pgplus.gif'. If you have webpages
+then it would be appreciated if you could add a link to the pgplus
+webpages with this icon. The HTML below demonstrates this:
+
+  <a href="http://pgplus.ewtoo.org"><img src="pgplus.gif" border="0"></a>
+
+This is a purely optional thing, whether you use the logo is up to you
+(but it makes a change from the "netscape now!" or "download ie" logos
+everyone has).
+
+		Richard Lawrence (aka Silver)
+		16th June 1998

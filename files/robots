@@ -1,0 +1,10 @@
+#
+robot
+120
+2
+#
+say I'm a robot!
+hit *
+say Allo ~!
+ponder
+#

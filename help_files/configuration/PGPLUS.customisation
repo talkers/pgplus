@@ -1,0 +1,23 @@
+
+  Customising your talker
+  -----------------------
+
+The first and most important thing you need to do before opening your
+doors to the public is customise the code. There is nothing people hate
+more than coming onto a new talker to find its bog standard base code.
+
+PGPlus gives you the opportunity to customise a large proportion of the
+code through "make config". Use it! Be unique! Do the SU's really have to
+be called just "superuser"? How about basing it on a some theme and naming
+them appropriately?
+
+Please don't forget that this code isn't 100% perfect. Do you like the
+fact that people can see what Z channels are available? Do you like the
+format of the "lsu" command? Do you think the commands for Lower Admins
+should be decreased? If you don't agree with whats been done then change
+it! Having said that it doesn't mean that what is here is stupid in
+anyway, if you did just go with the options presented you'd have a
+perfectly usable talker (it would just be a little on the dull side).
+
+		Richard Lawrence (aka Silver)
+		22nd April 1998

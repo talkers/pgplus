@@ -1,0 +1,12 @@
+Tic-Tac-Toe for Playground/EW based talkers.
+
+Author:       Bron Gondwana
+Version:      1.1
+Download:     http://css.ugh.net.au/~brong/src/ttt.html
+Email:        brong@css.ugh.net.au
+Release date: 8 October 1997     
+
+This code has been modified to work with PG+ and improved by Silver with:
+
+* Support for clean compiling with -Wall and -Wshadow
+* Saved statistics (see these in peoples X)

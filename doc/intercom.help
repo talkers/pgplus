@@ -1,0 +1,38 @@
+The intercom is a way to talk to people on other talkers who also have the
+intercom installed. All examples will use UberWorld (uber) as their
+example:
+
+INTERCOM LIST   - Lists all talkers with the intercom and status
+INTERCOM SLIST  - As above but a shorter (more compressed) list
+
+Once you've found a talker you can communicate with people like so:
+
+WHO @UBER                  - See who is logged into UberWorld
+LOCATE <name>              - Searches for a user on all up talkers
+TELL GRIM@UBER <message>   - Tell Grim on UberWorld something
+REMOTE GRIM@UBER <action>  - Emote something to Grim on UberWorld
+FINGER GRIM@UBER           - Find out about Grim on UberWorld
+EXAMINE GRIM@UBER          - Examine Grim on UberWorld
+IDLE GRIM@UBER             - Find out how idle Grim is on UberWorld
+
+The intercom room allows you to communicate with lots of people from all
+different talkers with normal room commands.
+
+INTERCOM HOME  - To go to the intercom room
+
+From the intercom room, you can talk, and have transmitted the following
+commands: SAY, EMOTE, THINK
+
+If you wish to stop certain intercom users from talking to you, this can
+be done with the usual ignore or bar commands on your list, like so:
+
+IGNORE REDNECK@FH  - to ignore specifically redneck on the talker fh
+IGNORE @RESORT     - to ignore EVERYONE on talker resort
+IGNORE CHRIS       - to ignore the name chris everywhere
+IGNORE @           - to completely block all intercom communication
+
+Sometimes, a link will be VERY slow, and instead of attempting to send the
+message forever, it will be expired. Sometimes, the message has been
+received at the other end, sometimes it hasnt, there is unfortunately no way
+to tell.
+

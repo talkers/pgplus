@@ -1,0 +1,147 @@
+
+ The Stack
+ ---------
+
+This helpfile details the usage of the stack within Playground Plus. As
+you might have already noticed there are two ways to print something to a
+player:
+
+tell_player(p,"text");
+TELLPLAYER(p,"text");
+
+The easiest thing to use is "TELLPLAYER" simply because "tell_player"
+cannot cope with this:
+
+tell_player(p,"Your name is %s\n", p->name);
+
+as it would output "Your name is %s".
+
+So what can it be used for? Well plain text is a starter. However before
+PG there was no other way but the "tell_player" command so how they printed
+variables was by using a stack ...
+
+ How to use the stack code
+ -------------------------
+
+Say you would like to do the above using the stack. Here is how you would:
+
+void procedure_name(player *p, char *str)
+{
+  char *oldstack = stack;    
+
+  ADDSTACK("Hello there\n");
+  ENDSTACK("Your name is %s\n", p->name);
+
+  tell_player(p, oldstack);
+  stack = oldstack;
+}
+
+You set up oldstack first and then add items to the stack with ADDSTACK.
+The last item must use ENDSTACK otherwise when you do the "tell_player"
+you'll get some funny text. After the "tell_player" you *must* do "stack =
+oldstack" otherwise you'll get a load of stack errors being logged.
+
+This is easiest way to do this and came about in PG. Unfortunately before
+PG there was a harder way to do this - talker coding purists use this form
+becuase it is slightly better and it is included here so you can
+understand the code. The same code above in the older form would be:
+
+void procedure_name(player *p, char *str)
+{
+  char *oldstack = stack;    
+
+  sprintf(stack,"Hello there\n");
+  stack = strchr(stack, 0);
+
+  sprintf(stack,"Your name is %s\n", p->name);
+  stack = end_string(stack);
+
+  tell_player(p, oldstack);
+  stack = oldstack;
+}
+
+Note that every sprintf *must* have a "stack = strchr(stack,0)" after it
+unless it is the last one where it must have "stack = end_string(stack)".
+If you look in the code you'll find that the "ADDSTACK" and "ENDSTACK" do
+this too.
+
+phypor's code uses:
+
+  stack += sprintf(stack,"blah");
+
+instead of:
+
+  sprintf(stack,"blah");
+  stack = strchr(stack, 0);
+
+which is equally valid.
+
+
+ Points about stacks
+ -------------------
+
+They are global, you can pass them from procedure to procedure but you
+must remember to do "stack = oldstack" at the end. If you did not and run
+the code whilst it would still run fine the stack.log file would contain
+the error:
+
+16:32:44 - 01/11/98 - Bad stack in function procedure_name, missing -28 bytes
+16:32:44 - 01/11/98 - Lost stack reclaimed 28 bytes
+
+This tells you that you need to check out the stack control in
+procedure_name.
+
+
+ Use of pstack_mid
+ -----------------
+
+Pstack_mid allows you to centre text surrounded by lines. The following:
+
+pstack_mid("Your information");
+
+is the same as:
+
+ADDSTACK("---------------------------- Your Information -----------------------");
+
+If you want to use variables the way I do it is as follows:
+
+void procedure_name (player *p, char *str)
+{
+  char *oldstack = stack;   /* Stack init */
+  char top[80];
+
+  sprintf(top,"Information for %s", p->name);
+  pstack_mid(top);  /* Set the banner with top */
+
+  ...
+
+  tell_player(p,oldstack);
+  stack = oldstack;
+}
+  
+For banners on the bottom I do the following:
+
+void procedure_name (player *p, char *str)
+{
+  char *oldstack = stack;   /* Stack init */
+  char bottom[80];
+
+  ...
+
+  sprintf(bottom,"There are %d commands here", num);
+  pstack_mid(bottom);
+  *stack++ = 0;
+
+  tell_player(p, oldstack);
+  stack = oldstack;
+}
+
+
+ Finally
+ -------
+
+This is just a general guide - whether it is the best is debatable. Its up
+to you to decide.
+
+		Richard Lawrence (aka Silver)
+		11th January 1998

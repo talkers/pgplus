@@ -1,0 +1,63 @@
+#
+# Playground+ Backup Script
+# Written by Richard Lawrence (aka Silver)
+#
+# This batch file is executed from the talker with the "backup" command
+# Yes this is totally different from the standard EW-2 version and IMHO
+# this is better since you don't need source backups and stuff like that.
+# If you don't like it, add whatever you want into it.
+#
+
+#
+# Change directory and get rid of unecessary files
+#
+
+cd ~/pgplus/backup/
+rm -f ../files/backup_write
+rm -f ../files/rooms/keys.b
+
+#
+# Move the existing files around so we have up to 7 days backups!
+#
+
+mv backup06.tar.gz backup07.tar.gz
+mv backup05.tar.gz backup06.tar.gz
+mv backup04.tar.gz backup05.tar.gz
+mv backup03.tar.gz backup04.tar.gz
+mv backup02.tar.gz backup03.tar.gz
+mv backup01.tar.gz backup02.tar.gz
+
+#
+# Now generate new backup file as backup1.tar. This is not compressed
+# so that backups can be done asap without messing up the player
+# files.
+#
+
+cd ..
+tar cf backup/backup01.tar files/notes files/players files/rooms files/items files/whois files/socials files/news
+
+#
+# Snooze for 30 seconds just to check that all the files have been
+# done properly. This is purely a paranoid measure and probably isn't
+# necessary at all.
+#
+
+sleep 30
+
+#
+# Now gzip up the files. Maximum compression.
+#
+
+cd backup
+gzip -9 backup01.tar
+
+#
+# Tah dah! Done - player files can be decompressed with
+#
+# cd ~/pgplus
+# cp backup/backup<number>.tar.gz .
+# tar zxvf backup<number>.tar.gz
+#
+# You *must* copy it into the ~/talker directory otherwise it
+# wont be overwritten! 
+#

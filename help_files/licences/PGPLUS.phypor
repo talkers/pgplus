@@ -1,0 +1,47 @@
+
+ phypors code
+ ------------
+
+  A few of the code bits installed are from phypor (phypor@benland.muc.edu)
+  and can be retrived in there original release form from
+    http://benland.muc.edu/~clouds/code/
+
+  A few of these release are:
+      dynamic commands priv change
+      command stats
+      last site logging
+      historee
+
+   and they all have the same license which reads:
+      freely distributable and modifiable,
+      as long as credit given in appropritate
+      places for any distrubitions (be it
+      this alone or within another package)
+
+   and the same disclaimer which is:
+      non, the author <phypor> is in no way responsible
+      for use, misuse, abuse, or any other actions
+      misactions, reactions of this code,
+      its provided as is.
+
+
+
+
+
+
+
+
+
+
+
+
+ooo..btw here are a few lil things that are 'experimental'...that
+is not exactly fit for being live in the release... 
+but nifty nonetheless.....
+
+
+   Try this indent...
+indent -kr -bad -bl -pcs -cs -di13 -i3 -nce -l75 -bli0
+
+   Try this in your Makefile (gotta tinker with displays to make it show right)
+CC			= time -f" Total time: %E" gcc

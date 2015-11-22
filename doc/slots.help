@@ -1,0 +1,13 @@
+SLOTS -  Play the slots!! It costs 5 pennies to play, but you could
+         win up to the whole pot depending on what you get.
+
+What comes up                             What you get
+-------------                             ------------
+Two of anything                           Your money back!
+3 Sevens                                  The whole pot!
+3 Cherrys                                 Half of the pot!
+3 of any other item                       1/4th of the Pot.
+
+The current value of the pot is &j pennies!
+
+Please see 'help slots-version' for more info on slots.

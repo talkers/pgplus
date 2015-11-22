@@ -1,0 +1,34 @@
+
+ Updating player structures
+ --------------------------
+
+You'll eventually find that you need to increase the size of the player
+structure to accodomate new features. This file shows you how:
+
+To add a new field simply do the following. There is examples for adding
+an integer and a string:
+
+ 1. Add it in the player structure (player.h) eg.
+
+  int integer;
+  char string[50];  /* Doesn't have to be 50 - could be anything! */
+
+ 2. Add it to the load function (in plists.c) using get_int_safe (for
+    ints) or get_char_safe (for strings) eg.
+
+  r = get_int_safe(&p->integer, r);
+  r = get_string_safe(p->string, r);
+
+ 3. Add it into the save player function (in plists.c) eg.
+
+  stack = store_int(stack, p->integer);
+  stack = store_string(stack, p->string);
+
+When you reboot the talker and load any pfiles of the "old" type then they
+will be automatically converted to the "new" type.
+
+Before you boot up make backups of the pfiles just in case anything goes
+wrong.
+
+		Richard Lawrence (aka Silver)
+		11th January 1998

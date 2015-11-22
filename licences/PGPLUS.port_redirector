@@ -1,0 +1,13 @@
+
+ Port Redirector
+ ---------------
+
+Included in the PG+ package is "datapipe" a handy program that can
+redirect connections to a port to another port or even site. Its handy if
+you move site and are waiting for your address (such as ml.org) to be
+updated.
+
+The comments at the top of the code explain all, but its not hard.
+
+	Richard Lawrence (aka Silver)
+	26.05.98

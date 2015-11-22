@@ -1,0 +1,26 @@
+
+ Mirror site information
+ -----------------------
+
+People are welcome to mirror this code as they wish, however it would be
+appreciated if the following was done:
+
+  * The code nor the documentation must not be modified in any way. This
+    includes additional files added or removed.
+
+  * The file 'pgplus.lsm' (available from
+    http://pgplus.ewtoo.org/pgplus.lsm) must be included in the same
+    directory as the package itself. 
+
+  * Every effort is made to check the URL listed above for updates and to
+    update the mirror if necessary.
+
+If you have downloaded this code from a site OTHER than:
+
+  http://pgplus.ewtoo.org
+
+it is recommended that you double check this address for code updates
+and/or patches.
+
+		Richard Lawrence (aka Silver)
+		16th June 1998

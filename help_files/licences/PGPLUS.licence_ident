@@ -1,0 +1,37 @@
+
+ Ident Code
+ ----------
+
+This is the original copyright file with the current version of the ident
+code. You need to agree to it before you use the ident in the talker. If
+you don't then make sure that it is disabled from within "make config".
+
+Thanks go to Athanasius for permission to distribute it and Sammael for
+giving us a hand hacking it about so it worked under Playground Plus.
+
+---Included licence---
+
+ The majority of the code contained herein is Copyright 1995/1996 by
+ Neil Peter Charley.
+ Portions of the code (notably that for Solaris 2.x and BSD compatibility)
+ are Copyright 1996 James William Hawtin. Thanks also goes to James
+ for pointing out ways to make the code more robust.
+ ALL code contained herein is covered by one or the other of the above
+ Copyright's.
+
+ Permission to use this code authored by the above persons is given
+ provided:
+
+   i) Full credit is given to the author(s).
+
+  ii) The code is not re-distributed in ANY form to persons other than
+     yourself without the express permission of the author(s).
+     (i.e. you can transfer it from account to account as long as it is
+      to yourself)
+
+ iii) You make EVERY effort to forward bugfixes to the author(s)
+     NB: Neil is co-ordinating any bugfixes that go into this program, so
+         please try and send them to him first.
+
+		Richard Lawrence (aka Silver)
+		23.04.98

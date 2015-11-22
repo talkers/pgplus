@@ -1,0 +1,55 @@
+/*
+ * Playground+ 1.0 Configuration File
+ * Don't edit unless you know what you are doing
+ */
+#define PG_VERSION "1.0" 
+
+/*
+ * Playground+ v1.0 Configuration Options
+ */
+
+/*
+ * Machine Options
+ */
+#define LINUX 1
+#undef  HPUX
+#undef  SOLARIS
+#undef  SUNOS
+#undef  ULTRIX
+#define ROOT "/home/pgplus/talker/"
+#define SOCKET_PATH "/junk/alive_socket"
+
+/*
+ * Server Options
+ */
+#define TALKER_NAME "Playground+"
+#define DEFAULT_PORT (5555)
+#define HC_PASSWORD "silly+rabbit"
+
+/*
+ * Timing options
+ */
+#define BACKUP_TIME (4000)
+#define NEWS_TIMEOUT (1814400)
+#define MAIL_TIMEOUT (1814400)
+#define TIMER_CLICK (5)
+#define VIRTUAL_CLICK (10000)
+#define SYNC_TIME (60)
+#define NOTE_SYNC_TIME (1800)
+
+/*
+ * Player and code options
+ */
+#define TERM_LINES (16)
+#define NAME_MAX_IN_PIPE (10)
+#define YOU_MAX_IN_PIPE (3)
+#define MAX_RES (1048576)
+
+/*
+ * System options
+ */
+#define STACK_SIZE (500001)
+#define MAX_LOG_SIZE (5000)
+#define HASH_SIZE (64)
+#define NOTE_HASH_SIZE (40)
+#undef  MALLOC_DEBUG

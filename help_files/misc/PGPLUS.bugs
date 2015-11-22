@@ -1,0 +1,26 @@
+
+ Playground+ bugs
+ ----------------
+
+First let me set one thing straight - Playground Plus is *not* 100% bug
+free. If I claimed that then I'd be stupid, however it won't fall over due
+to silly little things.
+
+However if you do find a bug (and it is a base code bug and not because of
+something you've changed or modified relating to it) then please email me
+details of the bug (and if you have a bug fix - that too!) to:
+
+	pgplus@pgplus.ewtoo.org
+	http://pgplus.ewtoo.org
+
+and I will post the report onto the web pages as a diff report. At the
+earliest possible moment the base code will be updated so that future
+downloads of the code will not have the bug in it.
+
+Because of this it is HIGHLY recommended that you check out the webpages
+on a semi-regular basis. Only the patches listed there will be
+*officially* approved and you should be wary of installing patches that
+are not.
+
+		Richard Lawrence (aka Silver)
+		16th January 1998

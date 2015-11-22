@@ -1,0 +1,22 @@
+
+ Welcome to Playground+
+ ----------------------
+
+PG+ is a stable, bug free version of PG96 with additional features and is
+carefully coded to allow you to start your own talker with the minimum
+amount of fuss.
+
+ Starting
+ --------
+
+All the help files can be found (cunningly enough) in the "help_files"
+directory where it is split into four sections: coding, configuration
+(start here), licences and misc.
+
+The best thing to do is to go into that directory and read
+"PGPLUS.welcome" followed by the files in the "configuration" directory.
+If you want to know what all the help files talk about then
+"Help_files.MANIFEST" is a good place to look.
+
+		Richard Lawrence (aka Silver)
+		18 June 1998

@@ -1,0 +1,105 @@
+.TH mem_test 3 "March 9, 1997" "Courts of Chaos Research" "mem_test manual"
+
+.SH NAME
+mem_test \- link libmem_test with your programs to look for memory leaks
+.SH SYNOPSIS
+#include <mem_test_user.h>
+
+void *malloc (size_t size);
+
+void *limalloc (unsigned int size, char *file_name, int line_number);
+
+void free (void *ptr);
+
+void lifree (void *ptr, char *file_name, int line_number);
+
+void *realloc (void *ptr, size_t size);
+
+void *lirealloc (void *ptr, unsigned int size, char *file_name, int line_number);
+
+void *calloc (size_t nelem, size_t elsize);
+
+void *licalloc (unsigned int nelem, unsigned int size, char *file_name, int line_number);
+
+void cfree (void *ptr);
+
+void licfree (void *ptr, char *file_name, int line_number);
+
+void *strdup (char *s1);
+
+void *listrdup (char *s1, char *file_name, int line_number);
+
+.SH DESCRIPTION
+.B mem_test
+consists of several functions that are wrappers for some of the most
+commonly used memory management functions. Each of the new functions
+calls the standard function and logs the location and amount of the
+memory allocated (or freed).
+
+A header file,
+.I mem_test_user.h
+is supplied that redefines the calls to
+the standard functions as calls to the new functions. The predefined
+macros, __FILE__ and __LINE__ are used to pass the name of the file
+and the line number of the call.
+
+To use the library, simply include the header file,
+.I mem_test_user.h
+and link with
+libmem_test.a When a program linked in this manner is executed, it
+creates a log file in the current directory which is used to record
+all calls to the redefined functions.
+
+When the program terminates, this log file may be analyzed with
+.B mem_analyze(1)
+, or examined manually. The latter can take quite a bit of patience
+and determination. Log files over 10M in size are quite possible...
+
+By default, the log file is named MEM_TEST_FILE. If you wish to use
+another name, simply assign the desired name to the environmental
+variable MEM_FILE before executing the program.
+
+.B mem_test may be used in conjunction with Electric Fence (a very
+nice memory debugger by Bruce Perens).
+.B mem_test
+will help you find memory leaks, Electric Fence will help you find
+illegal memory access.
+.SH EXAMPLE
+To link with mem_test, use the -l option:
+
+gcc -o foo foo.c -lmem_test
+
+Each line of the log file follows this format:
+
+limalloc:134521608:64:example_program.c:19
+
+This indicates that at line 19 of example_program.c, 64 bytes of data
+were allocated at 134521608 using limalloc()/malloc().
+.SH OPTIONS
+None to speak of.
+.SH FILES
+.I MEM_TEST_FILE
+(the default name of the log file)
+.SH "SEE ALSO"
+.BR mem_analyze (1)
+.SH BUGS
+Not all functions that deal with memory allocation are understood by
+.B mem_test
+
+Here is a partial list of functions ignored by mem_test:
+
+  getcwd()
+
+  scandir()
+
+  tempnam()
+
+  getnetgrent()
+
+  opendir()
+
+  ftw()
+
+  hcreate()
+
+  hsearch()

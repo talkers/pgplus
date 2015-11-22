@@ -1,0 +1,126 @@
+# PLAYGROUND PLUS CONFIGURE SCRIPT
+# Written by Spire
+#
+# New setup script to try and automatically determine what we're running.
+# If this fails, call the old script to do it interactively.
+
+BASEDIR=`pwd`
+glibcline=
+
+echo "#" && echo "# Configuring Makefile for Playground+" && echo "#"
+
+# Get the operating system name
+#
+echo -n "Checking host system type:         "
+uname_system=`uname -s 2>/dev/null` || uname_system=unknown
+uname_machine=`uname -m 2>/dev/null` || uname_system=unknown
+uname_release=`uname -r 2>/dev/null` || uname_release=unknown
+
+echo "$uname_machine $uname_system"
+
+case $uname_system in
+	Linux )
+		echo -n "Checking libc version:             "
+		echo "void main(void) { int foo=1; }" > libctest.c
+		cc -o libctest libctest.c 1>/dev/null 2>/dev/null
+		if [ -n "`objdump --private-headers libctest 2>/dev/null | grep libc.so.6`" ]; then
+			echo "glibc2 (libc.so.6)."
+			sourcemakefile=Makefile.Linux.glibc2
+			hosttype="$uname_machine-$uname_system-glibc1"
+			glibcline="GBLIC2 = 1"
+		else
+			echo "glibc1 (<=libc.so.5)."
+			sourcemakefile=Makefile.Linux.glibc1
+			hosttype="$uname_machine-$uname_system-glibc1"
+		fi
+		rm -f libctest libctest.c
+		;;
+	SunOS )
+		release_major=`echo $uname_release | cut -f 1 -d .`
+		echo -n "Checking specific OS:              "
+		case $release_major in
+			5 )
+				release_minor=`echo $uname_release | cut -f 2 -d .`
+				echo "Solaris 2.$release_minor"
+				sourcemakefile=Makefile.Solaris
+				hosttype="$uname_machine-Solaris-2"
+				;;
+			4 )
+				echo "SunOS $uname_release"
+				sourcemakefile=Makefile.SunOS
+				hosttype="$uname_machine-SunOS-4"
+				;;
+			* )
+				echo "Ancient SunOS"
+				sourcemakefile=Makefile.SunOS
+				hosttype="$uname_machine-SunOS-unknown"
+				;;
+		esac
+		;;
+	HPUX )
+		sourcemakefile=Makefile.HPUX
+		hosttype="$uname_machine-HPUX"
+		;;
+	Ultrix )
+		sourcemakefile=Makefile.Ultrix
+		hosttype="$uname_machine-Ultrix"
+		;;
+	IRIX* )
+		sourcemakefile=Makefile.IRIX
+		hosttype="$uname_machine-Irix"
+		;;
+	FreeBSD* )
+		sourcemakefile=Makefile.BSD
+		hosttype="$uname_machine-$uname_system"
+		;;
+	OpenBSD* )
+		sourcemakefile=Makefile.OpenBSD
+		hosttype="$uname_machine-$uname_system"
+		;;
+	* )
+		`which bash` configure/oldsetup
+		exit
+		;;
+esac
+
+echo "#"
+echo "# Found everything necessary, generating Makefile"
+echo "#"
+
+if [ ! -f configure/makefiles/$sourcemakefile ]; then
+	echo "Unable to find Makefile for $hosttype system!"
+	echo "(Looking for configure/$sourcemakefile)"
+	exit 1
+fi
+
+cp configure/makefiles/$sourcemakefile Makefile
+
+# Fix any icky timestamp problems
+touch *
+touch include/*
+
+echo "#"
+echo "# Makefile sucessfully installed!"
+
+if [ ! -f include/autoconfig.h ]; then
+  echo "# You have no configuration file - starting 'make config' ..."
+  echo "#"
+  echo
+  make config
+fi
+
+
+#
+# Lets do this after we get an autoconfig.h
+make depend
+
+
+echo '
+# You can now run
+#
+#  make config               to re-configure
+#  make install              for your initial compilation
+#  make quick                for faster (talker only) compiles and installs
+#'
+
+exit

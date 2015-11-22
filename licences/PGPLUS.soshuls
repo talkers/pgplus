@@ -1,0 +1,27 @@
+
+ kRad Soshuls System
+ -------------------
+
+   oks..... this is basically a way to create new socials
+   from within the talker... the admin type commands
+   that you need to know about are mainly delete_social
+   and grant creator (thats the priv, similar to builder
+   for items, that is required to create socials)
+
+   notice this ...this system has both soft coded socials
+   and hard coded socials...to add more of the hard coded
+   type, go into include/socials.h ..pick the type you 
+   wish it to be... and add it right into one of the
+   arrays.... as for the soft coded ones (the ones added
+   on the talker) consult the online help files 
+   (you can start with commands soc, it not only shows
+    the socials you have access to, it also shows, if you
+    are a creator, the commands to build socials)
+
+   please notice the license at the top of the file 
+   if you get any ideas about using this code...;)
+
+   its provided by me (phypor) just coz...
+
+
+

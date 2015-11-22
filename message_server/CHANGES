@@ -1,0 +1,17 @@
+1.1 -> 1.2
+==========
+
+   Fixed a small bug to do with signal handling that meant the message server
+just hang.
+
+   Moved the sigpause(0) in the 'loop' bit so that you don't have to wait for
+a SIGALRM before the thing goes past it.
+
+1.2 -> 1.3
+==========
+
+   General code cleanups.
+   Added proper commandline options (see ms -h and README).
+   Will now re-read message file if you give it a USR1 signal.
+   Now converts '\n' in message file to '\n\r' so DOS/MS-Windows/VMS
+      telnet clients should display the message correctly.

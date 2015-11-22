@@ -1,0 +1,49 @@
+#!/bin/sh
+
+# The port we run on
+PORT=7777
+
+# The name of the angel
+ANGEL=angel
+
+# The name of the server
+SERVER=talker
+
+# The location of all the files
+PATHDIR="/home/user/pgplus/"
+
+# Name of a file to log info to
+BOOTERROR=boot-script.log
+
+cd $PATHDIR/bin
+
+#If the angel and the server are BOTH down, then rerun the angel.
+
+if [ "`eval ps x|egrep '$ANGEL'|egrep $PORT|egrep -v egrep`" = "" ]; then
+   if [ "`eval ps x|egrep '$SERVER'|egrep $PORT|egrep -v egrep`" = "" ]; then
+      angel &
+      exit 0
+   fi
+fi
+
+#If the angel and the server are both UP, exit
+
+if [ "`eval ps x|egrep '$ANGEL'|egrep $PORT|egrep -v egrep`" != "" ]; then
+   if [ "`eval ps x|egrep '$SERVER'|egrep $PORT|egrep -v egrep`" != "" ]; then
+      exit 0
+   fi
+fi
+
+#If one or the other is down, send error.
+
+echo "+++++" >> $PATHDIR/BOOTERROR
+echo "Boot failed because either the $ANGEL or the server was already alive" >> $PATHDIR/BOOTERROR
+echo `date` >> $PATHDIR/BOOTERROR
+echo "Error is :" >> $PATHDIR/BOOTERROR
+if [ "`ps x|egrep '$ANGEL'|egrep 4242|egrep -v egrep`" != "" ]; then
+        echo "Angel ALIVE" >> $PATHDIR/BOOTERROR
+fi
+
+if [ "`ps x|egrep '$SERVER'|egrep 4242|egrep -v egrep`" != "" ]; then
+        echo "Server ALIVE" >> $PATHDIR/BOOTERROR
+fi

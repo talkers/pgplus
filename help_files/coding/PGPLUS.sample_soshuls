@@ -1,0 +1,24 @@
+
+ Sample Soshuls
+ --------------
+
+Included within the archive is 'sample_socials.tar.gz' which is an archive
+of sample kRad soshuls developed on the Playground Plus site. They vary in
+quality but give you a large number of examples to look at.
+
+To decompress, copy the file into the 'files/socials/' directory, CD into
+it and type:
+
+  tar zxvf sample_socials.tar.gz
+
+If you have an older version of 'tar' then you'll need to do this in two
+steps:
+
+  gunzip sample_socials.tar.gz
+  tar xvf sample_socials.tar
+
+If the talker is already running type "load_socials" into the talker,
+otherwise boot up the talker.
+
+		Richard Lawrence (aka Silver)
+		16th June 1998

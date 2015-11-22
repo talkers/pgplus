@@ -1,0 +1,43 @@
+#!/bin/sh
+
+##########################################################################
+#
+#                              tarball
+#
+#   a lil script for making distribution packages of Playground Plus
+#                                    (thrown toghter by phypor)
+#
+
+# set this to the same thing that your ROOT is for the talker
+ROOT_DIR="/home/pgplus/pgplus"
+
+echo
+echo "Making distribution package ..."
+
+echo "Creating dir /tmp/$USER/"
+mkdir /tmp/$USER
+
+echo "Creating dir /tmp/$USER/pgplus/"
+mkdir /tmp/$USER/pgplus
+
+echo "Copying everything over"
+cp -rf $ROOT_DIR/* /tmp/$USER/pgplus
+
+cd /tmp/$USER/pgplus/src; make scrub
+
+echo "Tarring it up"
+cd /tmp/$USER
+tar -cf pgplus.tar pgplus/
+
+echo "Gziping the tarball"
+gzip -9 /tmp/$USER/pgplus.tar
+
+echo "Moving to your home dir with unique name -- Playground_Plus_`date +"%y%m%d%H%M%S"`.tar.gz"
+mv /tmp/$USER/pgplus.tar.gz ~/Playground_Plus_`date +"%y%m%d%H%M%S"`.tar.gz
+
+echo "Cleaning up /tmp/"
+rm -rf /tmp/$USER/
+
+echo "Distribution package complete ..."
+echo
+

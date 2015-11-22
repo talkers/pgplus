@@ -1,0 +1,43 @@
+
+ Intercom Security
+ -----------------
+
+The intercom utilises several security measures to ensure no abuse is
+possible. However as anyone can log in as a newbie to any talker and
+cause havock, so they can to the intercom. The following security measures
+are implimented.
+
+Any new server wishing to connect to your intercom for the first time is NOT
+automatically allowed access to it. An SU must manually allow them to connect
+by unbarring the talker. It is usual to actually connect to that talker and
+see if its the sort of talker you WISH to have connecting to yours, before
+unbarring it. Once it has been unbarred once, it will not need verifying
+again.
+
+Any KNOWN server connecting for the first time in this session is first
+checked for authenticity.  Once it has satisfied your intercom it is
+authentic, the connection is automatically established.
+
+
+Any abuse of the intercom from remote sites is countered in many ways.
+
+Firstly, any name banished on your talker will not be able to communicate
+through the intercom in any way. Any name that is blocked or ignored on
+an individuals normal list will be unable to communicate with that
+individual. Lists have been expanded to accept intercom addresses, to allow
+specific intercom sites, intercom users, or the intercom as a whole, to
+be ignorred by the individual.
+
+For harassment by users from a specific site, the intercom may be closed to
+that site specifically, or if there is harassment from many sites, the
+intercom may be closed completely, and re-opened when you feel you wish to
+do so. 
+
+A specific name harassing users from many sites can be barred from passing
+through your intercom from any site.
+
+
+Thus, in a nutshell, anyone wanting to use it to harass people is going to
+have a hard time of it. Banish their name on the talker, on the intercom,
+ignore them, their name or their site, close their site, or close the 
+whole intercom. All ways of stopping a hassling user.

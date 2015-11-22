@@ -1,0 +1,109 @@
+
+ Playground Plus licence v1.0 (14.06.1998)
+ Written by Michael Simms (Grim) and Richard Lawrence (Silver)
+ -------------------------------------------------------------
+
+This is the licence for Plaground Plus (hence known as "the program"
+which refers to all codes and the 'look and feel' of codes contained
+herein that are not contained within ewtoo, summink or PG96)  which is
+based loosely on the licences for SensiSummink, PG96 and Nuts. If you do
+not agree to the licence then you should not use this base code.
+
+                                  ---+---
+
+1. You may copy and distribute exact copies of the program's source code
+   as you receive it, in any medium, provided you provide each copy with a
+   copy of this licence and a notice of the absence of any warranty.
+
+   You may change a free for the physical act of transferring a copy
+   provided this fee does not exceed your costs of transferring the copy
+   and may not include any labour costs. You may not charge a fee for the
+   program itself.
+
+2. You may modify your copy or copies of the program or any portion of it,
+   and copy and distribute such modifications or work under section 1
+   above, provided that you do not remove the original crediting and,
+   where a seperate licence exists, you comply with those conditions.
+
+   You may not add or cause to be added any functionality to the program
+   that would allow others to see, without the users knowledge, the
+   parameters or arguments passed to a command by a user, such as would
+   infringe on the users privacy, nor may you replace a command that
+   normally ensures privacy to a user, by another command that does not
+   allow an equivalent level of privacy, and call that command by the
+   same name, or by a name that implies the same level of privacy.
+
+3. Use of the program is restricted that you may not charge for the
+   use of the EW-Too Talker System on a per connection or per user
+   or by connected time basis, or any other charge scheme that places a
+   liability on any end user.
+
+4. You must not remove the "version" for the program or the ability
+   for a user of the talker to call this function whilst logged onto the
+   talker. There is nothing more annoying for source maintainers than to
+   log into a talker and not know which version the people have. It seems
+   that some people have removed the command so their talker seems less
+   'out of the box', but seeing as almost every talker is ew2 based,
+   thats seems a little pointless so please leave the command in place.
+
+5. You must credit the following people perminantly in your message of the
+   day (MOTD).
+
+   Thanks to Burble for the original code. Also Athanasius and Grim for
+   further work since. This version (PG+) was coded & supplied by Silver
+   which was adapted from PG96 by traP, astyanax, Nogard and vallie. 
+
+   This message has been hard coded into the base code and therefore
+   should not be modified.
+
+6. In help 'credits' or something similar you must also credit the
+   following people:
+   
+   For EW-Too - Chris Hughes and Jonathan Sloman, who made many
+   advancements,
+
+   For Summink - Grim and Nicolai, who made signifigant changes, 
+
+   For Playground 96 - sparky, alaric, Brann, snapper, subtle, DanS,
+   Mantis, Oolon, Currawong, nightshyfte, indieFan, shimone, aimee, and
+   rafferty.
+
+   For Playground+ (PG+) - Silver, phypor, blimey, astyanax, Segtor and
+                           Spire.
+
+   The reportto command was provided by Mantis from the Resort Online.
+
+7. If you choose to use the "report_to" code, you recognize that it
+   was written by Mantis from the Resort, and as part of the agreement,
+   you may not remove the existing command aliases of "rpt" or "reportto"
+   you may add to it, if you wish, but those command names must exist,
+   otherwise the agreement allowing you to use those commands is voided.
+
+
+ NO WARRANTY
+ -----------
+
+8. BECAUSE THE PROGRAM IS LICENCED FREE OF CHARGE, THERE IS NO WARRANTY
+   FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT
+   WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER
+   PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND,
+   EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+   WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+   THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS
+   WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF
+   ALL NECESSARY SERVICING, REPAIR OR CORRECTION.
+
+9. IN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN
+   WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MAY MODIFY
+   AND/OR REDISTRIBUTE THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU
+   FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR
+   CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE
+   PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING
+   RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A
+   FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF
+   SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH
+   DAMAGES.
+
+                                  ---+--- 
+ 
+                       End of Playground Plus Licence

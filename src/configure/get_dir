@@ -1,0 +1,54 @@
+# get_dir 1.0 (17.06.98)
+# Written by Richard Lawrence (aka Silver)
+#
+# This script works out the ROOT macro for the talker and sets it up in
+# the header file 'include/root.h'. It is a hell of a lot more
+# compilicated than you think because the script should not modify the
+# file if the paths are the same.
+# (if it did, you'd be recompiling every single file every 'make')
+#
+
+#
+# Get the path to the talker. We assume that this is being run from the
+# Makefile in the src directory.
+#
+
+cd ..
+root_dir=`pwd`
+cd src
+
+#
+# Create the file and display some details in the makefile to assure
+# the user
+#
+
+echo "Talker path detected as : $root_dir/"
+echo " "
+echo "#define ROOT \"$root_dir/\"" > include/root.temp
+
+#
+# Does the 'include/root.h' file exist? If not then we need to just move
+# that file.
+#
+
+if [ ! -e "include/root.h" ]
+then
+  mv include/root.temp include/root.h
+  exit
+fi
+
+#
+# Is there any difference between this new one and the current one?
+#
+
+if [ -n "`diff include/root.temp include/root.h`" ]
+then
+  mv include/root.temp include/root.h
+  exit
+fi
+
+#
+# There is no difference so we can just leave 'include/root.h' untouched
+#
+
+rm -f include/root.temp

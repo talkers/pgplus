@@ -1,0 +1,30 @@
+
+0.11
+
+- Add support for some functions that allocate memory which
+  libmem_test does not now know about.
+
+- Think about adding support of some sort for calls made to malloc and
+  company made by other library functions, such as those used in xlib
+  programming, which I'm just starting to learn in November 1997. I know
+  that commercial, and I think some freeware memory debugging
+  libraries, programs do this, so it is possible, but it might take
+  a total re-think of the libmem_test philosophy. Or maybe I should just
+  look into using other debugging libs for that sort of work. But
+  libmem_test is my baby... :-)
+
+
+0.10
+
+- When I send MEM_TEST_FILE into stdin on mem_analyze, I get an uninit
+  error
+
+- when I send a GDSII stream file in, I get lots of errors. It should
+  probably just print one error and quite. Naturally, this is a
+  ludicrous thing to do, but it should be handled gracefully.
+
+- mem_analyze should at least try to verify that the input lines are
+  good. A good start would be to count the fields
+
+- There's a minor bug n the Makefile, it tries to rm a no-existent
+  file

@@ -1,0 +1,54 @@
+
+Here is the current procedure for making a newbie a resident -
+
+Step 1) ask the person if they have a valid email and if the agree to 
+	abide by help rules.   You can do this for short:
+
+define newbie1 tell %0 okay, do you have a valid email address and agree 
+to follow help rules (type help rules to see it)?
+
+this way you can just type newbie1 (newbie's name) and they will be able
+to answer in a smilple yes or no, and can bring up problems they may have.
+(if they object to the over 18 rule, direct them to help adult)
+
+Step 2)	then you should check to see if there is already a resident with a 
+	very similar name by typing xref and part of the name like:
+
+(if they newbie's name is vallieage might show)
+xref val 
+
+current names that match val: vallie, torvalds.
+
+Currently we are very lenient as far as similart names, and as we grow in
+size, similar names are gong to be an unfortunate necessity, so unless the
+name similarity is like bigfatdorkball and bigfatdorkballl then try not to
+worry to much (it has to do with typing out as much of a name as to
+differentiate between players in tells).
+
+Step 3)	Ask for objections.   On the channel you will commonly see
+	<traP> obj (newbie-name)? and <vallie> none <indieFan> none.
+	This is how su's ask other su's for objections to a name.   If
+	the name is too similar to another in your opnion or is offensive
+	then now is the time to object.  The SU has usually already asked
+	the newbie if they have a valid email etc. etc. so just assume that
+	they have already done that part and worry about the name (or
+	site).
+
+Step 4) ressy the person :)  its as easy as typing res (newbie name)
+	They will get nminor spam, and will fill out their email and 
+	password automatically.  If they wait till now to tell you 
+	that they have no emamil then just pass them on to an admin if one
+	is on.   Otherwise just have them mail to talker@s195_13 and save
+	yourself the headache of dealing with a git.
+	When in doubt, ask an admin for help, that's what we're here for.
+
+Step 5) confirm the player aminute or two later.   Thge newbie can not
+	do anything like mote or tell until they have set their email and
+	password.   If you see them begin to move or talk then confirm and
+	make sure they have gotten everything set. - thats all *whew*
+
+Miscellaneous things include having to validate the email and so on, but
+these are extreme cases and are out of the ordinary.
+
+astyanax 2/23/96
+

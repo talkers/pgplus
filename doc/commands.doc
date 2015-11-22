@@ -1,0 +1,213 @@
+   The commands list can be found under 'commands su' and you will be able to
+access this help file even if you do not have the commands as a psuedo super 
+user (channel only).   (This file is huge, so dont be out in the main room
+and jabbying to you friends while reading it.)
+
+	ask     	A nice way to warn someone if you have already asked 
+			someone in a tell to behave.   It shows up on their
+			screen all nice and hitelled and looks official.
+
+	assist  	Shows a clueless newbie thta you are an SU and if they 
+			need help they can come to you.   (type assist me to
+			what they would see)
+
+	banish  	basically used if someone continually comes on with
+			an offensive (unfortunately this occurs repeatedly
+			once it starts happening a first time).
+
+	blank		used to blank something like blank title vallie	would
+			blank vallie's title.	Used if someone has something
+			offensive in their title, prefix, plan, etc and they
+			will not change it when you ask them.
+
+	blankpass	used if a newbie comes on and says that they are
+			already a resident and they tell you they forgot their
+			password.   Usually its better to pass this onto an
+			Admin if they are on because they can check to see
+			if the email is valid etc etc.
+
+        calc_spods      forces the talker to recalculate the spodlist.
+                        This is only really necessary if someone wants it
+                        updated. If this is used too often suggest to the
+                        coder that he/she increased the automatic update
+                        time.
+
+	ckban		used to search the currently bannes sites file to see
+			if a particular site is banned. uses IP addresses
+			ckban 137 would look for all currently banned addresses
+			that have 137 anywhere in them.
+			
+	comfy		go to the ever coveted comfy room.   Used for general
+			SU and/or Admin discussions.
+
+	confirm		tells you whether or not a newly ressied plater has
+			filled out their email and password yet.   A good
+			thing to type a minute or so after ressying someone.
+
+	decap		used when people feel the need to continually type
+			long strings in caps.   If someone gets their caps
+			key turned on once this is acceptable, but repeated
+			usage calls for this lil device.
+		
+	dibbs		used when you want to call 'dibbs' on a player thats a
+			newbie or is causing trouble without the annoying 
+			message to the player.  Only su's see you call 'dibbs'.
+
+	drag		drags someone off the program for being a repeated git.
+
+	dumb		makes a harassing person sound like a complete baby
+			(literally) and their communication is tempered until
+			undumb them :)
+
+	extend		makes someone's list longer by five units to a maximum
+			of 40.   useful so you dont have to go ask an admin 
+			to extend someone's list and create lots of red tape.
+			For more than 40, an admin must extend the list.
+
+	forcehelp	used to make a player see a certain help file
+			forcehelp <player name> <help file>.    Good to show
+			a player help 'rules' when theyre being idiots.
+
+	git		make a resident listed as a 'git' - someone that
+			should be watched for.   if you have inform sus or
+			inform newbies then you will see when gits log in.
+
+	jail		throw an idiot in jail for being stupid.   Basic thing.
+			generally following them into the jail and telling 
+			them why they're there follows.
+
+       list_emails      Dumps all the vaild emails out to the account for
+                        usage on the mailing list program.
+
+       list_gits (lsg)	Shows you the current gits online, what site they are
+			from, and who gitted them and for what reason.
+
+	list_new (lsn)  Shows you the current newbies online, and what site
+			they are from.   If someone has assisted them their
+			name will show up as well.
+
+	list_res (lsr)  Tells you all the residents whose names begin with the
+			letter you specify (not as good as xref - see below)
+
+	lsi		Shows you the sites every player is on from like a 
+			who listing.
+
+	mode            shows you the current mode of a player - like password
+			or converse mode, it helps if people cant do anything
+			but talk and you need to know what mode they are in.
+
+	newbies		Can be used to see whether the program is currently
+			open or closed to newbies, and you can turn newbies
+			on or off by specifying newbies on or newbies off
+			if there is enough catastraophe going on to warrant
+			closing the program to newbies.
+
+	nuke		erases a RESIDENTS player file completely.   To get
+			rid of a newbie, please use drag or splat.   Used
+			generally when a player has foregone all other forms
+			of punishment and has to be nuked.
+
+	off_duty	Go off duty.    You lose your su commands while off
+			duty, and you no longer are on the su channel.  It
+			is generally when you go afk or are having some diffi-
+			culties that you go off duty to regain some sanity.
+
+	on_duty		Go on duty (go on the su channel and get back your 
+			su commands).   You also go back on the list_su list.
+
+	pstats		Shows current player stats, how many newbies on etc.
+
+	redtape		Shows a player -=*> <your name> is busy please ask
+			<other SU you specify>.  Good when you have to go 
+			somewhere and someone asks you a question.
+
+	rename		change a newbie only's name from name 1 to name2
+			Rename turd Lilboy will change turd's name to Lilboy
+
+	resident (res)  make a newbie a resident (see shelp residenting)
+			Always try and confirm a new resident to see if they
+			did everything right.
+
+	reset_session	Resets the session timer without a parameter or with
+			one sets is to something else.
+
+	reset_sneeze	Resets the sneeze time on a site so people may log
+			back in from a site that was temporarily banned.
+
+	rm_shout	removes someone's ability to shout for being a dork.
+
+	rm_sing		same, except removes sings for excessive assanine 
+			behavior.
+
+	su se ss st	talk, emote, sing and think on the SU channel 
+
+	shelp		See the superuser help files.
+
+	shutdown	Check to see if the program is shutting down for
+			whetever reason and in how many minutes and seconds.
+
+	site		Check to see what site someone is coming in from.
+
+	sneeze		kicks a player off the program, and temporarily 
+			bans all players from logging in from that site.
+
+	snews		enter supernews mode.   Just like real news mode
+			except only SUs see it.
+
+	splat		kicks off a plasyer, and stops newbies from logging
+			in from that site for a time (10 minute dafeult)
+
+	su_hi		makes the su channel hilighted.   Kewl.
+
+	sumotd		shows you the superuser message of the day.
+
+	toggle_chan	only used if you like the horrid forest style
+			of s' s; and s~ for su se and st which we
+			Playgrounders generally look down on :)
+
+	trace		Shows you the last site a resident or SU connected
+			from.
+
+	unbanish	unbanishes a specific name.
+
+	unconverse	takes idiots out of converse mode because they
+			cant type /end for themselves.
+
+	undumb		makes a person not 'dumb' anymore
+
+	ungit		removes a person's git status
+
+
+	validate	bascially makes a player a resident with a validated
+			email - see below.
+
+	validate_email	makes a player's email as null yet validated.    Used
+			only for special exceptions when people don't know
+			their email address or are applying for an email
+			account in the interim.
+
+	warn		is hilighted and beeps and bascially shows a player
+			That you're not screwing around with them. It is 
+			logged to the program.
+
+	xref		The coolest command we have ;) It lets you search the
+			entire resident list and shows you multiple
+			matches.   Great for checking to see if a newbie's
+			name is too close to someone that's alreayd resident 
+			if the newbie asks for residency.
+
+	yoyo		spams the offender's screen and shows them a nasty 
+			message to behave or else.  basically a humiliate
+			tactic.
+
+	y		see if a player has been warned, how many times,
+			who residented them, etcetera etcetera.
+
+        zdel            deletes a currently being used zchannel if the
+                        subject is against the rules of the talker. A
+                        reason is needed and this is logged and told to
+                        the people on the channel.
+
+    These are just general comments and watching SU's use them in different
+situations is the best way to learn.
+

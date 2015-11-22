@@ -1,0 +1,53 @@
+
+ IntelliBots
+ -----------
+
+Playground+ includes Mikael Segercrantz's (aka Segtor) IntelliBots code.
+Please note that this code is still in an early test stage, and is in no way
+supported, not by Segtor, nor by anyone involved in the PG+ project.
+
+--- Begin included README.IntelliBots ---
+
+Ok.  First, if this code produces any error in your talker, don't come
+screaming at me.  It's released completely "as is", and I disclaim all
+liabilities.  I know this isn't near perfect, and talking.c only has the
+calls to this added, the talking commands hasn't been changed in any other
+way to support this.  That's still to come, some day.
+
+Then, some small instructions on how to change the code to fit your talker. 
+First, I wrote IntelliBots to work with Slaine's robots code.  This means,
+that you can define the intelligent robots as normal robots in Slaine's
+code, and just let my code work on the trigger phrases.
+
+1) Planning it out
+   First, before doing any changes, before even compiling IntelliBots into
+   the code, design them out.  How many do you need?  What phrases should
+   they be triggered from?  How they should react to these phrases.  Write
+   everything down.
+
+2) Defining the robot(s)
+   Locate the place where the robot names are listed, as well as the types
+   of input they want.  Change this to suite what you planned.
+
+3) Defining the trigger phrase(s)
+   Below the definiton of the robots themselves you can find the place where
+   the trigger phrases can be set.  Write the phrases you want the robots to
+   react to here, with the reaction number.
+
+4) IR_PRIVATE actions
+   Locate the part of the code where the actions for private communications
+   (about midway in intelligent_robot), and change the predefined actions to
+   what will be required on your talker.
+
+5) IR_ROOM and IR_SHOUT actions
+   At the bottom of intelligent_robot you can find the definition of the
+   actions for room and global commands.  Change these to fit your plans,
+   too.
+
+6) Enable IntelliBots
+   Type 'make config', select (Y)es on the 'Include robots code', and then
+   (Y)es on the 'Include Segtors IntelliBots (beta)'.  Then 'make install',
+   and the talker will compile with the intelligent robot code in it.  Have
+   fun.
+
+--- End included README.IntelliBots ---

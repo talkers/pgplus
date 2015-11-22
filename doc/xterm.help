@@ -1,0 +1,11 @@
+If you are using Xwindows put this in your .Xdefaults file
+so that you can see colors too =)
+
+XTerm*color0:           Black
+XTerm*color1:           Red
+XTerm*color2:           Green
+XTerm*color3:           Yellow
+XTerm*color4:           Blue
+XTerm*color5:           Magenta
+XTerm*color6:           Cyan
+XTerm*color7:           White

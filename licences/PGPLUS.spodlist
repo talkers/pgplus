@@ -1,0 +1,38 @@
+
+  Dynamic spodlist code version 1.0
+  Copyright (c) Richard Lawrence (aka Silver) 1998
+  Included as part of the Playground+ release.
+
+What is it?
+-----------
+
+  A drop in replacement spodlist code for Playground and SensiSummink
+talkers (although SensiSummink users may require some modifications to be 
+made). It features silent updating with the ability to request any
+residents postion or a specific postion number.
+
+Licence agreement
+-----------------
+
+  You may install. modify and use this code on your own talker provided
+that due credit is given in your talkers "help credits" or equivilant
+files ("Dynamic spodlist v1.0 by Silver" is sufficient). If you wish to
+add an entry in your version output then that is fine but not necessary.
+
+  This program may NOT be distributed as part of a talker base code except
+in the Playground Plus release (and any subsequent updates to the
+Playground Plus code by the same maintainer).
+
+  This code may not be redistributed in whole or part IN ANY FORM without
+the prior permission of the author who can be contacted at
+<silver@whiting.co.uk>
+
+Maintainer and Disclaimer
+-------------------------
+
+  This code is maintained by Richard Lawrence. All bug reports should be
+mailed to <silver@whiting.co.uk>.
+
+  There is no warranty nor statement of fitness or usability made about
+this code. The author claims no responsibility for damaged (either
+directly or indirectly) caused by the usage and installation of this code.

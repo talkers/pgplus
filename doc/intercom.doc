@@ -1,0 +1,162 @@
+Superusers and admins have many extra controlling commands for the
+intercom. These are as follows. NOTE: all of these are used from
+within intercom mode.
+
+add_server         - This adds a new unknown server to the database. An
+                    example of this is:
+
+                    intercom add_server Walt:walt:genesis.skl.com:6969
+
+
+
+announce_move      - This allows the admin to change the talkers registered
+                    address on all connected talkers.
+                    An example of this is:
+
+                    intercom announce_move genesis.skl.com:6969
+
+banish             - This permanently bars a remote talker from connecting to
+                    this intercom. This is the equivalent of banishing a
+                    character. This may be undone with the unbar command.
+                    An example of this is:
+
+                    intercom banish resort
+
+
+
+banish_name        - This stops a user from using the intercom. It stops
+                    the user at this end from making any outgoing use, and
+                    it also stops anyone from another talker with the name
+                    from sending any messages into this talker. This is a
+                    saved banish, and so will survive reboots and crashes.
+                    An example of this is:
+
+                    intercom banish redneck
+
+
+
+bar_name           -  This stops a user from using the intercom. It stops
+                    the user at this end from making any outgoing use, and
+                    it also stops anyone from another talker with the name
+                    from sending any messages into this talker. This is not a
+                    saved banish, and so will NOT survive reboots and crashes.
+                    An example of this is:
+
+                    intercom bar chris
+
+
+
+bar                - This temporarily bars a talker from connecting to this
+                    intercom. This will stop all connection from that talker
+                    to this. An example of this is:
+
+                    intercom bar surfers
+
+
+
+change_alias       - Change the alias, name, address and portnumber of a
+change_address      talkers entry in the database. This is useful for
+change_name         maintenance purposes, for example a talker on the list
+change_port         moves, or the alias is too close and too confusing to
+                    another talkers alias. An example of this is:
+
+                    intercom change_alias crazylands:crazy
+
+
+
+close              - This command completely closes down the intercom to all
+                    usage, no external links are retained. An example of this
+                    is:
+
+                    intercom close
+
+
+
+delete_server      - This completely deletes a server from the database. Note
+                    however that if they have us on their database, they
+                    will attempt to re-establish connection to us next time
+                    their intercom boots, and they will be added to our
+                    database as a banished talker. Thus it is only very useful
+                    when a talker has been discontinued. An example is:
+
+                    intercom delete_server elsewhere
+                  
+
+
+lsu                - This is NOT an intercom subcommand. Superusers only
+                    have the ability to view the SU list on remote talkers.
+                    An example of this is:
+    
+                    lsu @walt
+
+
+
+open               - This opens a closed intercom. This is the opposite of
+                    intercom close. An example of this is:
+
+                    intercom open
+
+
+
+ping               - This attempts to establish a link to a remote server
+                    that you believe is up, but is shown as being down on
+                    the intercom list. An example of this is:
+
+                    intercom ping cheeseplants
+
+
+
+reboot             - If the intercom is not very well, this will reboot it.
+                    It will have no other effect on the main talker.
+                    An example of this is:
+
+                    intercom reboot
+
+
+
+stats              - This views network statistics about any or all of the
+                    talkers connected to the intercom. An example of this is:
+
+                    intercom stats
+                    intercom stats walt
+
+
+
+unbanish_name      - This removes a name from the intercoms list of banished
+                    users, allowing two way conversation by that name once
+                    again. This negates intercom banish_name. An example of 
+                    this is:
+
+                    intercom unbanish athanasius
+
+
+
+unbar_name         - Allows a barred name to use the intercom again. This 
+                    negates the effect of intercom bar_name. An example of
+                    this is:
+
+                    intercom unbar_name terminator
+
+
+
+unbar              - This command removes a bar or banish from a talker, and
+                    attempts to estabish a link to it. An example of this is:
+
+                    intercom unbar foothills
+
+
+
+update_servers     - This requests a list of every talker that every talker
+                    we have a link with, has a link with. In other words, it
+                    discovers all new talkers in the intercom community. It
+                    should only really be done once a week, or once a month,
+                    as it is very high bandwidth. An example of this is:
+
+                    intercom update servers
+
+
+NOTE: Many of the command syntaxes are : separated.This is to allow spaces
+in the names of talkers, but do NOT put spaces in talker aliases, or
+only who will work with it, and tell and the rest will NOT.
+
+

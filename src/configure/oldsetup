@@ -1,0 +1,84 @@
+# Playground Plus config setup when the system isn't recongnised
+#
+echo "# Unable to work out your OS!? Please make a selection ..."
+echo "#"
+echo "#   1.  Slackware, Debian or Redhat Linux (glibc1)"
+echo "#   2.  Redhat Linux or Debian (glibc2) -- most commonly Redhat v5"
+echo "#   3.  Hewlett Packard UNIX (HP-UX)"
+echo "#   4.  Solaris"
+echo "#   5.  SunOS"
+echo "#   6.  Silicon Graphics Ultrix"
+echo "#   7.  FreeBSD 2.2.x"
+echo "#   8.  OpenBSD 2.x"
+echo "#"
+echo "# Selecting anything else entered will terminate this script)"
+echo 
+read num
+
+echo
+
+case "$num" in
+"1")
+	file="Linux.glibc1"
+	;;
+"2")
+	file="Linux.glibc2"
+	;;
+"3")
+	file="Linux.HPUX"
+	;;
+"4")
+	file="Solaris"
+	;;
+"5")
+	file="SunOS"
+	;;
+"6")
+	file="Ultrix"
+	;;
+"7")
+	file="BSD"
+	;;
+"7")
+	file="OpenBSD"
+	;;
+
+* )
+	echo "# Terminated without modifing Makefiles."
+	echo "#"
+	echo
+	exit
+	;;
+esac
+
+if eval [ ! -f configure/makefiles/Makefile.$file ]; then
+        echo "# Unable to find Makefile!"
+        echo "# (Looking for configure/makefiles/Makefile.$file)"
+        echo "#"
+        echo
+        exit 1
+fi
+
+eval cp configure/makefiles/Makefile.$file ./Makefile
+
+# fix icky timestamp problems
+touch *
+touch include/*
+
+echo "# Makefile copied sucessfully!"
+
+make depend
+
+if [ ! -f include/autoconfig.h ]; then
+  echo "# You have no configuration file - starting 'make config' ..."
+  echo "#"
+  echo
+  make config
+fi
+
+echo "# You can now either run:"
+echo "#"
+echo "#  'make config' to see up configuration options"
+echo "#  or 'make install' to compile code"
+echo "#"
+exit

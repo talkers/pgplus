@@ -1,0 +1,57 @@
+#
+# QuickSearch version 2.0 (05 Nov 1998)
+# Written by Richard Lawrence (aka Silver)
+#
+# A simple batch file to quickly find some text in Playground Plus
+#
+
+if [ -z "$1" ]
+then
+  echo
+  echo "QuickSearch version 2.0 (05 Nov 1998)"
+  echo "Written by Richard Lawrence (aka Silver)"
+  echo
+  echo "Usage: qs <string>"
+  echo "Searches all PG+ code for (case-insensitive) occurances of <string>"
+  echo
+  exit
+fi
+
+ls > .files
+ls include/ >> .files
+sort .files > .files_temp
+mv .files_temp .files
+
+rm -f .tmp
+echo "Searching all code for '$1' ..."
+
+flagged=""
+
+for id in `cat .files`
+do
+  if [ -e $id ]
+  then
+    fname=$id
+  else
+    fname="include/$id"
+  fi    
+ 
+  result=`more $fname | grep -n -i $1`
+
+  if [ -n "$result" ]
+  then  
+    echo " " >> .tmp
+    echo "**** $fname ****" >>.tmp
+    echo " " >>.tmp
+    echo "$result" >>.tmp
+    flagged="yes"
+  fi
+done
+
+if [ -z "$flagged" ]
+then
+  echo "Sorry, no matches found."
+else
+  less .tmp
+fi
+rm -f .tmp

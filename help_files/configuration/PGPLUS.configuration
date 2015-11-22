@@ -1,0 +1,105 @@
+
+ How to configure Playground+
+ ----------------------------
+
+First read "PGPLUS.licence" and agree to it. Now print this file out,
+you'll need to refer to it later.
+
+Now cd into the "src" directory and type
+
+$ make
+
+This will start the first part of the configuration program. If you
+thought that this config was anything like PG96 then you'll be pleasantly
+suprised.
+
+The first thing that will happen is the configuration script will attempt
+to determine what OS you are running. If it manages this sucessfully
+(which it *should* do 99% of the time) then the correct Makefile will be
+set up ready. If not, then you will be asked to select your OS type.
+
+Then the second part of the configuration program will run. You will be
+asked a series of questions which you will either have to reply Y (yes), N
+(no), give a number or a name. Where there is a option [Y/n/?] the letter
+in CAPITALS is the default should you hit [return]. Where there is text in
+square brackets [] that is the default should you hit [return]. Hitting ?
+gives you some help.
+
+Once you have done that you now need to edit the "admin.h" to set up who
+is hard coded admin (HCAdmin) and who isn't. Look for lines 40-44 and
+you'll see the following:
+
+/* interns */
+const char *HCAdminList[] = { "admin", "coder", "sysop", 0};
+
+Here the people called "admin", "coder" and "sysop" have HCAdmin priv when
+they log in. Change these to the names of your choice making sure that the
+last entry is the number 0.
+
+ Soft Messages
+ -------------
+
+After that you have an additional file to edit. Its the one in the soft/
+directory and called "config.msg". In here you can change the name of the
+talker, the port number and a whole variety of options. These options are
+placed here and not in the config script because they can be changed
+whilst the talker is running!
+
+Having said that changing the talker name or port number whilst using the
+intercom is not recommended at all, but all the options that are listed in
+the config.msg file can be changed later without having to recompile and
+reboot the code.
+
+You'll also find a whole variety of additional files with other messages.
+"config.msg" is the main one and *needs* to be edited asap but the others
+can be done once the talker is up and running.
+
+For more details about them you should read "PGPLUS.softmsgs".
+
+ Time to compile
+ ---------------
+
+Now, the nitty gritty. You're ready to compile. Just type 'make install'
+from the src directory, and cross your fingers.
+
+This program has been tested on a variety of platforms and should require
+no porting at all. If, however, you do need to do some mild porting (and
+its not because you've got a dodgy system, please let me know what you
+did).
+
+Once it has compiled, you need to boot up the talker. This is done by
+cd'ing to the "bin" directory and typing:
+
+$ angel &
+
+The talker will now boot and give you a load of "cant find" messages.
+Thats okay.
+
+If there is an error - such as "can't change to directory" then re-run
+"make config" and change the ROOT directory (because you got it wrong).
+
+If you get "cannot bind to socket" then that means that something is
+ALREADY running on that socket. It could be your talker, another talker, a
+MUD or a system process. So check it out and ask your sysop -
+alternatively choose another port number :o)
+
+You can change the name of the executable for your talker in the Makefile
+just by setting TALKER =    to whatever you want it to be. This name will
+make no difference to the live talker since no-one will see it but you.
+However just make sure that it contains only alphanumrics and "_".
+Also, if you change this, you have to kill the angel and talker
+then reboot, for it to take full effect
+
+The more astute of you may have noticed that at no time were you asked for
+the path to the pgplus code. This is now automatically worked out when you
+run 'make'.
+
+ What now?
+ ---------
+
+The next step is to read "PGPLUS.configuration2" ...
+
+		Richard Lawrence (aka Silver)
+		11 January 1998
+
+

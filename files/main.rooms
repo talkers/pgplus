@@ -1,0 +1,94 @@
+#
+#	These are comments
+#
+#  rooms take the following form
+#
+#  id
+#  name
+#  enter msg
+#  description, ending with a blank # on a newline
+#  exits, ending with 'end'
+#  auto messages, ending with 'end'
+#
+room
+in the Playground.
+runs into the Playground.
+
+
+The playground is awash with children. Running, screaming, shouting,
+playing, fighting, kicking and singing with each other. The sound is
+deafening and yet you seem to be mesmorised by the whole scene.
+
+A huge clock on the building announces to the children that its &m->h:&m->m
+although they seem hellbent on making the most of the precious time there
+is left.
+
+There is a shout of "Oy! &m->n!" from within the crowd. Looks like you're
+wanted to play ...
+
+#
+boot
+potty
+end
+end
+#
+boot
+in the boot room.
+is forced to go away for being bad.
+
+
+The nasty smell and the green slime dripping down the walls indicate that
+maybe this isn't the nicest of places to be. There is a faint smell
+of something rotting and the silence is occasionally punctuated by
+someone screaming.
+
+# 
+room
+end
+You feel that the walls are closing in
+A scream shatters the silence
+end
+#
+potty
+worshipping the ivory throne.
+goes to talk to a man about a horse.
+
+
+This is a "relaxed rules" room. Provided you aren't too offensive you can
+say what you like.
+
+However if you do overstep the mark don't be suprised if someone deals
+with you.
+
+#
+room
+end
+end
+#
+# The SUs quiet room 
+#
+comfy
+is relaxing in the back room.
+fades to a secret place.
+
+The luxurious sofas scattered around the large study beckon you, to settle
+down and relax. Your eyelids almost start drooping, finally at last some
+peace and quiet. The warmth of the fire burning cheerfully away in the
+hearth makes you warm and relaxed. Keeping the room lit, with cheerful
+little whispers of flames which dart about merrily.
+   Bookshelves line much of the walls, and here and there a book is sitting
+on a chair, or table. The accumulated nomenclature and knowledge of years of
+programming lines the wall in a collage, you wish you'd never looked at, but
+is useful now and then. Amongst the books on programming fortunately are
+many novels, collections of poems and short stories. From Cervantes to
+Nietzsche to Archer to Blyton, the odd book now and then catching your gaze,
+ah there's some Dr Seuss! Sit down quietly, take your shoes off, and relax.
+   There is what appears to be a drinks cabinet, and fridge over in the
+corner, and opposite that with scattered speakers about the room, sits
+a battered old stereogram with lots of newer wires and additions smiling
+out. Some quiet classical music emanates quietly around you, too soft to
+make out, but pleasing to the ears.
+#
+end
+end
+#

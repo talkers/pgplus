@@ -1,0 +1,30 @@
+
+0.13
+
+- Discovered that 0.12 (and all earlier versions) would not compile
+  under RedHat 5.0. Fixed it. Thanks to those who reported it.
+
+- Fixed the error in the LSM entry that pointed to 0.11
+
+0.12
+
+- Stopped complaints about 'Value of <HANDLE> construct can be "0"'
+  produced by mem_analyze
+
+0.11
+
+A minor bug fix and robustness release.
+
+- Fixed the bug in the Makefile that caused it to try to delete the
+  non-existent file, libmemtest.a
+
+- Fixed the bug in mem_analyze that caused it to emit an error about
+  the use of an uninitialized variable warning when the data was passed
+  to STDIN.
+
+- Added some checking for the proper field count in input lines to
+  mem_analyze.
+
+- If a field count error in mem_analyze was overridden with -i (or,
+  before the field count was checked), lines with an illegal field count
+  triggered other uninitialized variable errors. Fixed.

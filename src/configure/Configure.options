@@ -1,0 +1,35 @@
+#
+# For a description of the syntax of this configuration file,
+# see the Configure script.
+#
+comment 'Additional code options'
+bool 'Use Spires new process_output (beta)' NEW_PROCESS_OUTPUT
+bool 'Include Intercom server support' INTERCOM
+bool 'Include crash recovery code' ANTICRASH
+if [ "$ANTICRASH" = "y" ]; then
+  int '  Number of recovered crashes until program exits' MAX_CRASH
+fi
+bool 'Include auto-shutdown code' AUTOSHUTDOWN
+bool 'Include robots code' ROBOTS
+if [ "$ROBOTS" = "y" ]; then
+  bool '  Include Segtors IntelliBots (beta)' INTELLIBOTS
+fi
+bool 'Include last people login tracing' LAST
+if [ "$LAST" = "y" ]; then
+  int '  Number of last connections kept' LAST_SHOW
+fi
+bool 'Include command stats code' COMMAND_STATS
+bool 'Use new pager code' NEWPAGER
+bool 'Allow seamless rebooting of talker' SEAMLESS_REBOOT
+bool 'Enable partial command matching code' COM_MATCH
+bool 'Include ident server lookup code' IDENT
+int 'Number of lines of SU history' SUH_NUM
+bool 'Use new residency proposal code' NEW_RES_CODE
+bool 'Enable multis (chains) for group communication' ALLOW_MULTIS
+bool 'Include horrible HCAdmin channel' HC_CHANNEL
+bool 'Use new reconnection code' NEW_RECONNECT
+#
+comment 'Timing options'
+int 'Timeout for news articles' NEWS_TIMEOUT
+int 'Timeout for mail items' MAIL_TIMEOUT
+

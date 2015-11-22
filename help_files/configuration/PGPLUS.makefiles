@@ -1,0 +1,76 @@
+
+ Playground Plus Makefile information
+ ------------------------------------
+
+PG+ uses a different makefile setup to PG96. The major differences are
+that its better written and documented, hides compilation junk and comes
+with an automatic host configurator script.
+
+There are several options in the Makefile which are detailed both in the
+Makefile itself and here:
+
+ DEBUGGING
+ ---------
+
+By defining bugging you will make the talker (and other files) compile
+with debugging symbols. This increases the binaries slightly and is handy
+when you want to debug a core file. If memory/disk space is at a premuim
+then you can turn this off.
+
+ USE_LIBG
+ --------
+
+By defining this you will include the libg.a static C library which can
+greatly aid in debugging your code IF AND ONLY IF "DEBUGGING" has been
+defined. However this *substantially* increases the size of the binaries
+and should not be used in your live talker. If you do then you will get a
+visual warning on boot-up and in the 'version' command.
+
+ VERBOSE_MODE
+ ------------
+
+By defining this the talker will log a larger amount of additional
+information IF AND ONLY IF "DEBUGGING" is enabled. There seems to be no
+reason why you'd want to do this if you weren't debugging hence the way it
+is set up.
+
+ STRIP
+ -----
+
+By defining strip the Makefile will run the UNIX "strip" command on the
+executables after compiliation to remove unecessary symbols. This will
+only happen if "DEBUGGING" is undefined otherwise it would be a waste of
+time! You should only disable this if your box doesn't allow you
+access to the "strip" command.
+
+ Pedantic flag
+ -------------
+
+Playground+ will compile with the -pedantic flag. However it will generate
+a large number of warnings like so on Linux boxes:
+
+  /usr/include/socketbits.h:150: warning: ANSI C forbids zero-size array
+  `__cmsg_data'
+
+You shouldn't get this at all because -ansi isn't in the Makefile but
+-pedantic seems to check somethings which are under -ansi.
+
+Therefore the default Playground+ Makefiles *don't* have the -pedantic
+flag set. If you decide to use it then you will have no problems either in
+compilation or running - just you'll get a few errors.
+
+(Thanks to James/Slaine for pointing that out)
+
+ And finally remember!!
+ ----------------------
+
+It is NOT recommended to run a talker in DEBUGGING mode with USE_LIBG
+defined! This is due to the increased binary size. You will be given a
+visual warning upon boot up and the "version" command within the talker
+will be different to remind you of this.
+
+If you are on a paying server do not be suprised if they wish to charge
+you more for running a talker with the latter options enabled.
+
+	Richard Lawrence (aka Silver)
+	31st May 1998

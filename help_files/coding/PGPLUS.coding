@@ -1,0 +1,67 @@
+How to write a simple command
+-----------------------------
+
+This file shows you how to write a simple command. This command is called
+"whoami" and does exactly what the unix version does. It is not intended
+to be a programming lession.
+
+Okay, first we need to write the program. Pick a file - commands.c is a
+good one and at the bottom add the following:
+
+void who_am_i (player *p, char *str)
+{
+  TELLPLAYER(p,"You are %s\n", p->name);
+}
+
+Now in "clist.h" you need to add the following to the top:
+
+extern command_func who_am_i;
+
+This could be on its own or tagged to the end of the other externs.
+
+Now look down the commands list till you find the line
+
+{"who", who, 0, 0, 1, 0, INFOc},
+
+and add the following:
+
+{"whoami", who_am_i, BASE, 0, 1, 0, INFOc},
+
+The format of this is as follows:
+
+{"a", b, c, d, e, f, g},
+
+a : The command name
+b : The procedure that the code is in
+c : Who can use it - 0 = everyone             BASE = residents only
+                     PSU = Su channel         SU = Trainee
+                     ASU = Superuser          LOWER_ADMIN = Lower admin
+                     ADMIN = Admin            HCADMIN = HCAdmin
+                     SPOD = Spod              WARN = People with warn priv
+                     TRACE = People with trace priv
+    (These are the options in p->residency)
+d : THIS OPTION IS DEFUNCT - set to 0 all the time!
+e : Whether the command needs to have a space after it to me run, ie.
+    if this is set to 1 then you need to (ie. "say hello"). If it is a 0
+    then "sayhello" is acceptable. For default use 1
+f : Help file parameter (use 1)
+g : Section - COMMc = Communication    MISCc = Misc
+              SUPERc = Superuser       ADMINc = Admin
+              SYSc = System            LISTc = List commands
+              INVISc = Command will not be listed (good for aliases)
+              SPAMc = Command if excessivily used will trigger spam code
+                    
+And now compile - voila one command!
+
+Finally edit the "help" file in "doc" and add at the bottom:
+
+:whoami,me
+
+WHOAMI  - Find out who you are
+
+This will make "help whoami" or "help me" should the above text.
+
+Have fun.
+
+		Richard Lawrence
+		11th January 1998

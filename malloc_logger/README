@@ -1,0 +1,43 @@
+
+ Jim Buchanan
+
+ jbuchana@iquest.net          (preferred)
+ c22jrb@dawg.delcoelect.com   (intermediate)
+ jrbuchan@mail.delcoelect.com (disliked, but it's gonna stay around)
+
+mem_test is a library which is used to help locate memory leaks in a
+program under development.
+
+mem_test is certainly not the only such library in existence, but it
+is the one that I wrote for my own use, and I felt that others may
+find it to be of value.
+
+mem_test was originally written under SunOS 4.1.2 and has been used
+under HPUX 9.05 and Red Hat Linux 4.0 and 5.0, as well as
+Slackware 3.4
+
+An example program with some deliberate and easy to find memory leaks
+has been provided. It is called example_program.c The INSTALL file
+shows how to compile the example program and link it with libmem_test.
+
+Although libmem_test normally requires root privileges for
+installation, you can install it in directories under your home
+directory without being root. When linking to libmem_test installed in
+a non-standard location, use the -L switch to tell the linker where to
+look for the library. You'll also want to use quote marks around the
+full path name of the include file instead of angle brackets, or use
+the -I switch to tell the preprocessor where to find it.
+
+When a program linked with libmem_test executes, it creates a log file
+that records most memory allocations/deallocations. This file may be
+analyzed with the supplied program, mem_analyze, a program of your
+own, or manually. The latter is not recommended, as the logs files can
+become quite large for real-life programs.
+
+mem_test works by using defines in a header called mem_test_user.h to
+call special functions that replace the most common memory
+allocation/deallocation with special functions. These functions call
+the normal functions and log what has been done.
+
+For more information, and some limitations, see the man pages,
+mem_analyze(1) and libmem_test(3)

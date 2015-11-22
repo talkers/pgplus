@@ -1,0 +1,23 @@
+
+Begin3
+Title: mem_test
+Version: 0.10
+Entered-date: 12MAR97
+Description: mem_test is a library which is used to help locate memory leaks in a
+             program under development.
+             
+             mem_test is certainly not the only such library in existence, but it
+             is the one that I wrote for my own use, and I felt that others may
+             find it to be of value.
+Keywords: memory leaks malloc free
+Author: jbuchana@iquest.net (Jim Buchanan)
+Maintained-by: jbuchana@iquest.net (Jim Buchanan)
+Primary-site: http://www.iquest.net/~jbuchana/files/mem_test-0.10.tar.gz
+              61440 mem_test-0.10.tar.gz
+Alternate-site:
+Original-site:
+Platforms:
+Copying-policy: freeware
+End
+
+

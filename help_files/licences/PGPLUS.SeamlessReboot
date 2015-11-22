@@ -1,0 +1,107 @@
+
+ SeamlessReboot - to reboot your talker w/o losing connections. (v.5b)
+ ---------------------------------------------------------------------
+
+Simply that.   Seems sorta questionable as to why you'd go to the trouble
+of putting in code just for it, but when you think about being able to
+add any new code, or just a maintance reboot, without having to shutdown,
+without the players even noticing they are running on a new process,
+it's quiet a nice bit.
+
+The entrance points in the talker are easy enough... adding a member
+to the player struct, putting a lil bit at boot to check for a pending
+reboot, and changing the player socket shutdowns to be clean.
+The biggest trick for me was getting the angel to do right.  As it's
+written, it's made to watch a single process which it spawns.  But
+with this code, the talker itself spawns a child... needless to say
+there's quiet a bit of creativity in the new angel-talker relationship.
+Those installations will be the easiest, as everything there is to do
+is shown step by step in INSTALLTING and ANGEL_INSTALL.  The biggest
+installing procs for you will be configing the reboot.c code itself
+to just how you talker needs.   I've tried to include #define's and
+make each point where you may possibly need to modify as clear as can be.
+
+
+--- notes ---
+this version has an entry to add to handle_error and a few file mods
+  to allow you to have it automatically reboot instead of shutdown
+  on wibble.
+
+this was coded on linux....with a proc system...
+  if you dont have a proc system, youll have to play with the
+  way the angel checks for the talker being alive or not.
+  it doesnt depend on it, so there arent any major rewrites...
+  just will have to hack on it.
+
+the fd handling (mainly close_fds()) is to cover any left over fds
+  that arent closed in the code.  basicallly it runs up to
+  (1<<12), trying to close everything in its path except for
+  the fds that are needed for the reboot (stdout, stdin, main_descriptor,
+  alive_descriptor, and the players' fds).  initally, i thought
+  the code for it would take an overly long time to execute,
+  but after putting it under a timer, i got from 10000 ms -
+  20000 ms... 1 or 2 hundreths of a second, nothing at all
+  to cause any slowdowns.   without this... after many reboots..
+  the talker will have all kinda open dangling fd's which will
+  eventually grind it to a abrupt halt.
+
+to do the actual reboot, the talker saves system information,
+  runs through the players, saves them all into a seperate file
+  exactly as they are in the program, then forks itself, and
+  reloads all the info that was saved, rebuilding as it goes along.
+
+for about 5 - 10 seconds there will be an increase in disk usage.
+  each player is stored in its entirity (via fsave) so the amount
+  of space needed will be
+       online_players * sizeof (player struct)
+  for example, if you have 30 players logged in, and your player
+  struct is 20k in size, youll use ~600k of disk space.
+  if you have a really tight quota you could run out of room.
+  note however, these files only live a short period, as they are
+  removed as soon as the restoration is complete
+
+the flatlist order, current locations, etc are maintained,
+  however the order that players are within a room isnt.
+  its doubtful that this will ever be noticed.
+
+its beta, as of this release, ive only written it in the past few days
+  so if there are any bugs (its doubtful there are any major ones)
+  please let me know of them so the final release will be stronger.
+
+
+--- license ---
+If you chose to use this code, you may do so without restriction,
+as long as due credit be given in your talker's help credits
+or equvelant file, "SeamlessReboot package written by phypor" is sufficent.
+If you wish to put an entry in your version output,
+that's good as well, tho its not required.
+
+If you chose to redistribute this code, you may do so as long as
+all the files that are in the offical distribution are included.
+Exceptions, the INSTALLING and ANGEL_INSTALL files, need not be included
+if you redistribute the code preinstalled in a talker.   Any modifications
+must be plainly documented.  Credit must be given as stated above.
+
+
+--- author ---
+phypor is the author of this code and release package.
+
+
+--- maintainer ---
+Any bug reports should be mailed to phypor@benland.muc.edu
+
+
+--- disclaimer ---
+There is no warrenty nor statement of fitness or usablity made
+about this code...  If you chose to install it you are responsible
+fully for its implementation, and effects, be they good or ill.
+
+
+--- history ---
+v.5b      - added wibble entry points so that it will
+            reboot instead of shutdown in handle_error
+
+v.4b      - fixed cleaning up of fds with close_fds()
+
+v.3b      - first offical release
+

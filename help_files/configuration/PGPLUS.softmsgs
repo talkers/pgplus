@@ -1,0 +1,91 @@
+ Soft Messages
+ -------------
+
+    Many of what were compile time strings and ints have been replaced
+   with a dynamic system that allows you to change those strings,
+   without compiling, without evening rebooting.
+
+    The files for these messages are found in soft/ and they all conform
+   to a like format, which goes as follows...
+
+   an identifer is the first word on a line, with a colon after it.
+
+blah:
+
+   the data for the identifer is put after the colon, you may use
+   white space to delimit (in the files ive done so with a tab or
+   two to make it all line up prettily)
+
+blah:   This is the blah data
+
+   The program does Not add on a newline when these are interpreted.
+
+   To have multiple lines of data, begin the line directly
+   afterwards with a tab, such as
+
+blah:   This is blah data
+        And this is as well
+
+   (note, thats a tab directly before 'And')
+
+   The newlines will be preserved in how the message is dealt
+   with within the talker, as usual, however, there is no trailing
+   newline added... if you want to get one without having to do
+   it in the code, add a tab on a blankline after it, such as
+
+blah:   This is blah data
+        And this is as well
+        
+
+   (note, there is a tab at the beginning of that line)
+
+   You can also put newlines at the beginning not putting anything
+   on the inital data line, such as
+
+blah:   
+        This is blah data
+        And this is as well
+
+
+   Only lines whos first word is in the leftmost coloumn are parsed.
+   For ease of use and familiarity, # are used at beginnings of lines
+   to denote comments.   However, it is not suggested you try to use
+   them on the same line as data.
+
+
+   Thats all there is to the way the files are formated.
+
+
+   On to the how the code handles it...
+   In softmsg.c there are some highlevel functions for accessing
+   the diffrent files in soft/  for a quick way to add new stuff,
+   you can just put the identifer and data in one of the existant
+   files, and call the matching function to access it...
+   (check out plists.c for lotsa examples as to how this is done)
+
+   Note, using that this, with auto reload, you can for instance
+   change the login prompt and have it immedatly show on the
+   running talker... in fact, this is the suggested way for you
+   to get used to modifying things, cause in case of the login prompt,
+   you cant hurt anything in the program, and you can see the results
+   immedatly.
+   
+   
+   And finally a few words on safety...
+
+   In coding, if you add more dynatext tokens, they should Not Be
+   Set Directly To Soft Messages... the best way to get something
+   in dynatext is to use a global var, set it in set_config_flags()
+   then access have the dynatext access the global var...
+   This is so that you may properly embed dynatext in soft messages
+
+   These files are in alot of cases treated as close to code as
+   something can be without actually being it... so be very careful
+   as to whut you change... (there are notes in the files as to
+   where you must include various stuffs and other things)
+   Make sure you have backups of these files in case something
+   gets buggered or you manage to delete them... as they are
+   highly required for the operation of your talker...
+   (much the same way your main.rooms file is)
+
+                                    ~phypor (6.15.98)

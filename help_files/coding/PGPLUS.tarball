@@ -1,0 +1,49 @@
+
+ Playground Plus 'tarball' script
+ --------------------------------
+
+The 'tarball' script located in 'pgplus/bin' is a handy script written by
+phypor which creates a distribution ready tarball of your code.
+
+This is ideal for people who develop their code on a different server to
+the talker and want to be able to ftp across as small as possible archive
+to the live site.
+
+ How to use
+ ----------
+
+1. First edit the 'tarball' file and change the ROOT_DIR to whatever is
+   correct for your system (that is the system you are doing the coding
+   on). For most people it will just mean replacing "username" with your
+   username. It MUST end with /pgplus (note NO trailing / !!)
+
+2. Do your code.
+
+3. When ready, run the tarball script. It will use the /tmp directory to
+   create the archive and then copy the result back into the root of your
+   account with a the file name "Playground_Plus_" followed by the date
+   and time of creation.
+
+4. FTP to the root of your live site account
+
+5. Decompress with:
+
+     tar zxvf <filename>
+
+   If you do not have the latest version of zip you will need to use:
+
+     gunzip <filename>
+     tar xvf <filename>
+
+6. CD into pgplus/src, do "make os" (if your live server has a different
+   OS than the one you coded on) and then "make install".
+
+ Notes
+ -----
+
+If you use this script file phypor cannot be held responsible for any loss
+or damage incurred. You do so at your own risk.
+
+If you use this script be aware that several files will be overwritten 
+including your softmessages in the 'soft/' directory. If you do not want
+this then modify the batch file to delete these.

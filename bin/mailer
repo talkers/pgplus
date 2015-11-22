@@ -1,0 +1,103 @@
+#!/bin/sh
+#
+# Mailer program 1.7
+# (c) Richard Lawrence (aka Silver) 1996
+#
+# This simple script (in conjunction with the 'list_emails' command on the
+# talker) will send out a mass mail to all your residents without any of
+# them knowing who else has received it.
+# 
+
+#
+# Some credits and information
+#
+
+echo " "
+echo "Mailer 1.7"
+echo "Copyright (c) Richard Lawrence (aka Silver) 1996"
+echo " "
+
+#
+# If we have the wrong number of arguments then tell them some information
+#
+
+if [ -z "$1" ]
+then
+  echo "Allows you to mass mail your residents without your list being"
+  echo "hijacked."
+  echo " "
+  echo "eg.   ${0##*/} moved.msg \"PG+ has moved sites\""
+  echo " "
+  echo "Would mail the text file 'moved.msg' to all your residents with"
+  echo "the subject line \"PG+ has moved sites\"."
+  echo " "
+  echo "Usage: ${0##*/} [filename] [subject]"
+  echo " "
+  exit
+fi
+
+#
+# Check the 'emails.rpt' exists - if it doesn't then warn them and exit
+#
+
+if [ -e "~/pgplus/reports/emails.rpt" ]
+then
+  echo
+  echo "You need to log onto the talker and type 'list_emails' first before"
+  echo "you can run this program."
+  echo
+  exit
+fi
+
+#
+# Work out how many mails will be sent
+#
+
+num=`wc -l ~/pgplus/reports/emails.rpt | awk '{ print $1 }'`
+
+#
+# Print out the details for confirmation
+#
+
+echo "     Filename           : $1"
+if [ -z $2 ]
+then
+  echo "     Subject            : <no subject>"
+else       
+echo "     Subject            : $2"       
+fi
+echo "     Mails to be posted : $num"
+echo " "
+echo "Hit RETURN to start mailing or CTRL-C to cancel now"
+echo " "
+read temp
+
+#
+# Set the number posted so far (0)
+#
+
+d=0
+
+#
+# Loop through each name mailing them a personal email.
+# NOTE: The 'wait 1' is required otherwise sendmail has problems and
+#       often fails to terminate properly (leaving hundreds of running
+#       processes). Also without the 'wait' the program would cause the
+#       server to slow down immensely during execution.
+#
+
+for id in `cat ~/pgplus/reports/emails.rpt`
+do
+
+  eval mail -s '`echo $2`' $id < $1  
+  d=`expr $d + 1`
+  echo -e "   NOW MAILING ... ($d out of $num residents)\c\r"
+  sleep 1
+done
+
+#
+# Report we've finished
+#
+
+echo "   FINISHED.       ($num out of $num residents)"
+echo " "

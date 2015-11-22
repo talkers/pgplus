@@ -1,0 +1,137 @@
+# Format of this file: description<nl>variable<nl>helptext<nl><nl>. 
+# If the question being documented is of type "choice", we list
+# only the first occurring config variable. The help texts
+# must not contain empty lines. No variable should occur twice; if it
+# does, only the first occurrence will be used by Configure. The lines
+# in a help text should be indented two positions. Lines starting with
+# `#' are ignored. To be nice to menuconfig, limit your lines to 70
+# characters. Use emacs' kfill.el to edit this file or you lose.
+
+Root directory
+ROOT
+  The path to the talker directory. This *MUST* end with a trailing / and
+  will probably be something like "/home/yourid/pgplus/". If you get this
+  wrong nothing horrible will happen - except your talker won't boot.
+
+Use Spires new process_output (beta)
+NEW_PROCESS_OUTPUT
+  Use the new process_output function written by Spire for Playground
+  talkers. This is generally faster, leaner and prettier than the original
+  code but has the disadvantage of not being tested as much. All bug
+  reports for this code should be mailed to <pre@pre.org>.
+
+Include intercom server support
+INTERCOM
+  Includes Grims intercom code which allows you to talker to other people
+  on other talkers without leaving your own.
+  PLEASE NOTE: Although this has been tested to see if it works I (Silver)
+  am not responsible for maintaining the code so any problems shouldn't
+  be blamed on Playground+ :o)
+
+Include Crash recovery code
+ANTICRASH
+  This includes some code that attempts to trap errors when they occur and
+  stop the talker from crashing down.  You will see messages on the screen
+  when a recoverable error is saved.
+
+Number of crashes until program exits
+MAX_CRASH
+  This sets how many times the program will recover from a small crash
+  before it decides to exit and reboot.  It's useful to set this to
+  something reasonable (say 5) so you don't end up with it getting stuck
+  into a fast crash/recover loop.
+
+Include auto-shutdown code
+AUTOSHUTDOWN
+  Allows the staff to set the talker so that it will automatically perform
+  a full shutdown and reboot when there is no-one logged on.
+
+Include robots code
+ROBOTS
+  Include Slaines robots code which allows the creation of computer
+  controlled residents which can perform a variety of commands as defined
+  in a text file.
+  PLEASE NOTE: Although this has been tested to see if it works I (Silver)
+  am not responsible for maintaining the code so any problems shouldn't
+  be blamed on Playground+ :o)
+
+Include Segtors IntelliBots (early beta)
+INTELLIBOTS
+  Include Segtors Intelligent Robots code that allows Slaines robots to be
+  triggered by different trigger phrases.
+  PLEASE NOTE: To actually use these intelligent robots, you have to edit
+  the file robot_int.c to set them up.
+
+Include last people login tracing
+LAST
+  Enable the "viewlast" command which allows residents to see who was
+  lasted logged in, what time and how long they stayed around for.
+
+Number of connections kept
+LAST_SHOW
+  The number of people stored in the last login database.
+
+Include command stats code
+COMMAND_STATS
+  Enable users to see which commands are the most frequently used. Novelty
+  value only.
+
+Use new pager code
+NEWPAGER
+  Use Nightwolfs new pager code which allows you to use commands whilst
+  still in the pager.
+
+Allow seamless rebooting of talker
+SEAMLESS_REBOOT
+  Include phypors seamless reboot code which allows you to reboot the
+  talker "on the fly". that is, without having to kick all the residents
+  off. Definately recommended.
+
+Enable partial comand matching code
+COM_MATCH
+  Enables code which will attempt to partially match commands (ie. if you
+  type "boun" then the "bounce" command will be used).
+
+Include ident server lookup code
+IDENT
+  Allows the admin to see what account name a user is connecting with
+  provided the server they are connecting from uses an ident server.
+
+Number of lines of SU history
+SUH_NUM
+  The number of items recorded by Astyanax's SU history code ("suh"). A
+  good value is between 10 and 30.
+
+Use new residency proposal code
+NEW_RES_CODE
+  Selecting this option will mean that the "res" command proposes a newbie
+  for residency and gives the rest of the staff one minute to object
+  (using the "obj" command) if they so wish before the newbie becomes a
+  resident.
+  If you don't like the idea then selecting "N" will use the standard PG96
+  style residency system.
+
+Enable multis (chains) for group communication
+ALLOW_MULTIS
+  If enabled will assign a number to any communication command (eg. tell,
+  remote, rsing, tf etc) which can then be used in the way you would
+  normally converse with one person. If you don't understand then enable
+  it and have a play around with "tf" and multiple tells.
+
+Use new reconnection code
+NEW_RECONNECT
+  Use phypors new reconnection code. There is no need to use the old code
+  unless you have hacked it about a lot.
+
+Timeout for news articles
+NEWS_TIMEOUT
+  How long (in seconds) before news articles are deleted
+
+Timeout for mail articles
+MAIL_TIMEOUT
+  How long (in seconds) before peoples mails are deleted
+
+Maximum log size
+MAX_LOG_SIZE
+  How big the logs can be before getting trimmed. NOTE: Thanks to phypors
+  fifo log code they are not deleted like PG96 used to do.

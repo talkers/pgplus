@@ -1,0 +1,37 @@
+
+ Information for spooners
+ ------------------------
+
+This is the doc file for those of you who are looking to "spoon" PG+ code
+into your talkers, that is, hack out large chunks of the code and use in
+within your own talker. Whilst I'd rather you used the base code it would
+be stupid of me to expect that no-one will spoon heavily from this.
+
+Before you start, work out how much of the code you are going to spoon. If
+it is to be a large amount then maybe it would be worth considering using
+this as a base and copying your code into PG+.
+
+Another valid point is that some code (such as get_int_safe and others)
+requests that you mail the author for permission before adding to your
+own. Just because the code is in this base package doesn't mean its freely
+copyable.
+
+If you do decide to spoon then you shouldn't have any problems porting
+stuff to PG96 talkers (and maybe even SensiSummink talkers). I, and the
+other authors, cannot and will not guarantee that ported code will work
+*at all*. Don't forget the a lot of the code will require global variables
+or macros that are in other files.
+
+IF YOU DO PORT CODE, please make sure that you give credit to the authors 
+and mention that it was from PG+. You'll also need to put a line in your
+help credits to mention this code (ideally with credit to the PG+ base
+code and its download URL, which is http://pgplus.ewtoo.org).
+
+Unless it is stated any additional code was written by Richard Lawrence
+(aka Silver).
+
+If you have any problems porting code please do not contact me. I will
+only help people who are using the PG+ base code.
+
+	Richard Lawrence (aka Silver)
+	24 May 1998

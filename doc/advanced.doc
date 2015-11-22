@@ -1,0 +1,110 @@
+Help file for New Superusers [By traP]:
+
+
+SU CHANNEL
+----------
+SU 	    -	Talk on the SU channel
+SE, SU:     - 	emote on the su channel
+ST	    -	Think on the su channel
+SS 	    -  	Sing on the su channel
+OFF_DUTY    -	Block the SU channel, and temporarily become a "regular ressie"
+ON_DUTY	    -	Unblock the SU channel, become a regular su of your rank again.
+SU_HI	    -	Toggle hilighting of the su channel
+TOGGLE_CHAN -	Switch to the "clanland" channel set.. use this only if you
+		know what "clanland" is :-P
+
+
+DEALING WITH NEWBIES
+--------------------
+ASSIST <name>  - Inform a newbie you are a superuser willing to help
+	  	 them, and other SUs that you are assisting them.
+DIBBS <name>   - Similar to assist, but for experienced new people
+CONFIRM <name> - Check if a resident has set password and email. Note
+		 those who have not will not be saved.
+RENAME <1> <2> - change the name of a newbie from <1> to <2>.
+RES <name>     - Grant residency to a newbie.
+VRES <name>    - Grant residency to a newbie, and set their email address as
+		 "validated" (means they don't need an email address, use
+		 carefully)
+LIST_NEW, LSN  - lists the current newbies, their site, and who's assisting em.
+XREF <string>  - check for similar names.. for example...
+		 xref tr   Tells you everyone who is a resident who's name 
+		 contains the letters T and R in that order.
+
+
+GETTING INFORMATION ABOUT THE PROGRAM
+-------------------------------------
+PSTATS		- Current Program Stats.
+PINFO <player>  - Check the entermsg, loginmsg, logoffmsgs of any player.
+LSR <letter>    - List all residents who's name starts with <letter>
+SPOST <string>  - Post a memo to all superusers
+SNEWS           - Read the superuser memos
+
+
+WAYS TO HANDLE TROUBLEMAKERS
+----------------------------
+BANISH <name>		    - Permenantly (kinda) forbid a name from ever
+			      being used on the Playground.	
+BLANK <something> <player>  - Type blank alone to see what you can blank.
+			      It totally erases an offensive string.
+BOOT <player>		    - Kick someone out of the main room for a minute.
+CHAN BAN <player>           - Banish a person from using channels.
+CHAN KILL <channel ID>      - Destroy an offensive channel.
+DECAP <player>		    - Remove someone's ability to use capital letters.
+			      decap them again to restore the ability.
+DRAG (person) (reason)	    - Kick someone off the program. They can come 
+			      right back on, however.
+DUMB (player)               - Put someone in "tweedle" mode. They can't do much
+			      other than shaking a broken rattle =)
+FORCEHELP (player) (file)   - Show a help file to a player
+JAIL (player) (time)	    - Jail someone for a certain period. Enter -1 to 
+			      give em "life in prison"
+RESET_SNEEZE (player) [time]- Change or reset the sneeze delay on someone 
+			      (see SNEEZE)
+RM_SHOUT (player) [time]    - Forbid someone from shoutting for a time.
+RM_SING (player) [time]	    - stop someone from singing for a time.
+SNEEZE (player) [time] 	    - Kick someone off the program and keep them off
+			      for a time (cannot use -1 here)
+SPLAT (player) [time]       - Kick someone off, and ban all logins from that
+			      person's site temporarily. 
+UNBANISH (name)  	    - Remove the ban on the usage of a given name.
+UNCONVERSE (player)	    - Forcibly take someone out of Converse mode.
+UNDUMB (player)		    - remove "tweedle mode" from someone.
+UNJAIL (player)		    - Parole a felon ;-)
+UNSPLAT (player)	    - remove or change the time on the temporary 
+			      ban on a site.
+WARN (player) (string)      - Give someone an official warning.
+YOYO (player)		    - Fun :-P Throw someone out of the room and bring
+			      em back again. 
+
+
+MISCELLANEOUS
+-------------
+BLANKPASS (player) (new password) -
+		If at all possible, refer this to a Lower Admin or above first.
+		This changes someone's password, incase they forgot it, but you
+		have to be SURE that the person who wants their password 
+		changed is who they say they are.
+CALC_SPODS      - Recalculates the spodlist.
+CHECK IP	- See everyone's login site.
+CHECK LIST (p)  - Check the length of P's list.
+CHECK ROOMS (p) - Check what rooms P's owns.
+COMFY		- Takes you to the SU lounge.
+EXTEND (player) - Make someone's list longer, by 5, to a limit of 40.
+INFORM NEWBIES  - Get informed whenever a newbie logs on (a toggle.. do again
+			to turn off)
+INFORM SUS      - Same as inform newbies, but for superusers.
+MODE (player)	- Tells you what mode (converse, room, mail, news) someone's in
+PRIVS (player)  - Check what someone else can/can't do.
+RECAP (player)  - change someone elses capitalization of their name.
+REDTAPE (player) (other su) - tell someone you're busy, and have them ask 
+			      someone else that you designate.
+RESET_SESSION (msg?) 	- Set the session to (msg) optional  and change the 
+			  waiting time on the session to 0. Use this to reset
+			  an offensive session.
+SHUTDOWN		- See how long until the next reboot, and the reason 
+			  for the shutdown.
+SITE (player) or (ip)   - see who is logged on from where.
+SUMOTD			- See the superuser Message of the Day.
+TRACE	(player)	- See where a player last logged on from (last site)
+ZDEL (channel) (reason)  - Deletes a dodgy zchannel

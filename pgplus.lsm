@@ -1,0 +1,14 @@
+Begin3
+Title:           Playground Plus
+Version:         1.0.9
+Entered-date:    06.02.99
+Description:     An interactive talk server
+Keywords:        talker, mud, chat, ew2, ewtoo, ew-too, spod, pg, playground, pg96, playground96 
+Author:          Richard A. Lawrence (silver@whiting.co.uk)
+Maintained-by:   Richard A. Lawrence (silver@whiting.co.uk)
+Primary-site:    http://pgplus.ewtoo.org
+                 525k Playground_Plus_1.0.9.tar.gz
+                 540  pgplus.lsm
+Platforms:       Linux, FreeBSD, NetBSD, possibly others
+Copying-policy:  Freely distributable, see the LICENSE
+End

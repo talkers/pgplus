@@ -1,0 +1,85 @@
+.TH mem_analyze 1 "March 8, 1997" "Courts of Chaos Research" "mem_analyze manual"
+
+.SH NAME
+mem_analyze \- analyzes the output of programs linked with
+libmem_test(3)
+.SH SYNOPSIS
+mem_analyze [-i] 
+.I file
+.SH DESCRIPTION
+.B mem_analyze
+is a perl script that is used to used to summarize the data produced by
+libmem_test(3)
+
+.B mem_analyze
+will scan through a log file produced by a program linked with
+libmem_test and keep track of the memory locations 
+used and the amount of memory allocated at each. When
+.B mem_analyze
+is
+done, the locations of any memory still allocated
+will be listed, along with the name of the file and function that
+last touched these locations.
+.SH EXAMPLE
+Here is an example of
+.B mem_analyze
+being run on a log file produced by the supplied example program linked with
+libmem_test.
+
+.RS
+jbuchana$ mem_analyze MEM_TEST_FILE
+
+128 bytes of memory left allocated at 134522336
+
+134522336 was last touched by licalloc at line 32 of example_program.c
+
+128 bytes of memory left allocated at 134521680
+
+134521680 was last touched by limalloc at line 20 of example_program.c
+
+16 bytes of memory left allocated at 134521608
+
+134521608 was last touched by listrdup at line 28 of example_program.c
+
+512 bytes of memory left allocated at 134521816
+
+134521816 was last touched by lirealloc at line 25 of example_program.c
+
+jbuchana$
+.RE
+
+Note that if there had been no (detected) memory leaks,
+.B mem_analyze
+would not have produced any output.
+.SH OPTIONS
+When a call to one of the allocation functions fails (returning a NULL
+pointer), libmem_test writes an
+error message to its log file, then passes the NULL pointer to the
+users' program, which may do as it wills with it.
+
+When
+.B mem_analyze
+encounters one of these errors, it normally exits, after printing the
+error message as found in the log file.
+
+By using the -i switch, you may override this behavior and force
+.B mem_analyze
+to continue. This is not recommended, but it is provided for those who
+need this functionality.
+.SH FILES
+.I MEM_TEST_FILE
+(the default name of the log file)
+.SH "SEE ALSO"
+.BR libmem_test (3)
+.SH BUGS
+.B mem_analyze
+can be rather slow on large log files. I've had log files of over 10M
+in size, these required some patience to analyze.
+
+Both
+.B mem_analyze
+and
+.B libmem_test
+are fairly unsophisticated. There are functions which use and free memory
+that aren't dealt with. Nonetheless, they have helped me find my more
+common forms of leaking memory.

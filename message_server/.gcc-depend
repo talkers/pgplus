@@ -1,0 +1,4 @@
+comms.o: comms.c comms.h file.h
+file.o: file.c file.h
+main.o: main.c config.h file.h
+socket.o: socket.c config.h

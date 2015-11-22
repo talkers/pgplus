@@ -1,0 +1,12 @@
+# Playground+ Banish file
+#
+# Use 	C for complete close
+# 	N for email registration (i.e. must have resident char)
+#       L to log all logins from that site.
+#
+# here is a sample ban on a ficticious machine "fuck.net" ip: 666.666.666.666
+666.666.666.666  C    # reason for banish here (Who-banned-it)
+#
+# this format is required for the ckban command, and is used automatically
+# by the site_ban and newbie_ban commands.
+

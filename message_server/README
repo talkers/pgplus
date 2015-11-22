@@ -1,0 +1,95 @@
+Message Server v1.3
+===================
+
+  This is a nice little program to put a message up on a given tcp port.
+You'll most likely want to use it if you run a mud or talker and either
+have some downtime, or have had to move sites and want to leave a
+message on your old address.
+  It has the rather nice feature of not closing the connection as soon
+as it has sent the message, instead it does a 10 second (default)
+countdown before closing the connection. This is primarily to help people
+who use telnet clients that clear the screen as soon as the connection is
+dropped. Without the delay these people would have a very hard time ever
+reading your message!
+
+
+Portability
+===========
+
+  So far the code has only been tested on:
+  
+			Linux 1.2.13, gcc 2.6.3
+			Solaris 2.4, gcc 2.6.3
+			Solaris 2.4, standard 'cc'
+			SunOS 4.1.3, gcc 2.5.8
+
+NB: Version 1.3 has thus far only been tested on linux 1.3.77
+
+Compiling
+=========
+
+  To compile edit the Makefile to suit your system then simply type 'make'. If
+you get any errors you probly need to tweak some of the code to suit your
+system. 
+
+
+Running
+=======
+
+   From version 1.3 onwards ms accepts a variety of commandline
+arguments. Thes are:
+
+        -p <port>               - Set port to listen on
+	-m <file>               - Set message file to use
+	-l <delay (seconds)>    - Loop until port is bound
+	-t <timeout (seconds)>  - Time before connection close
+	-v                      - Verbose messages
+	-r                      - Run with 'angel'
+	-b                      - Run in background (implied by -r)
+	-h                      - Help message
+
+The defaults for port, file, delay and timeout are in config.h, and a
+recompile is necessary to change them. Once you've compiled it once it
+is probly easiest just to use the commandline switches.
+   Without the -v flag you will get NO status reports at all, not even
+that the program has successfully bound to the port, only error messages
+should any operation fail.
+   The -r option causes the program to fork a child to act as the actual
+message server. If this child dies then the parent 'angel' process waits
+10 seconds then re-runs the child. If you want to kill the program, just
+kill the parent process and the child should die as well.
+   You will almost always want to start with the -b flag, so the program
+is divorced from your terminal and will stay running after you logout.
+   You may change the message file and get the program (either parent or
+child if running with angel) to get it to re-read the message file by
+sending it a SIGUSR1:
+
+      kill -USR1 <process id of parent or child>
+      
+The serving process will then start giving out the new message.
+
+Copyright
+=========
+
+   Please note that this program IS copyrighted. Specifically it is
+
+     Copyright 1995,1996 Neil Peter Soveran-Charley, known on 'the net'
+     as 'Athanasius'. All rights reserved.
+
+   However, this is freeware, feel free to distribute it. If you DO modify it
+in any way please make an attempt to send the changes (preferably diffs against
+the original) to me. Currently I can be reached at
+Athanasius@orodrion.demon.co.uk, although this account may not always be
+in existence. I should maintain my account at ncharley@nyx.cs.du.edu
+indefinitely, so if you have problems contacting me, try that.
+   Do NOT distribute any modified version yourself, I'd like to keep that
+'centralised'. 
+
+Note for Mirror Sites
+=====================
+
+   At time of writing this software's principle site is ftp.mersinet.co.uk,
+in the directory /pub/Unix/Talkers/Src.
+
+
+-Ath

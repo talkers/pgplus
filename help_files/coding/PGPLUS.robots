@@ -1,0 +1,175 @@
+Robots
+------
+
+Playground+ uses robots code written by Slaine, which (in my opinion) is
+the best robots code out there :o)
+
+Here is the original help file on them (with non-essential bits hacked
+out). Finally please note that Slaine does NOT provide any support with
+this code _whatsoever_.
+
+---Begin Included Instructions---
+
+The robots work as follows, first, here is the structure of the
+robots list in code terms.  This is necessary for you to understand how it
+all fits together.
+
+struct moves_struct
+{
+   char			move_string[IBUFFER_LENGTH-10];
+   struct moves_struct  *next;
+};
+typedef struct moves_struct move;
+
+struct robot_struct
+{
+   char			lower_name[MAX_NAME];
+   int			speed;
+   int			counter;
+   int			flags;
+   int			max_moves;
+   struct moves_struct  *moves_top;
+   struct p_struct	*actual_player;
+   struct robot_struct  *next;
+};
+typedef struct robot_struct robot;
+
+
+What does this all mean? ;)  Any coders reading this should know.  If they
+don't, sack them.  Basically, the robots operate as a list, which is run
+through and processed.  They are linked together using the 'next' variable.
+Each robot structure has within it a list of moves, this means as many moves
+as you like can be defined for the robot.  This will be explained later.
+The robots are physically just a normal playerfile, the lower_name part is
+the name of the playerfile you wish the robot to work on (in lower case).
+The speed is how often in seconds you want the robot to do something,
+counter is just used to count up to what you have specified.  Flags tell the
+program what the robot can/cant/should do, max_moves is internal, don't
+touch it, and moves_top is where the list of moves is stored internally.
+actual_player is a pointer used by the program to affect a logged in
+playerfile.
+
+For some that might sound a bit heavy, but in practise it's almost
+ridiculously easy to get a robot running.  Here is the format for the robots
+definition file, which should be kept in files/stuff/robots.  An example
+robot has been added to the file with this source distribution.  Use the
+instructions later on in this file to create the robot, using the name
+'testrobot' for the playerfile and omitting step 2.
+
+The robots file format (just a text file):
+
+#
+name of robot in lower case
+how often to do things in seconds
+flags for the robot (explained below)
+#
+list of actions that you want the robot to perform, 1 per line
+exactly as they would be typed, along with * and ~, which mean to choose
+a random users name from the whole program, or the room the robot is in
+respectively, eg:
+emote grins at ~ - would make the robot grin at a random person in the room
+#
+name of robot in lower case
+how often.... etc etc (the rest like above)
+#
+actions.. etc
+#
+
+The file should start with a # sign, and then you give it two sections per
+robot, each with a # at the end, the robot data section, and the moves you
+want the robot to have.  They should -literally- be specified as you would
+type the line, but you can add * and ~ signs which mean 'insert the name of
+another user here' - the ~ being restricted to users in the same room as the
+robot, so:
+
+#
+madadmin
+10
+1
+#
+shutdown 0 muahahahahahaha!!!!!!  The pink elephants have abducted my brain and sold it to the moon trolls!
+yoyo *
+#
+
+The above, would, if you had a playerfile called 'madadmin' with full admin
+privs, which is perfectly possible, create a loony monster capable of
+randomly rebooting the talker, and yoyoing random people.  Fun.
+Of course, if you have socials enabled, you could use them too, eg
+'grin ~' would make the robot randomly grin at people in the room.
+It wouldn't be too hard to get a robot to listen for the word 'residency' so
+newbies could ask a robot su for res..  If anyone wants but cant write that,
+I'll add it in the next version :-)
+
+You will notice the flags entry in the above robot definitions, these are
+worked out as follows (code segment plus actual number to use)
+                              No.
+#define WANDER (1<<0)          1 
+#define LOCAL_WANDER (1<<1)    2
+#define INTELLIGENT (1<<2)     4 /* reserved for future development!! */
+#define STORED (1<<3)          8
+#define FIXED (1<<4)	      16
+
+WANDER and LOCAL_WANDER means the robot literally wanders around like a
+zombie,  but in the case of LOCAL_WANDER, the robot stays in the room
+grouping it is in, for example summink.rooms, or (player).x etc.  This makes
+it possible for example to have a robotic bartender that never leaves the
+bar rooms.  FIXED means the robot is just that, it sits still, and STORED
+means that the robot is in storage as default when the program reboots.
+To get the flags number to use in the robots file, just add up the numbers
+to get the value you need.  For example, a default stored locally wandering
+robots would be 10.
+
+How do you make a robot then?
+1) Create the robot playerfile.  Just log it in, resident it, set a password
+   that only the administrators will know, set its description, title, etc
+   etc, home rooms if you desire, a list if you think its useful, anything
+   that can be set on a normal player.  You can optionally grant it the
+   'robot' priv if you are able, but this will be done automatically when the
+   robot first becomes active.  Warning, don't use make, because the robot
+   won't have agreed to the disclaimer or set a gender and won't be able to
+   connect. 
+2) Set up an appropriate entry in the robots file.  Actually, this could be
+   done before you make the robot, but you'll still have to reboot because
+   robot definitions with no matching playerfile are ignored when everything
+   is set up on boot.
+3) Reboot the talker.
+4) If the robot is defined to be in storage as default, unstore it to watch
+   it running.  'store' and 'unstore' either disconnect and deactivate the
+   robot, or reconnect and reactivate it.  'lsr' lists data about all valid
+   robot interrupts, with a list of flags, counters, etc.
+
+Some notes about robots!
+* Superusers cannot abuse them :-)  This is because the privs checking code
+  won't allow anybody lower than admin to touch them.  However, should you as
+  admin splat/drag them or anything similar, they will log back in as soon as
+  they can, on the time when they next would have done something.
+* Remember to set a login room for them if necessary!  A robot can have
+  -any- room on the program set as a login room with no restrictions, but
+  bear in mind that they do have to obey the normal laws of keys etc while 
+  walking about.  Beware allowing users to link their rooms to main rooms,
+  as an unscrupulous user could grant a key to a robot, wait for it to
+  wander into a room with only exits to their other rooms, then remove the
+  key, trapping the robot :-).  Well.  It's what I would do anyway ;-)
+* If a robot is not found as a playerfile on bootup, only a reboot can
+  activate it.
+* A good way to test the reliability of your talker could be to let them
+  loose with high action timings and lots of different commands.  Watch
+  those crashes ;-)
+* Don't store a robot, then nuke it, and unstore it ok?  You'll crash your
+  talker.  The same goes for logging in on top of a robot interrupt, it may
+  have strange consequences when you log out again.  Although it could be
+  amusing while you are logged in finding yourself saying/doing/moving on
+  auto ;-)
+* Ways to blow a users mind no.1!  Do the above, but don't let on you are
+  logged in as the robot ;-), then spring a surprise on someone.  Almost
+  worth a crash.
+* Making yourself a robot to stay logged in and de-idle permanently is very
+  very lame.
+
+							~Slaine
+
+---End Included Instructions---
+
+		Richard Lawrence (aka Silver)
+		15th February 1998
+

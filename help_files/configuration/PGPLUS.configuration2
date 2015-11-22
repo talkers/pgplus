@@ -1,0 +1,109 @@
+
+ Starting up
+ -----------
+
+If you're here then you've got your talker configured, compiled and now
+running sucessfully. To check type:
+
+  ps x
+
+And somewhere you should see the following (NOTE: Your talker name will
+be inbetween the arrows, the process numbers *will* be different and you
+may not have all 4 listed depending whether you chose to use the intercom 
+or ident):
+
+ 2255  p4 S N  0:00 -=> Playground+ <=- Guardian Angel watching port 7777 
+ 2256  ?  S N  0:00 -=> Playground+ <=- Talk Server on port 7777 
+ 2257  ?  S N  0:00 -=> Playground+ <=- Ident server 
+ 2258  ?  S N  0:00 -=> Playground+ <=- Intertalker communication server 
+
+Yay! Okay, now is time to log in and sort out your character. So telnet to
+the correct port (in our demo its 7777) with
+
+  telnet 0 7777
+
+and log in as usual. When you get to the message:
+
+  You are attempting to login as a hard coded admin.
+  To continue, you must enter the HCADMIN access password.
+
+enter in the password that you defined in the "make config" and (provided
+you got it right) you'll enter the code. On the way past you'll have
+probably noticed the words:
+
+  Eeeeeeek ! No saved bits !
+
+and
+
+  You have no password !!!
+  Please set one as soon as possible with the 'password' command.
+  If you don't your character will not save!
+
+The first can be ignored but the second cannot. You must set a password in
+order for your character to save. This is done with the "password" command
+(funnily enough) and DOES NOT and SHOULD NOT be the same as the HCAdmin
+access password.
+
+ Its playtime
+ ------------
+
+Now thats sorted you'll probably want to have a play around with the
+commands and see what each one does. Once you've tired of having you and a
+few mates on you'll need to customise the talker to look unique.
+
+The first thing to do is to edit the rest of the soft messages in the
+soft/ directory. This will allow you to set up defaults for players and
+system messages.
+
+Once you've done that the files/ directory is another good place. Anything
+that ends in ".msg" can be changed and really should. Notice that there
+are 3 connect screens which are picked at random upon login. If you want
+only one then just copy connect1.msg to connect2.msg and connect3.msg.
+
+If you've defined "do_email_check" in soft/config.msg then you'll
+definately need to edit the "email_welcome.msg" file since this contains
+the message that is sent to people when they change their address.
+
+You'll probably notice that the files make extensive use of the &t symbol
+and the &e symbol. When viewed through the talker these are replaced
+with the name of your talker and the email address respectively. This
+means that a good deal of the files are already talker specific.
+
+Then you need to edit the files in doc/help. This is the help file. All
+keywords are listed with a : before it and if there are more than one
+associated keyword with a help file it is seperated with a comma. So:
+
+:help,general,fruit
+
+Means that typing "help help", "help general" or "help fruit" will bring
+up the text below.
+
+You'll want to search for the << symbol and follow the instructions. Most
+of these are just places to insert your policies on certain privs. Once
+you are done, type "reboot" and watch all the new stuff appear!
+
+ Time to go live!
+ ----------------
+
+Nows the time to get the people on and the place going - thats the fun
+part.
+
+Finally I'll leave you with some words of wisdom from Mike Bourdaa (traP):
+
+    "At this time, you have a code. Thats the easy part. You need a site
+    (this can be really hard to get), you need residents, and you need a
+    staff now.
+
+    Running a talker sounds like a great idea at the time, often, but
+    sometimes, it just isn't. Ask yourself, "Why do I want to start up
+    another talker" -- if the answer is "because I wanna be an admin" or
+    "I wanna let my friends be sus" then you're in for a rough go.  Its
+    not for everyone.. and its a LOT easier to just logon to existing
+    talkers and chat there, than it is to start your own."
+    
+Best of luck with your talker.
+
+		Richard Lawrence (aka Silver)
+		04 June 1998
+
+

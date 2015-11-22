@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+# Converts PG to PG+
+# Copyright (c) Richard Lawrence (aka Silver 1998)
+#
+# If you are not running with your talker in 'talker' directory and
+# Playground+ is 'pgplus' then you need to do a search and replace on
+# this batch file - and serves you right too :o)
+#
+
+echo " "
+echo " pg2pgplus"
+echo " ---------"
+echo " "
+echo "This batch file will correctly copy the necessary files from your"
+echo "pg96 talker to pg+"
+echo " "
+echo "It assumes that the pg code is in a directory called 'talker' and"
+echo "the pg+ code is in a directory called 'pgplus'. If not - you need"
+echo "to edit the batch file NOW!"
+echo " "
+echo "You need to shutdown your talker perminantly. To do this - kill the"
+echo "angel and then shutdown. Once you have done this then conversion"
+echo "can begin ..."
+echo " "
+echo "** PLEASE NOTE: THE AUTHOR DOES NOT HOLD RESPONSIBILITY FOR DAMAGE"
+echo "** OR LOSS WHEN RUNNING THIS PROGRAM. YOU USE IT AT YOUR OWN RISK."
+echo "** (nothing in your 'talker' directory will be deleted or modified)"
+echo " "
+echo " "
+echo "-=> To start conversion type \"continue\" - anything else to quit"
+read x
+
+if [ "$x" != "continue" ]
+then
+  echo "\"continue\" NOT typed - conversion aborted."
+  echo " "
+  exit
+fi
+
+
+echo " "
+echo " "
+echo "Okay starting conversion - Please wait"
+echo " "
+
+cd ~/talker
+
+echo "-=*> Copying messages and rooms"
+cd files
+cp banish ~/pgplus/files/
+cp banned.msg ~/pgplus/files/
+cp connect.msg ~/pgplus/files/
+cp connect2.msg ~/pgplus/files/
+cp connect3.msg ~/pgplus/files/
+cp full.msg ~/pgplus/files/
+cp main.rooms ~/pgplus/files/
+cp newban.msg ~/pgplus/files/
+cp nonew.msg ~/pgplus/files/
+cp nores.msg ~/pgplus/files/
+cp splat.msg ~/pgplus/files/
+cp system.rooms ~/pgplus/files/
+
+echo "-=*> Copying defrag"
+cp -r defrag/* ~/pgplus/files/defrag/
+
+echo "-=*> Copying notes"
+cp -r notes/* ~/pgplus/files/notes/
+
+echo "-=*> Copying pfiles"
+cp -r players/* ~/pgplus/files/players/
+
+echo "-=*> Copying rooms"
+cp -r rooms/* ~/pgplus/files/rooms/
+
+echo "-=*> Copying whois"
+cp -r whois/* ~/pgplus/files/whois/
+
+echo "-=*> Copying items"
+cp -r items/* ~/pgplus/files/items/
+
+echo 
+echo "-=*> Conversion finished"
+echo 
+echo "You will still need to edit a large number of files - more"
+echo "specifically:"
+echo " "
+echo "    quit.msg          - Message when people quit"
+echo "    motd.msg          - Your MOTD in the new format"
+echo "    sumotd.msg        - Your Superuser MOTD in the new format"
+echo "    rude.msg          - Swear words to be filtered (if turned on)"
+echo "    email_welcome.msg - Welcoming email (if turned on)"
+echo
+echo "                      ... plus any others you feel to be relevant."
+echo 
+echo "Once it has been established that the pfiles work fine with PG+"
+echo "you can delete the \"talker\" directory."
+echo " "

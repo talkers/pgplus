@@ -1,0 +1,64 @@
+
+ A welcome from Silver
+ ---------------------
+
+For the majority of time in EW2 talkers there had always been two
+choices. On one side was the solid (but ultimately dull) SensiSummink and
+the other, the packed with features (but buggy) Playground 96. Since the
+appearance of PG96 over two years ago it would be fair to say that it has
+taken the talker world by storm.
+
+However PG96 always had its critics. It was buggy, prone to crashing at
+the most unwelcome of times (such as removing someones privs) and had what
+could be described as sloppy code. Netherless people took to PG96,
+because despite all its faults, it was something SensiSummink couldn't
+never really manage to be - fun.
+
+Now the demands of spods on talker coders and admins mean that using a
+two year old base code is not likely to help new talkers grow and expand.
+Residents want more games, more commands, more abilities, the intercom,
+channels and such. Admins demand saved warnings, ident server, decent
+superuser and admin channels, more power and more control. These are all
+features that are not available or poorly implemented in PG96.
+
+Playground Plus attempts to change this by bringing the PG code up-to-date
+and on par with SensiSummink. No longer will users have to make the choice
+between good code with no features or code with features but prone to
+crash.
+
+This code has been substantially cleaned and tidied up and whilst is by no
+means perfect it wont crash due to silly little things. Nothing is perfect
+and I wouldn't claim this code is - there will always be the odd bug
+lurking about and if you let me know then I can sort it out.
+
+This code is fully endorsed by the original PG96 team and is officially
+seen as the next logical progression in the PG saga to the extent that a
+large amount of effort has been made to make sure that it is backwardly
+compatible with PG96.
+
+I hope you enjoy the code, both running it and coding it. I can't say that
+I have always enjoyed coding it since there have been several times where
+I've felt like saying "bugger it" and deleting the whole directory. It is
+for that reason that I would like to thank my good friends Geoffrey
+Swift (aka blimey) who provided a great deal of help with getting this
+code into shape and bug free when I was totally lost, Chris Allegretta
+(aka Astyanax) who provided support and advice, Phypor (aka j. bradley
+christian) for donating a huge amount of code, bug fixes and time and
+Patrick Evans (aka Spire) who wrote the nifty installer script, new
+makefiles and a smart new process_output function. Also John Whiting
+should not be left out for kindly providing a server to test the code on
+and for the webpages to reside on.
+
+Additional thanks should go to all those who contributed code to the
+project, the beta testing crew (all 150 of them!) who endured numerious
+changes to commands, code and the odd whopper of a bug, the members of the
+angel mailing list and those who admined the Playground Plus test site
+more than I ever did.
+
+Finally I wish to thank all those who coped with my moaning, winging,
+depression, buggy code and frequent mails asking questions and getting
+advice.
+
+	Richard Lawrence (aka Silver)
+	silver@whiting.co.uk
+	16th June 1998

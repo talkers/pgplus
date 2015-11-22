@@ -1,0 +1,102 @@
+Description (x-file and f-file)
+-------------------------------
+
+These commands are to spice up your examine (x) file and finger (f) 
+file.  Some of them are for both files, some are for only one.  They have 
+been separated for your convenience.
+
+For Both Files:
+age: 
+	-To set your age, type: age <number>
+		-You must set the age to a numerical value.  It will not 
+	 	 recognize anything else.
+		-Typing age 0 turns this function off.
+
+birthday (bday):
+	-To set your birthday, type: bday <month/date>
+		-If you want your birthday to be set to Feb 29, you _must_
+		 include the year in the date.  For example: bday 2/29/96.
+		 The only time you do not have to include the year, is when
+		 it is an actual leap year.
+		-Typing bday 0 turns this function off.
+
+description (desc):
+	-To set up a description of yourself, type: desc <self depiction>
+
+hometown:
+	-To set the location of where you are, type: hometown <place>
+
+madefrom (formerly automatically set based on gender):
+	-To set what you are made from, type: madefrom <components>
+		-You may now set this to whatever you wish it to be.  If you
+		 type madefrom without anything after it, it will default to
+		 the old message.
+
+title:
+	-To set your own title type: title <insert your noble rank here>
+		-You do not need to put your name at the beginning of your
+		 title.  The program will do it for you automatically.
+		-If you prefer to have just your name, and no title after it,
+		 type title with no message after it.  (i.e.- type: title)
+
+toggle:
+	-To set your email and/or site public for friends or everyone to see,
+	 type: toggle <email or site> <friends or everyone>
+		-If you do not toggle your email or site, it is assumed that
+		 you wish for them to remain private.
+
+url (WWW homepage location):
+	-To set the location of your homepage, type: url
+	 <location>
+		-This is NOT to set up a homepage.  It is only for those who
+		 currently have one.
+
+
+For the Examine (x) File:
+favorite:
+	-To set up a favorite, type: favorite # <item> <thing>
+		-The number must be 1, 2, or 3, as you are only allowed 3
+		 favorites.
+		-The item may be no longer than 12 characters long.
+		-For example: to show that your favorite movie is Star Wars
+			-type: favorite 1 movie Star Wars
+		-To delete a favorite, type: favorite #
+			-Make sure that you have the correct # of the one you
+			 wish to remove.  Also, you do not put in an <item> 
+			 or <thing> when you are deleting a favorite.
+
+irl_name:
+	-To set the name you go by in real life, type: irl_name <name you
+	 answer to>
+
+
+For the Finger (f) File:
+------------------------
+
+plan:
+	-To set your plan, type: plan <idea(s) of what to do with your life>
+		-If you wish to remove the plan section from your f-file,
+		 type plan with no comments after it.  (i.e.- type: plan)
+
+*Note: The examine (x) file is for people to get more info on you when 
+you are currently logged in.  The finger (f) file is to get more info 
+when you are not currently logged in.
+
+
+Miscellaneous Personalization Commands (these don't affect the x or f files):
+-----------------------------------------------------------------------------
+
+prefix:
+	-To set a prefix, type: prefix <msg>
+	 	-This has a limit of 16 characters, and will not accept any
+		 blank spaces within it.
+		-The prefix is also shown to anyone who has the prefix command
+		 on whenever you say something, public or private.
+		-To see how to turn prefixes on, type help noprefix.
+
+recap:
+	-To recapitalize your name in some new fashion, type: recap <name as
+	 you want it to appear>
+
+
+indieFan -- March 10, 1996

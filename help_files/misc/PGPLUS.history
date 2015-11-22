@@ -1,0 +1,99 @@
+
+ A Verbose History of Playground by astyanax
+ -------------------------------------------
+
+	In May of 1995, I (Chris Allegretta, or astyanax) went to visit
+Valerie Kelley-Gosser (vallie) for three weeks at the University of
+Cincinnati, Ohio.  Having been recently disappointed by the experiences we
+had had at other Ew-Too talkers, we decided to put up a talker of our own,
+"just for fun."  Val suggested the theme of a school playground, and hence
+Playground was born.  The original incarnation was a copy of summink (back
+in the days before SensiSummink) which I slowly hacked up into a
+semi-unique, if unstable, talker.
+
+	Playground was run on a Linux machine (connected to the net by
+simple a compressed SLIP connection) called magic.netdtw.com.  The
+administrator was very nice about the whole thing, but PG quickly outgrew
+the bandwidth it had available (due mainly to the amount of time Val and I
+spent on-line - there was almost someone on to talk to =-) But the visit
+was short and we needed jobs for the summer in our respective states, and
+the talker was shut down.
+
+	That fall, Mike Bourdaa (traP), who had already established
+himself as an excellent coder on another talker called Xtreme (where
+vallie and I had first met, incidentally) joined the group and offered
+PG a site at his school. I had known traP since back when talkers
+like Forest and Resort were just starting out, which now seems like
+forever ago.  Right about the same time, Hans Peterson (Nogard), the wise
+sage/coder whom we all loved for his impartiality, ability to make sense
+of any situation, and all around great-guyness, also came on the project.  
+
+	My original code base for Playground, while nice, was simply
+nowhere near as advanced and unique as the code (called Wonderland)
+that traP had created.  A question then arose as to which theme should be
+used with the Wonderland code, and a vote was taken.  (I in fact was the
+lone supporter of the Wonderland theme, strange eh?).  So the code base
+was switched, but the Playground theme and messages were kept and the
+Playground that is so well-known today was truly born.
+
+	PG96 was released while Playground itself was still running, and
+now everyone could have their very own PG.  Apparently so many people
+thought they could run PG better then we did, they went out and tried to
+prove it ;-).  PG96 was popular because, while a little buggy and ugly on
+the inside, it introduced some things that other talkers just didnt have
+as standard fare, raising the standards of the average talker (and some
+say, killing the Ew-too talker world in the process).  Our view was, code
+should not make a talker, people do.  Resort and Foothills were chugging
+right along with thousands of residents, and our little code should not
+have been any serious threat to them.
+
+	A problem arose with the PG96 code in that Phypor, a former
+Superuser and friend to Val and me, was not credited for his many (if
+sometimes zany) suggestions to the code.  His input and service was quite
+important to PG itself, and to be honest I didn't remember until the code
+was released. I apologized to him when he brought it to my attention,
+thinking that it could be fixed in a later version of the PG code.
+Unfortunately, no updates became available, and Phy went off to code his
+own (semi-legal) version of the PG code.  After a lot of hostilities, the
+matter was resolved.  SensiPG (his code) was changed to remove any
+possible license violations, and I promised to rectify not crediting
+Phypor for his work in PG by explicitly stating it here. Thank you again
+Brad, for all your help.
+
+	But back to our story.  PG96 had become the code of choice in
+the land, though people were screaming for an update.  Slaine's
+SensiSummink, which was (and still is) an incredibly well put together and
+stable piece of coding, just wasnt enough for those who wanted as many
+bells and whistles as possible.  Other projects close to scope of
+Playground's were tried, but either they were too close to PG to have any
+real distinction to them (i.e. the coder took out our names and slipped in
+his/her own), or the code was just not released after all. Enter one Rich
+Lawrence (Silver) of the UK.
+
+	I first received an email from Silver asking for the "blessing" to
+release his code in early 1998.  First off, I was interesred as to why my
+blessing was so important when traP had written most of PG96's code.
+To be honest, I didnt think much of this at first, because 800 other
+coders had already been asking for my blessing when their code was clearly
+not much better than what PG was already, and besides, none of them
+carried the name of our little baby =).  Silver's Playground Plus, on the
+other hand, sounded like an actually useful project: an update to the PG
+code with many new improvements and features, and an emphasis on
+stability, closer to what the SensiSummink project strives for.
+
+	Well I could not resist this, and Val and I decided to give Silver
+our full blessing.  I even contibuted some code bits that I had written
+after the PG96 release (like the slot machine code and SU History), which
+he took and incorporated into PG+.  Hopefully, his work will not be in
+vain, as there are apparently so many other codes coming out that are
+supposed to "blow PG96 out of the water".  PGPlus already does that, and
+the fact that PG96 seems to be the standard by which people judge their
+talker codes makes the developers of PG smile a little more. 
+
+	But, nothing will ever be Playground, no matter how many claim
+they are (or how many don't want to be ;-). It is now a piece of history,
+something which those who were there to experience it can smile and
+say, "yeah, I was a part of that".  And perhaps you will have that
+same experience with your own talker, all it takes is a dream and some
+willing fingers.  And now, with the latest version of PG (PGPlus), you are
+already well on your way... Best of luck.
